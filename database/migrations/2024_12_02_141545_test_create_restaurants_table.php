@@ -4,28 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateRestaurantsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
-        Schema::create('test-restaurants', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 40)->nullable(false);
-            $table->string('address', 200)->nullable(false);
-            $table->string('piva', 11)->nullable(false)->unique();
-            $table->text('logo', 40)->nullable(true);
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('name');
+            $table->string('address');
+            $table->char('piva', 11);
+            $table->text('logo')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('test-restaurants');
+        Schema::dropIfExists('restaurants');
     }
-};
+}
