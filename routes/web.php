@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DishController as AdminDishController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TypeController;
@@ -16,12 +17,18 @@ use App\Http\Controllers\TypeController;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('types', [TypeController::class, 'index']);
+
+// Dishes
+Route::prefix('/admin')->name('admin.dishes.')->group(function () {
+    // Index
+    Route::get('/dishes', [AdminDishController::class, 'index'])->name('index');
+});
