@@ -27,4 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('/admin')->name('admin.dishes.')->group(function() {
     // Index
     Route::get('/dishes', [AdminDishController::class, 'index'])->name('index');
+    // Show
+    Route::get('/dishes/{dish}', [AdminDishController::class, 'show'])->name('show');
 });
