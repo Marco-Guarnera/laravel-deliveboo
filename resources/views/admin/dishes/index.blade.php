@@ -28,5 +28,6 @@
                 @endforelse
             </tbody>
         </table>
+        <div>{{ $dishes_list->links() }}</div>
     </div>
 @endsection

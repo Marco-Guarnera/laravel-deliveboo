@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DishController extends Controller {
     // Index
     public function index() {
-        $dishes_list = Dish::all();
+        $dishes_list = Dish::paginate(10);
         return view('admin.dishes.index', compact('dishes_list'));
     }
 }
