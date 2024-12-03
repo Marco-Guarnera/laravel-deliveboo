@@ -14,45 +14,80 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $users = [
+
             [
-                "email" => "info@kfc.it",
-                "password" => "12345678"
+                'email' => 'info@kebabhouse.com',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@burgerking.it",
-                "password" => "12345678"
+                'email' => 'pizzeria@bellanapoli.it',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@mcdonalds.it",
-                "password" => "12345678"
+                'email' => 'info@dragongarden.com',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@tacobell.it",
-                "password" => "12345678"
+                'email' => 'sushi@sushiyama.com',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@lapiadineria.com",
-                "password" => "12345678"
+                'email' => 'info@elmexicano.com',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@sushiexpress.it",
-                "password" => "12345678"
+                'email' => 'info@seoulspice.com',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@kebabhouse.it",
-                "password" => "12345678"
+                'email' => 'info@tajmahal.com',
+                'password' => '12345678'
             ],
+
             [
-                "email" => "info@damichele.net",
-                "password" => "12345678"
+                'email' => 'burger@burgerhouse.com',
+                'password' => '12345678'
             ],
+
+            [
+                'email' => 'steakhouse@texasgrill.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'bbq@bbqpit.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'fastfood@fastburger.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'vegan@greenbites.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'glutenfree@noglut.com',
+                'password' => '12345678'
+            ],
+
         ];
 
         foreach ($users as $userData) {
-            $user = new User();
-            $user->email = $userData["email"];
-            $user->password = Hash::make($userData["password"]);
-            $user->save();
+
+            User::create([
+                'email' => $userData["email"],
+                'password' => Hash::make($userData["password"]),
+            ]);
         }
     }
 }
