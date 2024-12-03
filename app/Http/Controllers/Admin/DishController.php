@@ -12,4 +12,9 @@ class DishController extends Controller {
         $dishes_list = Dish::paginate(10);
         return view('admin.dishes.index', compact('dishes_list'));
     }
+
+    // Show
+    public function show(Dish $dish) {
+        return view('admin.dishes.show', compact('dish'));
+    }
 }
