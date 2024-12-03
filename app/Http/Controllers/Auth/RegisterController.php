@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Restaurant;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +24,7 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
+    /**clearstatcache
      * Where to redirect users after registration.
      *
      * @var string
@@ -55,12 +55,13 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:40'],
             'address' => ['required', 'string', 'min:5', 'max:200'],
             'piva' => ['required', 'string', 'numeric', 'digits:11', 'unique:restaurants'],
-            'logo' => ['nullable', 'image', 'max:250']
+            'logo' => ['nullable', 'image', 'max:250'],
+            'types' => ['required', 'array', 'exists:types,id'],
         ]);
     }
 
     /**
-     * Create a new user instance and associate restaurants to it after a valid registration.     *
+     * Create a new user instance and associate restaurants to it after a valid registration.
      *
      * @param  array  $data
      * @return \App\Models\User
@@ -74,12 +75,17 @@ class RegisterController extends Controller
         ]);
 
         // Create the associated restaurant(s) for the user
-        $user->restaurants()->create([
+        $restaurant = $user->restaurants()->create([
             'name' => $data['name'],
             'address' => $data['address'],
             'piva' => $data['piva'],
             'logo' => $data['logo'],
         ]);
+
+        // Associate types with the restaurant
+        if (isset($data['types'])) {
+            $restaurant->types()->sync($data['types']);
+        }
         return $user;
     }
 }
