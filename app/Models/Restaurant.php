@@ -16,6 +16,12 @@ class Restaurant extends Model
         'logo',
     ];
 
+
+    public function types()
+    {
+        return $this->belongsToMany(Type::class);
+    }
+
     /**
      * Get the user that owns the restaurant.
      *
