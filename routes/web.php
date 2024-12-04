@@ -33,4 +33,6 @@ Route::prefix('/admin')->name('admin.dishes.')->group(function() {
     Route::get('/dishes', [AdminDishController::class, 'index'])->name('index');
     // Show
     Route::get('/dishes/{dish}', [AdminDishController::class, 'show'])->name('show');
+    // Edit
+    Route::get('/dishes/{dish}/edit', [AdminDishController::class, 'edit'])->name('edit');
 });
