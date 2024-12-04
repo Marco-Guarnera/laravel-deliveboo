@@ -16,7 +16,12 @@ class Restaurant extends Model
         'logo',
     ];
 
-
+    /**
+     * Get the types associated with the restaurant.
+     *
+     * Defines a many-to-many relationship with the Type model.
+     *
+     */
     public function types()
     {
         return $this->belongsToMany(Type::class);
@@ -29,5 +34,14 @@ class Restaurant extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the dishes associated with the restaurant.
+     *
+     */
+    public function  dishes()
+    {
+        return $this->hasMany(Dish::class);
     }
 }
