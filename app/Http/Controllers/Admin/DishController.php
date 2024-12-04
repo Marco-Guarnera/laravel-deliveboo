@@ -35,4 +35,11 @@ class DishController extends Controller {
     public function edit(Dish $dish) {
         return view('admin.dishes.edit', compact('dish'));
     }
+
+    // Update
+    public function update(Request $request, Dish $dish) {
+        $data_list = $request->all();
+        $dish->update($data_list);
+        return redirect()->route('admin.dishes.index');
+    }
 }
