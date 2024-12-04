@@ -13,6 +13,13 @@ class DishController extends Controller {
         return view('admin.dishes.create', compact('dish'));
     }
 
+    // Store
+    public function store(Request $request) {
+        $data_list = $request->all();
+        $dish = Dish::create($data_list);
+        return redirect()->route('admin.dishes.index');
+    }
+
     // Index
     public function index() {
         $dishes_list = Dish::paginate(10);
