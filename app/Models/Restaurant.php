@@ -14,6 +14,7 @@ class Restaurant extends Model
         'address',
         'piva',
         'logo',
+        'user_id'
     ];
 
 
