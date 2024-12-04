@@ -93,6 +93,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         //Create a new user
         $user = User::create([
             'email' => $data['email'],
@@ -105,6 +106,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'piva' => $data['piva'],
             'logo' => $data['logo'],
+            'user_id' => $user->id,
 
         ]);
 
@@ -112,9 +114,14 @@ class RegisterController extends Controller
         if (isset($data['types'])) {
             $restaurant->types()->sync($data['types']);
         }
+
         return $user;
     }
 
+    /**
+     * Show the registration form with types.
+     *
+     */
     public function showRegistrationForm()
     {
         $types = Type::all();
