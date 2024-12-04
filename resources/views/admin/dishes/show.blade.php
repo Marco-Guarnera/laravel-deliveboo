@@ -8,7 +8,7 @@
                 <!-- Card -->
                 <div class="card">
                     @isset($dish->img)
-                        <img src="..." class="card-img-top" alt="...">
+                        <img class="card-img-top" src="{{ asset('/storage/' . $dish->img) }}" alt="{{ $dish->name }}">
                     @endisset
                     <div class="card-body">
                         <h5 class="card-title">{{ $dish->name }}</h5>

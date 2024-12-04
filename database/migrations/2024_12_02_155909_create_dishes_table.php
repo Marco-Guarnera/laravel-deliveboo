@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->string('name', length: 250)->nullable(false);
             $table->text('description')->nullable(true);
             $table->decimal('price', total: 5, places: 2)->default(0)->nullable(false);
-            $table->boolean('is_visible')->default(true)->nullable(false);
+            $table->boolean('is_visible')->default(false)->nullable(false);
             $table->text('img')->nullable(true);
             $table->timestamps();
         });

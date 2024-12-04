@@ -3,6 +3,7 @@
 <!-- Index -->
 @section('content')
     <div class="container-fluid">
+        <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Create</a>
         <!-- Table -->
         <table class="table table-hover">
             <thead>
@@ -25,6 +26,12 @@
                         <td>{{ $dish->is_visible }}</td>
                         <td>
                             <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
+                            <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('admin.dishes.delete', $dish) }}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @empty
