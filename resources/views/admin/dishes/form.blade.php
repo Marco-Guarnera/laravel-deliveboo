@@ -20,7 +20,7 @@
                     <!-- Dish Visibility -->
                     <div class="form-check form-switch">
                         <label for="dish-vis" class="form-check-label">Visibility:</label>
-                        <input type="checkbox" id="dish-vis" class="form-check-input" name="is_visible" role="switch" @checked(old('is_visible', $dish->is_visible))>
+                        <input type="checkbox" id="dish-vis" class="form-check-input" name="is_visible" value="1" role="switch" @checked(old('is_visible', $dish->is_visible))>
                     </div>
                     <!-- Dish Img -->
                     <label for="dish-img" class="form-label">Image:</label>
