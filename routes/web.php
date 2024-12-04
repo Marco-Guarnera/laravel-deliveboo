@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('/admin')->name('admin.dishes.')->group(function() {
     // Create
     Route::get('/dishes/create', [AdminDishController::class, 'create'])->name('create');
+    // Store
+    Route::post('/dishes', [AdminDishController::class, 'store'])->name('store');
     // Index
     Route::get('/dishes', [AdminDishController::class, 'index'])->name('index');
     // Show
