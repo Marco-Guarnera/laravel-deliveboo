@@ -91,4 +91,11 @@ class RegisterController extends Controller
         }
         return $user;
     }
+
+    public function showRegistrationForm()
+    {
+        $types = Type::all();
+
+        return view('auth.register', compact('types'));
+    }
 }
