@@ -30,4 +30,9 @@ class DishController extends Controller {
     public function show(Dish $dish) {
         return view('admin.dishes.show', compact('dish'));
     }
+
+    // Edit
+    public function edit(Dish $dish) {
+        return view('admin.dishes.edit', compact('dish'));
+    }
 }
