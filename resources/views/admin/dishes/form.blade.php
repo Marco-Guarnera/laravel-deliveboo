@@ -19,7 +19,7 @@
                     <input type="number" id="dish-price" class="form-control" name="price" value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01">
                     <!-- Dish Visibility -->
                     <div class="form-check form-switch">
-                        <label for="dish-vis" class="form-check-label">Visibility:</label>
+                        <label for="dish-vis" class="form-check-label">Visibility</label>
                         <input type="checkbox" id="dish-vis" class="form-check-input" name="is_visible" value="1" role="switch" @checked(old('is_visible', $dish->is_visible))>
                     </div>
                     <!-- Dish Img -->
