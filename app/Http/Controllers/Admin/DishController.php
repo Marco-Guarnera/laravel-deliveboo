@@ -50,7 +50,7 @@ class DishController extends Controller {
 
         if ($request->hasFile('img')) {
             if ($dish->img) Storage::disk('public')->delete($dish->img);
-            $file_path = Storage::dish('public')->put('img/dishes/', $dish->img);
+            $file_path = Storage::disk('public')->put('img/dishes/', $request->img);
             $data_list['img'] = $file_path;
         }
 
