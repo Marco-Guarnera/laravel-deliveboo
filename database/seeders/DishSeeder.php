@@ -14,24 +14,33 @@ class DishSeeder extends Seeder
      */
     public function run(): void
     {
-        Dish::factory()->count(25)->create();
+        Dish::factory()->count(200)->create();
 
-
-        // Retrieve all dish IDs
+        // get all dish IDs
         $dishIds = Dish::pluck('id');
 
-        // Retrieve all restaurants
+        // get all restaurants
         $restaurants = Restaurant::all();
 
+        // assign random dishes to each restaurant
         foreach ($restaurants as $restaurant) {
-            // Generate a random number of dishes between 7 and 15
+            // generate a random number of dishes (7 to 15)
             $randomDishCount = rand(7, 15);
 
-            // Select random dish IDs from the available dishes
-            $randomDishes = $dishIds->random($randomDishCount);
+            // pick random dishes from the dish IDs
+            $selectedDishes = $dishIds->random($randomDishCount);
 
-            // Associate the selected dishes with the current restaurant
-            $restaurant->dishes()->sync($randomDishes);
+            // assign each selected dish to the current restaurant
+            foreach ($selectedDishes as $dishId) {
+                // find the dish by ID
+                $dish = Dish::find($dishId);
+
+                // link the dish to the restaurant
+                $dish->restaurant_id = $restaurant->id;
+
+                // save the dish with the restaurant ID
+                $dish->save();
+            }
         }
     }
 }
