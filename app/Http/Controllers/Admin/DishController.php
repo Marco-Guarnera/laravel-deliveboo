@@ -7,6 +7,12 @@ use App\Models\Dish;
 use Illuminate\Http\Request;
 
 class DishController extends Controller {
+    // Create
+    public function create() {
+        $dish = new Dish();
+        return view('admin.dishes.create', compact('dish'));
+    }
+
     // Index
     public function index() {
         $dishes_list = Dish::paginate(10);
