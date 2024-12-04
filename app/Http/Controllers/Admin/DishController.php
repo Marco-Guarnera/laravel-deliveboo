@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DishRequest;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,8 +16,8 @@ class DishController extends Controller {
     }
 
     // Store
-    public function store(Request $request) {
-        $data_list = $request->all();
+    public function store(DishRequest $request) {
+        $data_list = $request->validated();
 
         if ($request->hasFile('img')) {
             $file_path = Storage::disk('public')->put('img/dishes/', $request->img);
@@ -45,8 +46,8 @@ class DishController extends Controller {
     }
 
     // Update
-    public function update(Request $request, Dish $dish) {
-        $data_list = $request->all();
+    public function update(DishRequest $request, Dish $dish) {
+        $data_list = $request->validated();
 
         if ($request->hasFile('img')) {
             if ($dish->img) Storage::disk('public')->delete($dish->img);
