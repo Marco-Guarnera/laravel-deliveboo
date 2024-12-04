@@ -86,14 +86,21 @@
                         </div>
 
                         <!--Restaurant type selection   -->
-<div class="form-group">
-<label for="types" class="col-md-4 col-form-label text-md-end">Restaurant type(s)</label>
-<select name="types[]" id="types" class="form-control" multiple>
-    @foreach ($types as $type)
-        <option value="{{ $type->id }}">{{ $type->name }}</option>
-    @endforeach
+                        <div class="row mb-3">
+                            <label for="types" class="col-md-4 col-form-label text-md-end">Restaurant type(s)</label>
+                            <div class="col-md-6">
+                                @foreach ($types as $type)
+                                    <div class="form-check">
+                                        <input class="form-check-input @error('types') is-invalid @enderror" type="checkbox" name="types[]" value="{{ $type->id }}" id="type_{{ $type->id }}"
+                                            {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="type_{{ $type->id }}">
+                                            {{ $type->name }}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                            </div>
+                        </div>
 
-</div>
 
 
 

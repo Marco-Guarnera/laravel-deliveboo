@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'min:5', 'max:200'],
             'piva' => ['required', 'string', 'numeric', 'digits:11', 'unique:restaurants'],
             'logo' => ['nullable', 'image', 'max:250'],
-            'types' => ['required', 'array', 'exists:types,id'],
+            'types' => ['required', 'array', 'max:2', 'exists:types,id'],
         ]);
     }
 
@@ -83,6 +83,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'piva' => $data['piva'],
             'logo' => $data['logo'],
+
         ]);
 
         // Associate types with the restaurant
