@@ -12,6 +12,7 @@
                     <th>Description</th>
                     <th>Price</th>
                     <th>Visibility</th>
+                    <th>Functions</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,9 @@
                         <td>{{ $dish->description }}</td>
                         <td>{{ $dish->price }}</td>
                         <td>{{ $dish->is_visible }}</td>
+                        <td>
+                            <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
+                        </td>
                     </tr>
                 @empty
                     <div>Not Available</div>
