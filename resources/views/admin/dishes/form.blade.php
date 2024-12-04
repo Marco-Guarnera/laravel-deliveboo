@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-3">
                 <!-- Form -->
-                <form action="@yield('form-action')" method="post">
+                <form action="@yield('form-action')" method="post" enctype="multipart/form-data">
                     @yield('form-method')
                     @csrf
                     <!-- Dish Name -->
