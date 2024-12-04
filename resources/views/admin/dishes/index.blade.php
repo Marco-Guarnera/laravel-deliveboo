@@ -26,6 +26,7 @@
                         <td>{{ $dish->is_visible }}</td>
                         <td>
                             <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
+                            <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
                         </td>
                     </tr>
                 @empty
