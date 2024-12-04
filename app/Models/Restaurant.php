@@ -18,11 +18,6 @@ class Restaurant extends Model
     ];
 
 
-    public function types()
-    {
-        return $this->belongsToMany(Type::class);
-    }
-
     /**
      * Get the user that owns the restaurant.
      *
@@ -32,7 +27,7 @@ class Restaurant extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function type()
+    public function types()
     {
         return $this->belongsToMany(Type::class);
     }
