@@ -42,4 +42,10 @@ class DishController extends Controller {
         $dish->update($data_list);
         return redirect()->route('admin.dishes.index');
     }
+
+    // Delete
+    public function destroy(Dish $dish) {
+        $dish->delete();
+        return redirect()->route('admin.dishes.index');
+    }
 }
