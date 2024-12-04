@@ -25,11 +25,14 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**clearstatcache
-     * Where to redirect users after registration.
+     *  Define the URL to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        return route('admin.dishes');
+    }
 
     /**
      * Create a new controller instance.
