@@ -3,6 +3,7 @@
 <!-- Index -->
 @section('content')
     <div class="container-fluid">
+        <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Create</a>
         <!-- Table -->
         <table class="table table-hover">
             <thead>
