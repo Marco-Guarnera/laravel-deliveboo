@@ -4,6 +4,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3">
+                <!-- Errors -->
+                @include('partials.errors')
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
                 <!-- Form -->
                 <form action="@yield('form-action')" method="post" enctype="multipart/form-data">
                     @yield('form-method')
