@@ -27,6 +27,11 @@
                         <td>
                             <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
                             <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('admin.dishes.delete', $dish) }}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @empty
