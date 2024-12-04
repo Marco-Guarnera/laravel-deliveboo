@@ -27,9 +27,9 @@ class DishController extends Controller
     {
         $data_list = $request->validated();
 
-        $restaurant_id = auth()->user()->restaurant->id;
+        $restaurant = auth()->user()->restaurants->first();
 
-        $data_list['restaurant_id'] = $restaurant_id;
+        $data_list['restaurant_id'] = $restaurant->id;
 
         if ($request->hasFile('img')) {
             $file_path = Storage::disk('public')->put('img/dishes/', $request->img);
