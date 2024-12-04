@@ -6,3 +6,13 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// Generics
+form :where(input, textarea) {
+    margin-bottom: 0.25rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
