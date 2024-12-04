@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     // Create
     public function create() {
         $dish = new Dish();
