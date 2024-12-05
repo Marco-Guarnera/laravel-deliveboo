@@ -3,7 +3,24 @@
 <!-- Index -->
 @section('content')
 <div class="container-fluid">
-    <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Create</a>
+
+
+<!--Messaggio in caso non ci siano piatti-->
+@php
+
+$hasDishes = false;
+foreach ($restaurants as $restaurant) {
+    if ($restaurant->dishes->isNotEmpty()) {
+        $hasDishes = true;
+        break;
+    }
+}
+@endphp
+
+
+
+@if ($hasDishes)
+<a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Create</a>
     <!-- Table -->
     <table class="table table-hover">
         <thead>
@@ -41,6 +58,12 @@
             @endforeach
         </tbody>
     </table>
-    <div></div>
+    @else
+<div class="text-center mt-4">
+    <p>No dishes available. Start inserting your dishes!</p>
+    <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Add a new dish!</a>
+</div>
+    @endif
+
 </div>
 @endsection
