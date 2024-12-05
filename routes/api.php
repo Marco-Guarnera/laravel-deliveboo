@@ -25,3 +25,8 @@ Route::get('/dishes', [DishController::class, 'index'])->name('api.dishes.index'
 
 // API endpoint to list all restaurants
 Route::get('/restaurants', [RestaurantController::class, 'index'])->name('api.restaurants.index');
+
+
+Route::post('/dishes', [DishController::class, 'store']);
+Route::put('/dishes/{dish}', [DishController::class, 'update']);
+Route::delete('/dishes/{dish}', [DishController::class, 'destroy']);
