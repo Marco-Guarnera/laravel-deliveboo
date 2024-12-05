@@ -44,4 +44,15 @@ class RestaurantController extends Controller
             'results' => $dishes,
         ]);
     }
+
+    public function show($restaurantId)
+    {
+        // Trova il ristorante con i suoi tipi associati
+        $restaurant = Restaurant::with('types')->findOrFail($restaurantId);
+
+        return response()->json([
+            'success' => true,
+            'results' => $restaurant,
+        ]);
+    }
 }
