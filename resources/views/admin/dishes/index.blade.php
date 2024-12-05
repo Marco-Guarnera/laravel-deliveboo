@@ -48,8 +48,10 @@ foreach ($restaurants as $restaurant) {
                     <form action="{{ route('admin.dishes.delete', $dish) }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button type="submit" class="btn btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteDish" >Delete</button>
+                    <!--Button that triggers modal-->
+                        <button type="button" id="modalTrigger" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#deleteDish"
+                        data-dish-id="{{ $dish->id }}" data-dish-name="{{ $dish->name }}">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -68,26 +70,41 @@ foreach ($restaurants as $restaurant) {
 
 </div>
 <!--Modal for delete confirmation-->
-<!-- Button trigger modal -->
+
 
   <!-- Modal -->
-  <div class="modal fade" id="deleteModal" tabindex="-1" role="delete" aria-labelledby="deleteModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+          <button type="button" class="btn-danger" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+         Are you sure you want to delete this dish? This operation is not reversible.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Keep this dish</button>
+        <!--Delete form-->
+          <form id="deleteForm" method="POST" action="" style="display: inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 @endsection
+
+@section('modalScript')
+document.getElementById('modalTrigger').addEventListener('click', function()) {
+
+}
+
+
+@endsection
+
+
