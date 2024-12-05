@@ -37,7 +37,10 @@ class RestaurantController extends Controller
     public function getDishes($restaurantId)
     {
         $restaurant = Restaurant::findOrFail($restaurantId);
-        $dishes = $restaurant->dishes;
+        $dishes = $restaurant->dishes->map(function ($dish) {
+            $dish->image_url = $dish->img ? asset('storage/' . ltrim($dish->img, '/')) : null;
+            return $dish;
+        });
 
         return response()->json([
             'success' => true,
