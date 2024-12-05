@@ -30,3 +30,8 @@ Route::get('/restaurants', [RestaurantController::class, 'index'])->name('api.re
 Route::post('/dishes', [DishController::class, 'store']);
 Route::put('/dishes/{dish}', [DishController::class, 'update']);
 Route::delete('/dishes/{dish}', [DishController::class, 'destroy']);
+
+
+use App\Http\Controllers\Api\TypeController;
+
+Route::get('/types', [TypeController::class, 'index']);
