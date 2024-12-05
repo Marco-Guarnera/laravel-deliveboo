@@ -45,6 +45,13 @@ foreach ($restaurants as $restaurant) {
                 <td>
                     <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
                     <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
+                     <!--Delete button-->
+                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                     data-bs-target="#deleteModal"
+                     data-dish-id="{{ $dish->id }}"
+                     data-dish-name="{{ $dish->name }}">
+                     Delete
+                 </button>
 
                 </td>
             </tr>
@@ -62,6 +69,37 @@ foreach ($restaurants as $restaurant) {
     @endif
 
 </div>
+
+
+
+
+
+<!--Delete modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this dish? This operation is not reversible.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep this dish</button>
+
+                <!-- Delete form -->
+                <form id="deleteForm" method="POST"  action="{{ route('admin.dishes.delete', $dish) }}" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
 
 
 @endsection
