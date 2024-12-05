@@ -49,7 +49,8 @@ class DishController extends Controller
         Dish::create($data_list);
 
         // redirect to the dishes index page
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'Created!')
+            ->with('alert-class', 'success');
     }
 
     /**
@@ -104,7 +105,8 @@ class DishController extends Controller
         $dish->update($data_list);
 
         // redirect to the dishes index page
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'Updated!')
+            ->with('alert-class', 'success');
     }
 
     /**
@@ -116,6 +118,7 @@ class DishController extends Controller
         $dish->delete();
 
         // redirect to the dishes index page
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'Deleted!')
+            ->with('alert-class', 'danger');
     }
 }
