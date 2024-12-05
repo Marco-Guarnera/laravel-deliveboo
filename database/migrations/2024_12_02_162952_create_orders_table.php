@@ -11,19 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('restaurant_id')->constrained('restaurants')->onDelete('cascade');
-            $table->string('customer_name');
-            $table->string('customer_email');
-            $table->string('customer_number', 10);
-            $table->string('customer_address');
-            $table->decimal('total_price', 10, 2);
+        Schema::create(
+            'orders',
+            function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('restaurant_id')->constrained('restaurants')->onDelete('cascade');
+                $table->string('customer_name');
+                $table->string('customer_email');
+                $table->string('customer_number', 10);
+                $table->string('customer_address');
+                $table->decimal('total_price', 10, 2);
 
 
 
-            $table->timestamps();
-        });
+                $table->timestamps();
+            }
+        );
     }
 
     /**

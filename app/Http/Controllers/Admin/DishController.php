@@ -18,7 +18,6 @@ class DishController extends Controller
 
     /**
      * display the form for creating a new dish
-     *
      */
     public function create()
     {
@@ -28,7 +27,6 @@ class DishController extends Controller
 
     /**
      * store a new dish in the database
-     *
      */
     public function store(DishRequest $request)
     {
@@ -56,7 +54,6 @@ class DishController extends Controller
 
     /**
      * display a list of dishes grouped by the user's restaurants
-     *
      */
     public function index()
     {
@@ -72,7 +69,6 @@ class DishController extends Controller
 
     /**
      * display the specified dish
-     *
      */
     public function show(Dish $dish)
     {
@@ -81,7 +77,6 @@ class DishController extends Controller
 
     /**
      * show the form for editing the specified dish
-     *
      */
     public function edit(Dish $dish)
     {
@@ -90,7 +85,6 @@ class DishController extends Controller
 
     /**
      * update the specified dish in the database
-     *
      */
     public function update(DishRequest $request, Dish $dish)
     {
@@ -99,7 +93,9 @@ class DishController extends Controller
 
         // handle image update if a new file is provided
         if ($request->hasFile('img')) {
-            if ($dish->img) Storage::disk('public')->delete($dish->img);
+            if ($dish->img) {
+                Storage::disk('public')->delete($dish->img);
+            }
             $file_path = Storage::disk('public')->put('img/dishes/', $request->img);
             $data_list['img'] = $file_path;
         }
@@ -113,7 +109,6 @@ class DishController extends Controller
 
     /**
      * remove the specified dish from the database
-     *
      */
     public function destroy(Dish $dish)
     {

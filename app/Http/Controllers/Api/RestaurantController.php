@@ -12,9 +12,11 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::with('types', /* 'types.restaurants', */ 'dishes', /* 'dishes.restaurant' */)->paginate(10);
 
-        return response()->json([
+        return response()->json(
+            [
             'success' => true,
             'results' => $restaurants,
-        ]);
+            ]
+        );
     }
 }

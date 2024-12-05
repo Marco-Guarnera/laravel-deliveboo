@@ -12,19 +12,23 @@ class DishController extends Controller
     public function index()
     {
         $dishes_list = Dish::all();
-        return response()->json([
+        return response()->json(
+            [
             'success' => true,
             'results' => $dishes_list
-        ]);
+            ]
+        );
     }
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $data = $request->validate(
+            [
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
-        ]);
+            ]
+        );
 
         $dish = Dish::create($data);
 
@@ -33,11 +37,13 @@ class DishController extends Controller
 
     public function update(Request $request, Dish $dish)
     {
-        $data = $request->validate([
+        $data = $request->validate(
+            [
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
-        ]);
+            ]
+        );
 
         $dish->update($data);
 

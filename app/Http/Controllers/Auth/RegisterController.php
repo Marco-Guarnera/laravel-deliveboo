@@ -21,10 +21,10 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
 
-    /**clearstatcache
+    /**
+     * clearstatcache
      *  Define the URL to redirect users after registration.
      *
      * @var string
@@ -47,12 +47,14 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return Validator::make(
+            $data,
+            [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'name' => ['required', 'string', 'max:40'],
@@ -60,7 +62,8 @@ class RegisterController extends Controller
             'piva' => ['required', 'string', 'numeric', 'digits:11', 'unique:restaurants'],
             'logo' => ['nullable', 'image', 'max:250'],
             'types' => ['required', 'array', 'max:2', 'exists:types,id'],
-        ], [
+            ],
+            [
             'name.required' => 'Please, insert a name for your restaurant.',
             'address.required' => 'Please, insert an address for your restaurant.',
             'piva.required' => 'Please, insert correctly your P.Iva.',
@@ -82,33 +85,38 @@ class RegisterController extends Controller
 
 
 
-        ]);
+            ]
+        );
     }
 
     /**
      * Create a new user instance and associate restaurants to it after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
     {
 
         //Create a new user
-        $user = User::create([
+        $user = User::create(
+            [
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+            ]
+        );
 
         // Create the associated restaurant(s) for the user
-        $restaurant = $user->restaurants()->create([
+        $restaurant = $user->restaurants()->create(
+            [
             'name' => $data['name'],
             'address' => $data['address'],
             'piva' => $data['piva'],
             'logo' => $data['logo'],
             'user_id' => $user->id,
 
-        ]);
+            ]
+        );
 
         // Associate types with the restaurant
         if (isset($data['types'])) {
@@ -120,7 +128,6 @@ class RegisterController extends Controller
 
     /**
      * Show the registration form with types.
-     *
      */
     public function showRegistrationForm()
     {
