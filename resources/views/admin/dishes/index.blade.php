@@ -49,8 +49,8 @@ foreach ($restaurants as $restaurant) {
                         @method('delete')
                         @csrf
                     <!--Button that triggers modal-->
-                        <button type="button" id="modalTrigger" class="btn btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteDish"
+                        <button type="button" class="btn btn-danger modalTrigger" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
                         data-dish-id="{{ $dish->id }}" data-dish-name="{{ $dish->name }}">Delete</button>
                     </form>
                 </td>
@@ -78,15 +78,15 @@ foreach ($restaurants as $restaurant) {
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
-          <button type="button" class="btn-danger" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-         Are you sure you want to delete this dish? This operation is not reversible.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Keep this dish</button>
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Are you sure you want to delete this dish? This operation is not reversible.
+    </div>
+    <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep this dish</button>
         <!--Delete form-->
           <form id="deleteForm" method="POST" action="" style="display: inline;">
             @csrf
@@ -100,10 +100,17 @@ foreach ($restaurants as $restaurant) {
 @endsection
 
 @section('modalScript')
-document.getElementById('modalTrigger').addEventListener('click', function()) {
 
-}
 
+document.addEventListener('DOMContentLoaded', function() {
+const modalTriggers = document.querySelectorAll('modalTrigger');
+
+<!--const dishName = this.getAttribute('data-dish-name');
+const dishId = this.getAttribute('data-dish-id');-->
+
+console.log('ok');
+
+});
 
 @endsection
 
