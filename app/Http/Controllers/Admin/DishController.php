@@ -30,7 +30,8 @@ class DishController extends Controller {
 
         $dish = Dish::create($data_list);
 
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'Created!')
+                                                      ->with('alert-class', 'success');
     }
 
     // Index
@@ -61,12 +62,14 @@ class DishController extends Controller {
 
         $dish->update($data_list);
 
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'Updated!')
+                                                      ->with('alert-class', 'success');
     }
 
     // Delete
     public function destroy(Dish $dish) {
         $dish->delete();
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'Deleted!')
+                                                      ->with('alert-class', 'danger');
     }
 }

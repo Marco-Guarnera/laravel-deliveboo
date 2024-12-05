@@ -3,6 +3,13 @@
 <!-- Index -->
 @section('content')
     <div class="container-fluid">
+        <!-- Session Data -->
+        <div class="row">
+            <div class="col-3 mx-auto">
+                @include('partials.session-data')
+            </div>
+        </div>
+        <!-- Create -->
         <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Create</a>
         <!-- Table -->
         <table class="table table-hover">
@@ -25,8 +32,11 @@
                         <td>{{ $dish->price }}</td>
                         <td>{{ $dish->is_visible }}</td>
                         <td>
+                            <!-- Show -->
                             <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
+                            <!-- Edit -->
                             <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
+                            <!-- Delete -->
                             <form action="{{ route('admin.dishes.delete', $dish) }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
