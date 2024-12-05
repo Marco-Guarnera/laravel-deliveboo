@@ -32,4 +32,16 @@ class RestaurantController extends Controller
             'results' => $restaurants,
         ]);
     }
+
+
+    public function getDishes($restaurantId)
+    {
+        $restaurant = Restaurant::findOrFail($restaurantId);
+        $dishes = $restaurant->dishes;
+
+        return response()->json([
+            'success' => true,
+            'results' => $dishes,
+        ]);
+    }
 }

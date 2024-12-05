@@ -35,3 +35,6 @@ Route::delete('/dishes/{dish}', [DishController::class, 'destroy']);
 use App\Http\Controllers\Api\TypeController;
 
 Route::get('/types', [TypeController::class, 'index']);
+
+
+Route::get('restaurants/{restaurantId}/dishes', [RestaurantController::class, 'getDishes']);
