@@ -35,7 +35,7 @@ class DishController extends Controller {
 
     // Index
     public function index() {
-        $dishes_list = Dish::paginate(10);
+        $dishes_list = Dish::orderBy('name', 'asc')->paginate(10);
         return view('admin.dishes.index', compact('dishes_list'));
     }
 
