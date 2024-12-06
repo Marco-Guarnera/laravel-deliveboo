@@ -16,23 +16,31 @@
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
-       <header class="d-flex justify-content-around align-items-center">
+        <header class="d-flex justify-content-between align-items-center p-3">
+
+            <h3 class="text-success fw-bold">DeliveBoo</h3>
+
 
             @if (Route::has('login'))
-
+                <div class="d-flex align-items-center">
                     @auth
-                        <a class="badge bg-danger text-wrap" href="{{ url('admin/dishes') }}" >Your Restaurant's page</a>
+
+                        <a class="btn btn-danger text-white ms-3" href="{{ url('admin/dishes') }}">Your Restaurant's page</a>
                     @else
-                        <a class="badge bg-success text-wrap" href="{{ route('login') }}">Log in</a>
+
+                        <a class="btn btn-success text-white ms-3" href="{{ route('login') }}">Log in</a>
 
                         @if (Route::has('register'))
-                            <a class="badge bg-danger text-wrap" href="{{ route('register') }}">Register</a>
+
+                            <a class="btn btn-danger text-white ms-3" href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
-
+                </div>
             @endif
+        </header>
 
+        </body>
+        </html>
 
-            </header>
 
 </html>
