@@ -83,6 +83,8 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        $this->authorize('view', $dish);
+
         return view('admin.dishes.edit', compact('dish'));
     }
 
@@ -91,6 +93,8 @@ class DishController extends Controller
      */
     public function update(DishRequest $request, Dish $dish)
     {
+        $this->authorize('update', $dish);
+
         // validate the request data
         $data_list = $request->validated();
 
