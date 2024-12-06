@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $dish->name }}</h5>
                         <p class="card-text">{{ $dish->description }}</p>
-                        <span class="card-text">{{ $dish->price }}</span>
+                        <span class="card-text">{{ $dish->price . '€' }}</span>
                     </div>
                 </div>
             </div>

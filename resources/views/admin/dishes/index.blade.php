@@ -2,7 +2,7 @@
 
 <!-- Index -->
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <!-- Session Data -->
         <div class="row">
             <div class="col-3 mx-auto">
@@ -15,7 +15,6 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -26,22 +25,28 @@
             <tbody>
                 @forelse ($dishes_list as $dish)
                     <tr class="align-middle">
-                        <td>{{ $dish->id }}</td>
                         <td>{{ $dish->name }}</td>
                         <td>{{ $dish->description }}</td>
-                        <td>{{ $dish->price }}</td>
-                        <td>{{ $dish->is_visible }}</td>
+                        <td>{{ $dish->price . '€' }}</td>
                         <td>
-                            <!-- Show -->
-                            <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
-                            <!-- Edit -->
-                            <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
-                            <!-- Delete -->
-                            <form action="{{ route('admin.dishes.delete', $dish) }}" method="post" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                            @php
+                                if ($dish->is_visible) echo 'On';
+                                else echo 'Off';
+                            @endphp
+                        </td>
+                        <td>
+                            <div class="d-flex gap-1">
+                                <!-- Show -->
+                                <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
+                                <!-- Edit -->
+                                <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>
+                                <!-- Delete -->
+                                <form action="{{ route('admin.dishes.delete', $dish) }}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @empty

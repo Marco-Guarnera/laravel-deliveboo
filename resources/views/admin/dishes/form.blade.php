@@ -22,7 +22,7 @@
                     <textarea id="dish-description" class="form-control" name="description" rows="5" placeholder="Description">{{ old('description', $dish->description) }}</textarea>
                     <!-- Dish Price -->
                     <label for="dish-price" class="form-label">Price:</label>
-                    <input type="number" id="dish-price" class="form-control" name="price" value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01">
+                    <input type="number" id="dish-price" class="form-control" name="price" value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01" placeholder="€">
                     <!-- Dish Visibility -->
                     <div class="form-check form-switch">
                         <label for="dish-vis" class="form-check-label">Visibility</label>
