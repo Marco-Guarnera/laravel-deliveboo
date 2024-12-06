@@ -21,6 +21,8 @@ class DishController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Dish::class);
+
         $dish = new Dish();
         return view('admin.dishes.create', compact('dish'));
     }
@@ -30,6 +32,8 @@ class DishController extends Controller
      */
     public function store(DishRequest $request)
     {
+        $this->authorize('create', Dish::class);
+
         // validate the request data
         $data_list = $request->validated();
 
