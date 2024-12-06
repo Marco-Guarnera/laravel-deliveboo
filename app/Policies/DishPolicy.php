@@ -21,7 +21,7 @@ class DishPolicy
      */
     public function view(User $user, Dish $dish): bool
     {
-        //
+        return $dish->restaurant->user_id === $user->id;
     }
 
     /**
