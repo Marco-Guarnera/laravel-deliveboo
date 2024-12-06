@@ -120,6 +120,8 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
+        $this->authorize('delete', $dish);
+
         // delete the dish record
         $dish->delete();
 
