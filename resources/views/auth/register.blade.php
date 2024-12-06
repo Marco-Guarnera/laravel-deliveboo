@@ -13,7 +13,7 @@
                 <div class="card-body">
 
                     <!-- Register form -->
-                    <form method="POST" action="{{ route('register') }}">
+                    <form id="register-form" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <!-- Input for restaurant name -->
@@ -90,14 +90,15 @@
                             <label for="types" class="col-md-4 col-form-label text-md-end">Restaurant type(s)</label>
                             <div class="col-md-6">
                                 @foreach ($types as $type)
-                                    <div class="form-check">
-                                        <input class="form-check-input @error('types') is-invalid @enderror" type="checkbox" name="types[]" value="{{ $type->id }}" id="type_{{ $type->id }}"
-                                            {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}>
-                                        <label class="form-check-label" for="type_{{ $type->id }}">
-                                            {{ $type->name }}
-                                        </label>
-                                    </div>
-                                    @endforeach
+                                <div class="form-check">
+                                    <input class="form-check-input @error('types') is-invalid @enderror" type="checkbox"
+                                        name="types[]" value="{{ $type->id }}" id="type_{{ $type->id }}"
+                                        {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="type_{{ $type->id }}">
+                                        {{ $type->name }}
+                                    </label>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
 
@@ -160,4 +161,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('additional-script')
+
+@vite('resources/js/app.js')
+
 @endsection
