@@ -45,7 +45,7 @@ class DishPolicy
      */
     public function delete(User $user, Dish $dish): bool
     {
-        //
+        return $dish->restaurant->user_id === $user->id;
     }
 
     /**
