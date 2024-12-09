@@ -68,11 +68,20 @@ const validatePiva = piva => /^[0-9]{11}$/.test(piva);
 
 const isValidPiva = value => validatePiva(value) || "P.IVA must be exactly 11 digits.";
 
-// TODO add a new error container element for each input field
 // Create error container element
-const errorElement = document.createElement('span');
-errorElement.classList.add('invalid-feedback');
-restaurantName.parentNode.appendChild(errorElement);
+const createErrorElement = (inputElement) => {
+    const errorElement = document.createElement('div');
+    errorElement.classList.add('invalid-feedback');
+    inputElement.insertAdjacentElement('afterend', errorElement);
+    return errorElement;
+};
+
+const nameErrorElement = createErrorElement(restaurantName);
+const addressErrorElement = createErrorElement(restaurantAddress);
+const pivaErrorElement = createErrorElement(PIVA);
+const emailErrorElement = createErrorElement(email);
+const passwordErrorElement = createErrorElement(password);
+const confirmPasswordErrorElement = createErrorElement(confirmPassword);
 
 // |SHOW ERRORS
 const showError = (inputElement, errorElement, errorMessage) => {
@@ -90,8 +99,7 @@ registerForm.addEventListener('submit', function (event) {
     let isFormValid = true;
 
     if (!validateName(restaurantName.value.trim())) {
-        console.log(isValidName(restaurantName.value));
-        showError(restaurantName, errorElement, isValidName(restaurantName.value));
+        showError(restaurantName, nameErrorElement, isValidName(restaurantName.value));
         isFormValid = false;
     }
     if (!validateAddress(restaurantAddress.value)) {
