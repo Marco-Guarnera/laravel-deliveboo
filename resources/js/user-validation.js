@@ -28,12 +28,22 @@ const email = document.getElementById('email'); // Email.
 const password = document.getElementById('password'); // Password.
 const confirmPassword = document.getElementById('password-confirm'); // Confirm password.
 
+// |GET ELEMENTS FOR ERROR MESSAGES
+const nameError = document.getElementById('name-error');
+const addressError = document.getElementById('address-error');
+const pivaError = document.getElementById('piva-error');
+const logoError = document.getElementById('logo-error');
+const emailError = document.getElementById('email-error');
+const passwordError = document.getElementById('password-error');
+const confirmPasswordError = document.getElementById('password-confirm-error');
+
+
+// |FORM VALIDATION FUNCTIONS
 // Email validation.
 const validateEmail = (value) =>
     /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(value);
 
 const isValidEmail = value => validateEmail(value) || "Please provide a valid email address.";
-
 
 // Password validation arrow function.
 const validatePassword = (value) =>
@@ -56,6 +66,7 @@ const isValidAddress = value => validateAddress(value) || "Address must be betwe
 const validatePiva = piva => /^[0-9]{11}$/.test(piva);
 
 const isValidPiva = value => validatePiva(value) || "P.IVA must be exactly 11 digits.";
+
 
 // |ADD EVENT LISTENER
 // Add submit event listener to the registration form
