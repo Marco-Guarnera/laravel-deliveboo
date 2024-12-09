@@ -49,53 +49,59 @@ const confirmPasswordErrorElement = document.getElementById('password-confirm-er
 // |FORM VALIDATION FUNCTIONS
 
 // Validates email format using regex.
-const validateEmail = (value) =>
-    /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(value);
-
-const isValidEmail = (value) =>
-    validateEmail(value) || "Please provide a valid email address.";
+const validateEmail = (email) => {
+    if (!/^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email)) {
+        return "Please provide a valid email address.";
+    }
+    return ""; // Valid
+};
 
 // Validates password: at least 8 characters, no spaces.
-const validatePassword = (value) =>
-    /^(?=\S{8,}$).+$/.test(value);
+const validatePassword = (password) => {
+    if (!/^(?=\S{8,}$).+$/.test(password)) {
+        return "Password must be at least 8 characters long.";
+    }
+    return ""; // Valid
+};
 
-const isValidPassword = (value) =>
-    validatePassword(value) || "Password must be at least 8 characters long.";
+// Validates confirm password.
+const validateConfirmPassword = (password, confirmPassword) => {
+    if (password.trim() === "" || confirmPassword.trim() === "") {
+        return "Password and confirmation cannot be empty.";
+    }
+    if (password !== confirmPassword) {
+        return "Passwords do not match.";
+    }
+    return ""; // Valid
+};
 
 // Validates restaurant name: 1-40 characters.
-const validateName = (name) =>
-    name.length > 0 && name.length <= 40;
-
-const isValidName = (value) =>
-    validateName(value) || "Name is required and must not exceed 40 characters.";
+const validateName = (name) => {
+    if (name.length === 0) return "Name is required.";
+    if (name.length > 40) return "Name must not exceed 40 characters.";
+    return ""; // Valid
+};
 
 // Validates restaurant address: 5-200 characters.
-const validateAddress = (address) =>
-    address.length >= 5 && address.length <= 200;
-
-const isValidAddress = (value) =>
-    validateAddress(value) || "Address must be between 5 and 200 characters.";
+const validateAddress = (address) => {
+    if (address.length < 5) return "Address must be at least 5 characters.";
+    if (address.length > 200) return "Address must not exceed 200 characters.";
+    return ""; // Valid
+};
 
 // Validates VAT (P.IVA): exactly 11 digits.
-const validatePiva = (value) =>
-    /^[0-9]{11}$/.test(value);
-
-const isValidPiva = (value) =>
-    validatePiva(value) || "P.IVA must be exactly 11 digits.";
+const validatePiva = (piva) => {
+    if (!/^[0-9]{11}$/.test(piva)) return "P.IVA must be exactly 11 digits.";
+    return ""; // Valid
+};
 
 // Validates that at least one restaurant type is selected.
 const validateTypes = () => {
     const selectedTypes = document.querySelectorAll('input[name="types[]"]:checked');
-    if (selectedTypes.length === 0) {
-        return "At least one type must be selected.";
-    } else if (selectedTypes.length > 2) {
-        return "You can select a maximum of two types.";
-    }
-    return ""; // No errors
+    if (selectedTypes.length === 0) return "At least one type must be selected.";
+    if (selectedTypes.length > 2) return "You can select a maximum of two types.";
+    return ""; // Valid
 };
-
-const isValidTypes = () =>
-    validateTypes() || "At least one type must be selected.";
 
 // |UTILITY FUNCTIONS
 
@@ -145,48 +151,54 @@ registerForm.addEventListener('submit', function (event) {
     let isFormValid = true;
 
     // Validate restaurant name.
-    if (!validateName(restaurantName.value.trim())) {
-        showError(restaurantName, nameError, isValidName(restaurantName.value));
+    const nameMessage = validateName(restaurantName.value.trim());
+    if (nameMessage) {
+        showError(restaurantName, nameError, nameMessage);
         isFormValid = false;
     } else {
         showValid(restaurantName, nameError);
     }
 
     // Validate restaurant address.
-    if (!validateAddress(restaurantAddress.value.trim())) {
-        showError(restaurantAddress, addressError, isValidAddress(restaurantAddress.value));
+    const addressMessage = validateAddress(restaurantAddress.value.trim());
+    if (addressMessage) {
+        showError(restaurantAddress, addressError, addressMessage);
         isFormValid = false;
     } else {
         showValid(restaurantAddress, addressError);
     }
 
     // Validate P.IVA.
-    if (!validatePiva(PIVA.value.trim())) {
-        showError(PIVA, pivaError, isValidPiva(PIVA.value));
+    const pivaMessage = validatePiva(PIVA.value.trim());
+    if (pivaMessage) {
+        showError(PIVA, pivaError, pivaMessage);
         isFormValid = false;
     } else {
         showValid(PIVA, pivaError);
     }
 
     // Validate email.
-    if (!validateEmail(email.value.trim())) {
-        showError(email, emailError, isValidEmail(email.value));
+    const emailMessage = validateEmail(email.value.trim());
+    if (emailMessage) {
+        showError(email, emailError, emailMessage);
         isFormValid = false;
     } else {
         showValid(email, emailError);
     }
 
     // Validate password.
-    if (!validatePassword(password.value.trim())) {
-        showError(password, passwordError, isValidPassword(password.value));
+    const passwordMessage = validatePassword(password.value.trim());
+    if (passwordMessage) {
+        showError(password, passwordError, passwordMessage);
         isFormValid = false;
     } else {
         showValid(password, passwordError);
     }
 
     // Validate confirm password.
-    if (password.value.trim() !== confirmPassword.value.trim()) {
-        showError(confirmPassword, confirmPasswordError, "Passwords do not match.");
+    const confirmPasswordMessage = validateConfirmPassword(password.value.trim(), confirmPassword.value.trim());
+    if (confirmPasswordMessage) {
+        showError(confirmPassword, confirmPasswordError, confirmPasswordMessage);
         isFormValid = false;
     } else {
         showValid(confirmPassword, confirmPasswordError);
@@ -194,8 +206,7 @@ registerForm.addEventListener('submit', function (event) {
 
     // Validate restaurant types
     const typesMessage = validateTypes(); // Get the validation result
-    if (typesMessage !== "") { // Check for errors
-        console.log(isValidTypes());
+    if (typesMessage) {
         // Add 'is-invalid' class to each checkbox
         typeCheckboxes.forEach((checkbox) => checkbox.classList.add('is-invalid'));
         // Add 'is-invalid' class to the container
