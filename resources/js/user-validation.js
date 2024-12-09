@@ -3,6 +3,7 @@ regular expression 101 | regex101.com
 
 link to email regex https://regex101.com/r/WCXPcP/1
 link to password regex https://regex101.com/r/ivDsvJ/1
+link to italian vat registration number regex https://regex101.com/r/xQ6xR7/1
 
 */
 console.log('JS OK')
@@ -43,8 +44,18 @@ const isValidPassword = value =>
 
 // Restaurant name validation arrow function.
 const validateName = name => name.length > 0 && name.length <= 40;
+
 const isValidName = value => (value && validateName(value)) || "Name is required and must not exceed 40 characters.";
 
+// Restaurant address validation arrow function.
+const validateAddress = address => address.length >= 5 && address.length <= 200;
+
+const isValidAddress = value => validateAddress(value) || "Address must be between 5 and 200 characters.";
+
+// Restaurant address validation arrow function.
+const validatePiva = piva => /^[0-9]{11}$/.test(piva);
+
+const isValidPiva = value => validatePiva(value) || "P.IVA must be exactly 11 digits.";
 
 // |ADD EVENT LISTENER
 // Add submit event listener to the registration form
