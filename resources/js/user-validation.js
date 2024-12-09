@@ -64,7 +64,7 @@ const validateAddress = address => address.length >= 5 && address.length <= 200;
 const isValidAddress = value => validateAddress(value) || "Address must be between 5 and 200 characters.";
 
 // Restaurant address validation arrow function.
-const validatePiva = piva => /^[0-9]{11}$/.test(piva);
+const validatePiva = value => /^[0-9]{11}$/.test(value);
 
 const isValidPiva = value => validatePiva(value) || "P.IVA must be exactly 11 digits.";
 
@@ -102,28 +102,32 @@ registerForm.addEventListener('submit', function (event) {
         showError(restaurantName, nameErrorElement, isValidName(restaurantName.value));
         isFormValid = false;
     }
-    if (!validateAddress(restaurantAddress.value)) {
-        console.log(isValidAddress(restaurantAddress.value));
+
+    if (!validateAddress(restaurantAddress.value.trim())) {
+        showError(restaurantAddress, addressErrorElement, isValidAddress(restaurantAddress.value));
         isFormValid = false;
     }
 
-    if (!validatePiva(PIVA.value)) {
-        console.log(isValidPiva(PIVA.value));
+    // Validazione P.IVA
+    if (!validatePiva(PIVA.value.trim())) {
+        showError(PIVA, pivaErrorElement, validatePiva(PIVA.value));
+        isFormValid = false;
+    }
+    // Validazione email
+    if (!validateEmail(email.value.trim())) {
+        showError(email, emailErrorElement, isValidEmail(email.value));
         isFormValid = false;
     }
 
-    if (!validateEmail(email.value)) {
-        console.log(isValidEmail(email.value));
+    // Validazione password
+    if (!validatePassword(password.value.trim())) {
+        showError(password, passwordErrorElement, validatePassword(password.value));
         isFormValid = false;
     }
 
-    if (!validatePassword(password.value)) {
-        console.log(isValidPassword(password.value));
-        isFormValid = false;
-    }
-
-    if (password.value !== confirmPassword.value) {
-        console.log("Passwords do not match.");
+    // Validazione conferma password
+    if (!((confirmPassword.value.trim()) === (confirmPassword.value.trim()))) {
+        showError(confirmPassword, confirmPasswordErrorElement, "Passwords do not match.");
         isFormValid = false;
     }
 
