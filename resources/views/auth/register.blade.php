@@ -27,10 +27,9 @@
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -46,10 +45,9 @@
 
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -64,10 +62,9 @@
 
                                 @error('piva')
                                 <span class="invalid-feedback" role="alert">
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -82,10 +79,9 @@
 
                                 @error('logo')
                                 <span class="invalid-feedback" role="alert">
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -125,10 +121,9 @@
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -157,11 +152,12 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
                                     name="password_confirmation" autocomplete="new-password">
+
                                 @error('password_confirmation')
-                                <spanerror" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
