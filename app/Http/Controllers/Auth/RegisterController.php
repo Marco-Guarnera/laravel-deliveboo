@@ -7,6 +7,7 @@ use App\Models\Type;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -55,35 +56,28 @@ class RegisterController extends Controller
         return Validator::make(
             $data,
             [
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'name' => ['required', 'string', 'max:40'],
-            'address' => ['required', 'string', 'min:5', 'max:200'],
-            'piva' => ['required', 'string', 'numeric', 'digits:11', 'unique:restaurants'],
-            'logo' => ['nullable', 'image', 'max:250'],
-            'types' => ['required', 'array', 'max:2', 'exists:types,id'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'name' => ['required', 'string', 'max:40'],
+                'address' => ['required', 'string', 'min:5', 'max:200'],
+                'piva' => ['required', 'string', 'numeric', 'digits:11', 'unique:restaurants'],
+                'logo' => ['nullable', 'image', 'max:250'],
+                'types' => ['required', 'array', 'max:2', 'exists:types,id'],
             ],
             [
-            'name.required' => 'Please, insert a name for your restaurant.',
-            'address.required' => 'Please, insert an address for your restaurant.',
-            'piva.required' => 'Please, insert correctly your P.Iva.',
-            'piva.size' => 'Your P.Iva must be 11 characters long.',
-            'logo.image' => 'Your Logo must be an image file.',
-            'logo.max' => 'Your logo can\'t exceed 2MB of space.',
-            'email.required' => 'Please, insert your email.',
-            'email.email' => 'Please, insert a valid email address',
-            'email.unique' => 'This email address is already taken.',
-            'password.required' => 'Please insert your password.',
-            'password.min' => 'Your Password must be at least 8 characters long.',
-            'password.confirmed' => 'The passwords must correspond.',
-            'types.*.exists' => 'Please insert a valid restaurant type.',
-
-
-
-
-
-
-
+                'name.required' => 'Please, insert a name for your restaurant.',
+                'address.required' => 'Please, insert an address for your restaurant.',
+                'piva.required' => 'Please, insert correctly your P.Iva.',
+                'piva.size' => 'Your P.Iva must be 11 characters long.',
+                'logo.image' => 'Your Logo must be an image file.',
+                'logo.max' => 'Your logo can\'t exceed 2MB of space.',
+                'email.required' => 'Please, insert your email.',
+                'email.email' => 'Please, insert a valid email address',
+                'email.unique' => 'This email address is already taken.',
+                'password.required' => 'Please insert your password.',
+                'password.min' => 'Your Password must be at least 8 characters long.',
+                'password.confirmed' => 'The passwords must correspond.',
+                'types.*.exists' => 'Please insert a valid restaurant type.',
 
             ]
         );
@@ -98,22 +92,27 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+        // Save the logo file if provided, or set to null if absent
+        $data['logo'] = isset($data['logo'])
+            ? Storage::disk('public')->put('img/logos/', $data['logo'])
+            : null;
+
         //Create a new user
         $user = User::create(
             [
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
             ]
         );
 
         // Create the associated restaurant(s) for the user
         $restaurant = $user->restaurants()->create(
             [
-            'name' => $data['name'],
-            'address' => $data['address'],
-            'piva' => $data['piva'],
-            'logo' => $data['logo'],
-            'user_id' => $user->id,
+                'name' => $data['name'],
+                'address' => $data['address'],
+                'piva' => $data['piva'],
+                'logo' => $data['logo'],
+                'user_id' => $user->id,
 
             ]
         );
