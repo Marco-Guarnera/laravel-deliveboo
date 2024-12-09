@@ -111,6 +111,13 @@ const showError = (inputElement, errorElement, errorMessage) => {
     errorElement.innerHTML = `<strong>${errorMessage}</strong>`;
 };
 
+// Marks an input as valid and removes error messages.
+const showValid = (inputElement, errorElement) => {
+    inputElement.classList.remove('is-invalid');
+    inputElement.classList.add('is-valid');
+    errorElement.innerHTML = ''; // Clears any existing error messages.
+};
+
 // |ADD EVENT LISTENER
 // Adds submit event listener to the registration form.
 registerForm.addEventListener('submit', function (event) {
@@ -123,36 +130,48 @@ registerForm.addEventListener('submit', function (event) {
     if (!validateName(restaurantName.value.trim())) {
         showError(restaurantName, nameError, isValidName(restaurantName.value));
         isFormValid = false;
+    } else {
+        showValid(restaurantName, nameError);
     }
 
     // Validate restaurant address.
     if (!validateAddress(restaurantAddress.value.trim())) {
         showError(restaurantAddress, addressError, isValidAddress(restaurantAddress.value));
         isFormValid = false;
+    } else {
+        showValid(restaurantAddress, addressError);
     }
 
     // Validate P.IVA.
     if (!validatePiva(PIVA.value.trim())) {
         showError(PIVA, pivaError, isValidPiva(PIVA.value));
         isFormValid = false;
+    } else {
+        showValid(PIVA, pivaError);
     }
 
     // Validate email.
     if (!validateEmail(email.value.trim())) {
         showError(email, emailError, isValidEmail(email.value));
         isFormValid = false;
+    } else {
+        showValid(email, emailError);
     }
 
     // Validate password.
     if (!validatePassword(password.value.trim())) {
         showError(password, passwordError, isValidPassword(password.value));
         isFormValid = false;
+    } else {
+        showValid(password, passwordError);
     }
 
     // Validate confirm password.
     if (password.value.trim() !== confirmPassword.value.trim()) {
         showError(confirmPassword, confirmPasswordError, "Passwords do not match.");
         isFormValid = false;
+    } else {
+        showValid(confirmPassword, confirmPasswordError);
     }
 
     // If the form is valid, allow submission.
