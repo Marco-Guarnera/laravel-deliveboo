@@ -23,7 +23,7 @@ img {
     box-sizing: border-box;
 }
 
-header {
+#welcome-header {
     height: 100px;
     background-color: orange;
 }
@@ -33,4 +33,28 @@ header {
     text-decoration: none;
     font-size: 20px;
     color: red;
+}
+
+#welcome-main {
+    background-color: orange;
+    height: calc(100vh - 100px);
+}
+
+#text-container-1,
+#text-container-2 {
+    height: 80px;
+    border-color: rgb(6, 126, 6);
+    border-style: solid;
+    width: fit-content;
+    padding: 10px;
+
+}
+
+#text-container-1 {
+    margin-left: 200px;
+}
+
+#text-container-2 {
+    margin-top: 100px;
+    margin-right: 200px;
 }

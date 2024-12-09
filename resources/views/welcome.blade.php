@@ -16,7 +16,7 @@
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
-        <header class="d-flex justify-content-between align-items-center p-3">
+        <header id="welcome-header" class="d-flex justify-content-between align-items-center p-3">
 
             <h3 class="text-success fw-bold">DeliveBoo</h3>
 
@@ -38,6 +38,16 @@
                 </div>
             @endif
         </header>
+        <main id="welcome-main" class="d-flex justify-content-between">
+         <div id="text-container-1">
+            <h3 class="text-success">Create your account</h3>
+         </div>
+         <div id="text-container-2">
+           <h3 class="text-success">Insert all your dishes</h3>
+         </div>
+
+         </div>
+        </main>
 
         </body>
         </html>
