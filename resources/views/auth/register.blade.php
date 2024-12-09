@@ -95,8 +95,10 @@
 
                         <!-- Input for restaurant types -->
                         <div class="row mb-3">
-                            <label for="types" class="col-md-4 col-form-label text-md-end">Restaurant type(s)</label>
-                            <div class="col-md-6">
+                            <label for="types-group" class="col-md-4 col-form-label text-md-end">
+                                Restaurant type(s)
+                            </label>
+                            <div id="types-group" class="col-md-6">
                                 <!-- Dynamically generated checkboxes for restaurant types -->
                                 @foreach ($types as $type)
                                 <div class="form-check">
@@ -194,5 +196,7 @@
 
 <!-- Additional scripts -->
 @section('additional-script')
-@vite('resources/js/app.js')
+@vite('reso
+urces/js/ap
+p.js')
 @endsection
