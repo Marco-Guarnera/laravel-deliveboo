@@ -41,6 +41,11 @@ const validatePassword = (password) =>
 const isValidPassword = value =>
     validatePassword(value) || "Password must be at least 8 characters long, containing at least one letter, one number and one non-alpha numeric number.";
 
+// Restaurant name validation arrow function.
+const validateName = name => name.length > 0 && name.length <= 40;
+const isValidName = value => (value && validateName(value)) || "Name is required and must not exceed 40 characters.";
+
+
 // |ADD EVENT LISTENER
 // Add submit event listener to the registration form
 registerForm.addEventListener('submit', function (event) {
