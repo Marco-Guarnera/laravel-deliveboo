@@ -1,49 +1,45 @@
+/* Credits
+regular expression 101 | regex101.com
+
+link to email regex https://regex101.com/r/WCXPcP/1
+link to password regex https://regex101.com/r/ivDsvJ/1
+
+*/
 console.log('JS OK')
 
 // !REGISTER FORM
 
 // |GET INTERESTED DOCUMENT ELEMENTS
-// Get the form element for user registration
+// Get the form element for user registration.
 const registerForm = document.getElementById('register-form')
 
-// Get input fields for restaurant data
-const restaurantName = document.getElementById('name'); // Restaurant name
-const restaurantAddress = document.getElementById('address'); // Restaurant address
-const PIVA = document.getElementById('piva'); // VAT (PIVA)
-const restaurantImg = document.getElementById('logo'); // Restaurant logo
+// Get input fields for restaurant data.
+const restaurantName = document.getElementById('name'); // Restaurant name.
+const restaurantAddress = document.getElementById('address'); // Restaurant address.
+const PIVA = document.getElementById('piva'); // VAT (PIVA).
+const restaurantImg = document.getElementById('logo'); // Restaurant logo.
 
 // Get checkbox for restaurant types
-const restaurantTypes = document.getElementById('types'); // Restaurant types
+const restaurantTypes = document.getElementById('types'); // Restaurant types.
 
-// Get input fields for restaurant owner credentials
-const registerEmail = document.getElementById('email'); // Email
-const registerPassword = document.getElementById('password'); // Password
-const confirmPassword = document.getElementById('password-confirm'); // Confirm password
+// Get input fields for restaurant owner credentials.
+const email = document.getElementById('email'); // Email.
+const password = document.getElementById('password'); // Password.
+const confirmPassword = document.getElementById('password-confirm'); // Confirm password.
 
-// Email validation
-const emailValidation = (email) => {
+// Email validation.
+const validateEmail = (email) =>
+    /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email);
 
-    /* Credits
-    regular expression 101 | regex101.com
-
-    link to regex https://regex101.com/r/WCXPcP/1
-    */
-    const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
-
-    if (!email) {
-        return "Please enter your email address."
-    };
-
-    if (!emailRegex.test(email)) {
-        return "Please provide a valid email address."
-    };
-
-    return true;
-}
+const isValidEmail = value => validateEmail(value) || "Please provide a valid email address.";
 
 
+// Password validation arrow function.
+const validatePassword = (password) =>
+    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,}$/.test(password);
 
-console.log(registerForm);
+const isValidPassword = value =>
+    validatePassword(value) || "Password must be at least 8 characters long, containing at least one letter, one number and one non-alpha numeric number.";
 
 // |ADD EVENT LISTENER
 // Add submit event listener to the registration form
