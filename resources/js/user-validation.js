@@ -31,9 +31,6 @@ const restaurantAddress = document.getElementById('address'); // Restaurant addr
 const PIVA = document.getElementById('piva'); // VAT (P.IVA) input.
 const restaurantImg = document.getElementById('logo'); // Restaurant logo input.
 
-// Checkboxes for restaurant types.
-const restaurantTypes = document.getElementById('types'); // Restaurant types input.
-
 // Input fields for restaurant owner credentials.
 const email = document.getElementById('email'); // Email input.
 const password = document.getElementById('password'); // Password input.
@@ -96,6 +93,11 @@ const isValidTypes = () =>
     validateTypes() || "At least one type must be selected.";
 
 // |UTILITY FUNCTIONS
+
+// | Dynamically create an error element for restaurant types
+// Select the last checkbox container for error message placement
+const typesContainer = document.querySelector('.form-check:last-of-type');
+const typesError = createErrorElement(typesContainer);
 
 // Dynamically creates an error element for each input field.
 const createErrorElement = (inputElement) => {
