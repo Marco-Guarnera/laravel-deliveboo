@@ -197,6 +197,10 @@ registerForm.addEventListener('submit', function (event) {
         // Show the error message
         typesError.innerHTML = `<strong>${isValidTypes()}</strong>`;
         isFormValid = false;
+    } else {
+        typeCheckboxes.forEach((checkbox) => showValid(checkbox, typesError));
+        typesContainer.classList.remove('is-invalid');
+        typesError.innerHTML = '';
     }
 
     // If the form is valid, allow submission.
