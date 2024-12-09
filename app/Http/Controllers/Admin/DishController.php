@@ -70,6 +70,16 @@ class DishController extends Controller
 
         // pass the retrieved data (restaurants and their dishes) to the view
         return view('admin.dishes.index', compact('restaurants'));
+=========
+        return redirect()->route('admin.dishes.index')->with('status', 'Created!')
+                                                      ->with('alert-class', 'success');
+    }
+
+    // Index
+    public function index() {
+        $dishes_list = Dish::orderBy('name', 'asc')->paginate(10);
+        return view('admin.dishes.index', compact('dishes_list'));
+>>>>>>>>> Temporary merge branch 2
     }
 
     /**
@@ -121,11 +131,10 @@ class DishController extends Controller
 
     /**
      * remove the specified dish from the database
+     *
      */
     public function destroy(Dish $dish)
     {
-        $this->authorize('delete', $dish);
-
         // delete the dish record
         $dish->delete();
 

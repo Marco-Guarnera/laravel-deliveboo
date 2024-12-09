@@ -10,11 +10,13 @@ class RestaurantController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Restaurant::with('types');
+        // Includi i tipi e il primo piatto associato al ristorante
+        $query = Restaurant::with(['types', 'dishes' => function ($query) {
+            $query->select('id', 'restaurant_id', 'img')->orderBy('id')->limit(1);
+        }]);
 
-        // Verifica se sono stati selezionati più tipi
+        // Filtra i ristoranti in base ai tipi selezionati
         if ($request->has('types')) {
-            // Esplode la lista di tipi separati da virgola in un array
             $types = explode(',', $request->types);
 
             foreach ($types as $type) {
@@ -24,7 +26,7 @@ class RestaurantController extends Controller
             }
         }
 
-        // Recupera i ristoranti filtrati
+        // Recupera i ristoranti filtrati con paginazione
         $restaurants = $query->paginate(10);
 
         return response()->json(
@@ -34,6 +36,7 @@ class RestaurantController extends Controller
             ]
         );
     }
+
 
 
     public function getDishes($restaurantId)
