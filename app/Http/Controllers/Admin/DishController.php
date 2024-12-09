@@ -52,15 +52,14 @@ class DishController extends Controller
 
         // redirect to the dishes index page
         return redirect()->route('admin.dishes.index');
-        return redirect()->route('admin.dishes.index')->with('status', 'Created!')
-            ->with('alert-class', 'success');
     }
 
-    // Index
+    /**
+     * display a list of dishes grouped by the user's restaurants
+     *
+     */
     public function index()
     {
-        $dishes_list = Dish::orderBy('name', 'asc')->paginate(10);
-        return view('admin.dishes.index', compact('dishes_list'));
         // get the currently authenticated user
         $user = auth()->user();
 
@@ -108,8 +107,8 @@ class DishController extends Controller
         // update the dish with the new data
         $dish->update($data_list);
 
-        return redirect()->route('admin.dishes.index')->with('status', 'Updated!')
-            ->with('alert-class', 'success');
+        // redirect to the dishes index page
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -120,7 +119,8 @@ class DishController extends Controller
     {
         // delete the dish record
         $dish->delete();
-        return redirect()->route('admin.dishes.index')->with('status', 'Deleted!')
-            ->with('alert-class', 'danger');
+
+        // redirect to the dishes index page
+        return redirect()->route('admin.dishes.index');
     }
 }
