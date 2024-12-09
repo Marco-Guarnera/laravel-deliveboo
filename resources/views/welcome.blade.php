@@ -25,7 +25,7 @@
                 <div class="d-flex align-items-center">
                     @auth
 
-                        <a class="btn btn-danger text-white ms-3" href="{{ route('admin/dishes') }}">Your Restaurant's page</a>
+                        <a class="btn btn-danger text-white ms-3" href="{{ route('admin.dishes.index') }}">Your Restaurant's page</a>
                     @else
 
                         <a class="btn btn-success text-white ms-3" href="{{ route('login') }}">Log in</a>
