@@ -13,7 +13,7 @@
                 <div class="card-body">
 
                     <!-- Register form -->
-                    <form method="POST" action="{{ route('register') }}">
+                    <form id="register-form" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <!-- Input for restaurant name -->
@@ -26,7 +26,7 @@
                                     name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                <span id="name-error" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -44,7 +44,7 @@
                                     value="{{ old('address') }}" required autocomplete="address" autofocus>
 
                                 @error('address')
-                                <span id="address-error" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -61,7 +61,7 @@
                                     name="piva" value="{{ old('piva') }}" required autocomplete="piva" autofocus>
 
                                 @error('piva')
-                                <span id="piva-error" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -78,7 +78,7 @@
                                     name="logo" autofocus>
 
                                 @error('logo')
-                                <span id="logo-error" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -114,7 +114,7 @@
                                     name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                <span id="email-error" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -131,7 +131,7 @@
                                     required autocomplete="new-password">
 
                                 @error('password')
-                                <span id="password-error" class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -145,11 +145,6 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
                                     name="password_confirmation" required autocomplete="new-password">
-                                @error('password_confirmation')
-                                <span id="password-confirm-error" class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
                         </div>
 
