@@ -8,6 +8,11 @@
 @import 'bootstrap/scss/bootstrap';
 
 // Generics
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 form :where(input, textarea) {
     margin-bottom: 0.25rem;
 }
