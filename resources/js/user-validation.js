@@ -29,15 +29,15 @@ const password = document.getElementById('password'); // Password.
 const confirmPassword = document.getElementById('password-confirm'); // Confirm password.
 
 // Email validation.
-const validateEmail = (email) =>
-    /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email);
+const validateEmail = (value) =>
+    /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(value);
 
 const isValidEmail = value => validateEmail(value) || "Please provide a valid email address.";
 
 
 // Password validation arrow function.
-const validatePassword = (password) =>
-    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,}$/.test(password);
+const validatePassword = (value) =>
+    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,}$/.test(value);
 
 const isValidPassword = value =>
     validatePassword(value) || "Password must be at least 8 characters long, containing at least one letter, one number and one non-alpha numeric number.";
@@ -63,36 +63,39 @@ registerForm.addEventListener('submit', function (event) {
     // Prevent default submission to apply client-side validation
     event.preventDefault();
 
-    // Validation errors array
-    const errors = [];
+    let isFormValid = false;
 
-    // Validate restaurant name
-    if (restaurantName.value.trim() === '') {
-        errors.push('Restaurant name is required.');
-    };
+    if (!validateName(restaurantName.value)) {
+        console.log(isValidName(restaurantName.value));
+        isFormValid = false;
+    }
 
-    // Validate restaurant address
-    if (restaurantAddress.value.trim().length < 5) {
-        errors.push('Restaurant address must be at least 5 characters long.');
-    };
+    if (!validateAddress(restaurantAddress.value)) {
+        console.log(isValidAddress(restaurantAddress.value));
+        isFormValid = false;
+    }
 
-    if (registerPassword.value.trim() !== confirmPassword.value.trim()) {
-        errors.push('Passwords do not match.');
-    };
+    if (!validatePiva(PIVA.value)) {
+        console.log(isValidPiva(PIVA.value));
+        isFormValid = false;
+    }
 
-    if (errors.length > 0) {
-        console.error('Validation errors:', errors);
-    } else {
-        console.log('Form is valid!');
+    if (!validateEmail(email.value)) {
+        console.log(isValidEmail(email.value));
+        isFormValid = false;
+    }
+
+    if (!validatePassword(password.value)) {
+        console.log(isValidPassword(password.value));
+        isFormValid = false;
+    }
+
+    if (password.value !== confirmPassword.value) {
+        console.log("Passwords do not match.");
+        isFormValid = false;
+    }
+
+    if (isFormValid) {
         registerForm.submit();
-    };
-
-    const validationMess = emailValidation(email);
-
-    if (validationMess !== true) {
-        console.log(validationMess);
-    } else {
-        console.log("Email valida");
-    };
-
+    }
 });
