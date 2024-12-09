@@ -35,7 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @auth
-                            <a href="{{ route('admin.dishes.index') }}">Homepage</a>
+
                         @endauth
                     </ul>
 
