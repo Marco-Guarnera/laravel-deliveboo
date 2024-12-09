@@ -86,6 +86,15 @@ const validatePiva = (value) =>
 const isValidPiva = (value) =>
     validatePiva(value) || "P.IVA must be exactly 11 digits.";
 
+// Validates that at least one restaurant type is selected.
+const validateTypes = () => {
+    const selectedTypes = document.querySelectorAll('input[name="types[]"]:checked');
+    return selectedTypes.length > 0;
+};
+
+const isValidTypes = () =>
+    validateTypes() || "At least one type must be selected.";
+
 // |UTILITY FUNCTIONS
 
 // Dynamically creates an error element for each input field.
@@ -174,10 +183,14 @@ registerForm.addEventListener('submit', function (event) {
         showValid(confirmPassword, confirmPasswordError);
     }
 
+    // Validate restaurant types
+    if (!validateTypes()) {
+        console.log(isValidTypes());
+        isFormValid = false;
+    }
+
     // If the form is valid, allow submission.
     if (isFormValid) {
         registerForm.submit();
-    } else {
-        console.log('Form contains errors, submission blocked.');
     }
 });
