@@ -27,7 +27,6 @@ class Dish extends Model
     }
     /**
      * Get the restaurant that owns the dish.
-     *
      */
     public function restaurant()
     {
