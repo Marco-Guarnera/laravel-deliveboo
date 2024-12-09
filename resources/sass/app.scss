@@ -13,7 +13,7 @@ form :where(input, textarea) {
 }
 
 img {
-    display: block;
+    height: auto;
     max-width: 100%;
 }
 
@@ -43,8 +43,7 @@ header {
 #text-container-1,
 #text-container-2 {
     height: 80px;
-    border-color: rgb(6, 126, 6);
-    border-style: solid;
+
     width: fit-content;
     padding: 10px;
 
@@ -57,4 +56,12 @@ header {
 #text-container-2 {
     margin-top: 100px;
     margin-right: 200px;
+}
+
+#welcome-image {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }

@@ -38,15 +38,18 @@
                 </div>
             @endif
         </header>
-        <main id="welcome-main" class="d-flex justify-content-between">
+        <main id="welcome-main">
+            <div class="d-flex justify-content-between">
          <div id="text-container-1">
             <h3 class="text-success">Create your account</h3>
          </div>
          <div id="text-container-2">
            <h3 class="text-success">Insert all your dishes</h3>
          </div>
-
-         </div>
+            </div>
+<div id="welcome-image">
+    <img src="https://img.freepik.com/free-psd/free-food-service-arrangement-with-background-mock-up_23-2148421299.jpg?size=626&ext=jpg" alt="">
+</div>
         </main>
 
         </body>
