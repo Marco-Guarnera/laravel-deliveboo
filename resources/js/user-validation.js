@@ -16,9 +16,34 @@ const restaurantImg = document.getElementById('logo'); // Restaurant logo
 const restaurantTypes = document.getElementById('types'); // Restaurant types
 
 // Get input fields for restaurant owner credentials
-const registerEmail = document.getElementById('eamil'); // Email
+const registerEmail = document.getElementById('email'); // Email
 const registerPassword = document.getElementById('password'); // Password
 const confirmPassword = document.getElementById('password-confirm'); // Confirm password
+
+// Email validation
+const emailValidation = (email) => {
+
+    /* Credits
+    regular expression 101 | regex101.com
+
+    link to regex https://regex101.com/r/WCXPcP/1
+    */
+    const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
+
+    if (!email) {
+        return "Please enter your email address."
+    };
+
+    if (!emailRegex.test(email)) {
+        return "Please provide a valid email address."
+    };
+
+    return true;
+}
+
+
+
+console.log(registerForm);
 
 // |ADD EVENT LISTENER
 // Add submit event listener to the registration form
@@ -32,21 +57,30 @@ registerForm.addEventListener('submit', function (event) {
     // Validate restaurant name
     if (restaurantName.value.trim() === '') {
         errors.push('Restaurant name is required.');
-    }
+    };
 
     // Validate restaurant address
     if (restaurantAddress.value.trim().length < 5) {
         errors.push('Restaurant address must be at least 5 characters long.');
-    }
+    };
 
     if (registerPassword.value.trim() !== confirmPassword.value.trim()) {
         errors.push('Passwords do not match.');
-    }
+    };
 
     if (errors.length > 0) {
         console.error('Validation errors:', errors);
     } else {
         console.log('Form is valid!');
         registerForm.submit();
-    }
-})
+    };
+
+    const validationMess = emailValidation(email);
+
+    if (validationMess !== true) {
+        console.log(validationMess);
+    } else {
+        console.log("Email valida");
+    };
+
+});
