@@ -86,7 +86,12 @@ const isValidPiva = (value) =>
 // Validates that at least one restaurant type is selected.
 const validateTypes = () => {
     const selectedTypes = document.querySelectorAll('input[name="types[]"]:checked');
-    return selectedTypes.length > 0;
+    if (selectedTypes.length === 0) {
+        return "At least one type must be selected.";
+    } else if (selectedTypes.length > 2) {
+        return "You can select a maximum of two types.";
+    }
+    return ""; // No errors
 };
 
 const isValidTypes = () =>
@@ -188,14 +193,15 @@ registerForm.addEventListener('submit', function (event) {
     }
 
     // Validate restaurant types
-    if (!validateTypes()) {
+    const typesMessage = validateTypes(); // Get the validation result
+    if (typesMessage !== "") { // Check for errors
         console.log(isValidTypes());
         // Add 'is-invalid' class to each checkbox
         typeCheckboxes.forEach((checkbox) => checkbox.classList.add('is-invalid'));
         // Add 'is-invalid' class to the container
         typesContainer.classList.add('is-invalid');
         // Show the error message
-        typesError.innerHTML = `<strong>${isValidTypes()}</strong>`;
+        typesError.innerHTML = `<strong>${typesMessage}</strong>`;
         isFormValid = false;
     } else {
         typeCheckboxes.forEach((checkbox) => showValid(checkbox, typesError));
