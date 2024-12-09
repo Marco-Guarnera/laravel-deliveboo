@@ -29,7 +29,7 @@ class DishPolicy
      */
     public function create(User $user): bool
     {
-        return $user->restaurant !== null;
+        return $user->restaurants->isNotEmpty();
     }
 
     /**
