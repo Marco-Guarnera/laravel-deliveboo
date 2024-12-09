@@ -94,10 +94,6 @@ const isValidTypes = () =>
 
 // |UTILITY FUNCTIONS
 
-// | Dynamically create an error element for restaurant types
-// Select the last checkbox container for error message placement
-const typesContainer = document.querySelector('.form-check:last-of-type');
-const typesError = createErrorElement(typesContainer);
 
 // Dynamically creates an error element for each input field.
 const createErrorElement = (inputElement) => {
@@ -106,6 +102,12 @@ const createErrorElement = (inputElement) => {
     inputElement.insertAdjacentElement('afterend', errorElement);
     return errorElement;
 };
+
+// | Dynamically create an error element for restaurant types
+// Select the last checkbox container for error message placement
+const typesContainer = document.querySelector('.form-check:last-of-type');
+const typesError = createErrorElement(typesContainer);
+const typeCheckboxes = document.querySelectorAll('input[name="types[]"]'); // Select all checkboxes
 
 // Create error elements for all inputs.
 const nameError = createErrorElement(restaurantName);
@@ -188,6 +190,12 @@ registerForm.addEventListener('submit', function (event) {
     // Validate restaurant types
     if (!validateTypes()) {
         console.log(isValidTypes());
+        // Add 'is-invalid' class to each checkbox
+        typeCheckboxes.forEach((checkbox) => checkbox.classList.add('is-invalid'));
+        // Add 'is-invalid' class to the container
+        typesContainer.classList.add('is-invalid');
+        // Show the error message
+        typesError.innerHTML = `<strong>${isValidTypes()}</strong>`;
         isFormValid = false;
     }
 
