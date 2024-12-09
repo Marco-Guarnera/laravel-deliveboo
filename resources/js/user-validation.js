@@ -6,6 +6,7 @@ link to password regex https://regex101.com/r/ivDsvJ/1
 link to italian vat registration number regex https://regex101.com/r/xQ6xR7/1
 
 */
+
 console.log('JS OK')
 
 // !REGISTER FORM
@@ -67,6 +68,18 @@ const validatePiva = piva => /^[0-9]{11}$/.test(piva);
 
 const isValidPiva = value => validatePiva(value) || "P.IVA must be exactly 11 digits.";
 
+// TODO add a new error container element for each input field
+// Create error container element
+const errorElement = document.createElement('span');
+errorElement.classList.add('invalid-feedback');
+restaurantName.parentNode.appendChild(errorElement);
+
+// |SHOW ERRORS
+const showError = (inputElement, errorElement, errorMessage) => {
+    inputElement.classList.add('is-invalid');
+    inputElement.classList.remove('is-valid');
+    errorElement.innerHTML = `<strong>${errorMessage}</strong>`;
+};
 
 // |ADD EVENT LISTENER
 // Add submit event listener to the registration form
@@ -74,13 +87,13 @@ registerForm.addEventListener('submit', function (event) {
     // Prevent default submission to apply client-side validation
     event.preventDefault();
 
-    let isFormValid = false;
+    let isFormValid = true;
 
-    if (!validateName(restaurantName.value)) {
+    if (!validateName(restaurantName.value.trim())) {
         console.log(isValidName(restaurantName.value));
+        showError(restaurantName, errorElement, isValidName(restaurantName.value));
         isFormValid = false;
     }
-
     if (!validateAddress(restaurantAddress.value)) {
         console.log(isValidAddress(restaurantAddress.value));
         isFormValid = false;
