@@ -20,7 +20,6 @@ class Restaurant extends Model
 
     /**
      * Get the user that owns the restaurant.
-     *
      */
     public function user()
     {
@@ -33,7 +32,7 @@ class Restaurant extends Model
     }
 
 
-    public function  dishes()
+    public function dishes()
     {
         return $this->hasMany(Dish::class);
     }

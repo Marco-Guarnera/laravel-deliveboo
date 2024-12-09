@@ -18,17 +18,8 @@ class Dish extends Model
         'restaurant_id'
     ];
 
-
-
-
-
-
-
-
-
     /**
      * Get the restaurant that owns the dish.
-     *
      */
     public function restaurant()
     {

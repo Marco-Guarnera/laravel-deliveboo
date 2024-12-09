@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('dishes', function (Blueprint $table) {
+        Schema::table(
+            'dishes',
+            function (Blueprint $table) {
 
-            $table->unsignedBigInteger('restaurant_id')->after('id')->nullable(true);
+                $table->unsignedBigInteger('restaurant_id')->after('id')->nullable(true);
 
-            $table->foreign('restaurant_id')->references('id')->on('restaurants')->cascadeOnUpdate()->nullOnDelete();
-        });
+                $table->foreign('restaurant_id')->references('id')->on('restaurants')->cascadeOnUpdate()->nullOnDelete();
+            }
+        );
     }
 
     /**
@@ -24,9 +27,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('dishes', function (Blueprint $table) {
-            $table->dropForeign('dishes_restaurant_id_foreign');
-            $table->dropColumn('restaurant_id');
-        });
+        Schema::table(
+            'dishes',
+            function (Blueprint $table) {
+                $table->dropForeign('dishes_restaurant_id_foreign');
+                $table->dropColumn('restaurant_id');
+            }
+        );
     }
 };

@@ -111,14 +111,15 @@ class RestaurantSeeder extends Seeder
 
 
         foreach ($restaurants as $data) {
-
-            Restaurant::create([
+            Restaurant::create(
+                [
                 'name' => $data['name'],
                 'address' => $data['address'],
                 'piva' => $data['piva'],
                 'logo' => $data['logo'],
                 'user_id' => $data['user_id'],
-            ]);
+                ]
+            );
         }
     }
 }

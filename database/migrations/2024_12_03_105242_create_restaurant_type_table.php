@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('restaurant_type', function (Blueprint $table) {
-            $table->primary(['restaurant_id', 'type_id']);
-            $table->foreignId('type_id')->constrained('types')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('restaurant_id')->constrained('restaurants')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->timestamps();
-        });
+        Schema::create(
+            'restaurant_type',
+            function (Blueprint $table) {
+                $table->primary(['restaurant_id', 'type_id']);
+                $table->foreignId('type_id')->constrained('types')->cascadeOnUpdate()->cascadeOnDelete();
+                $table->foreignId('restaurant_id')->constrained('restaurants')->cascadeOnUpdate()->cascadeOnDelete();
+                $table->timestamps();
+            }
+        );
     }
 
     /**

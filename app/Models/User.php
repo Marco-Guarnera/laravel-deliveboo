@@ -12,7 +12,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -46,9 +48,8 @@ class User extends Authenticatable
 
     /**
      * Get the restaurants associated with the user.
-     *
      */
-    public function  restaurants()
+    public function restaurants()
     {
         return $this->hasMany(Restaurant::class);
     }
