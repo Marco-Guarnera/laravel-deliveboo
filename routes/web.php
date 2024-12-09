@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DishController as AdminDishController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TypeController;
 
 
 /*
@@ -15,11 +17,30 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('types', [TypeController::class, 'index']);
+
+// Dishes
+Route::prefix('/admin')->name('admin.dishes.')->group(function () {
+    // Create
+    Route::get('/dishes/create', [AdminDishController::class, 'create'])->name('create');
+    // Store
+    Route::post('/dishes', [AdminDishController::class, 'store'])->name('store');
+    // Index
+    Route::get('/dishes', [AdminDishController::class, 'index'])->name('index');
+    // Show
+    Route::get('/dishes/{dish}', [AdminDishController::class, 'show'])->name('show');
+    // Edit
+    Route::get('/dishes/{dish}/edit', [AdminDishController::class, 'edit'])->name('edit');
+    // Update
+    Route::put('/dishes/{dish}', [AdminDishController::class, 'update'])->name('update');
+    // Delete
+    Route::delete('/dishes/{dish}', [AdminDishController::class, 'destroy'])->name('delete');
+});
