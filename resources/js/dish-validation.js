@@ -38,6 +38,20 @@ const validateDishPrice = (price) => {
     return ""; // Valid
 };
 
+// Validates dish visibility: required, boolean
+const validateDishVisibility = (visibility) => {
+    if (!visibility.checked) return "You must check this box to make the dish visible.";
+    return ""; // Valid
+};
+
+// Validates dish image: optional, must be an image and max 256KB
+const validateDishImg = (img) => {
+    if (img.files.length === 0) return ""; // Optional field
+    const file = img.files[0];
+    if (!file.type.startsWith('image/')) return "File must be an image.";
+    if (file.size > 256 * 1024) return "Image size must not exceed 256KB.";
+    return ""; // Valid
+};
 
 // |UTILITY FUNCTIONS
 
@@ -83,10 +97,46 @@ dishesForm.addEventListener('submit', function (event) {
     // Validate dish name
     const nameMessage = validateDishName(dishName.value.trim());
     if (nameMessage) {
-        console.log(nameMessage);
+        showError(dishName, nameMessage);
         isDishesFormValid = false;
-    };
+    } else {
+        showValid(dishName);
+    }
 
+    // Validate dish description
+    const descriptionMessage = validateDishDescription(dishDescription.value.trim());
+    if (descriptionMessage) {
+        showError(dishDescription, descriptionMessage);
+    } else {
+        showValid(dishDescription);
+    }
+
+    // Validate dish price
+    const priceMessage = validateDishPrice(dishPrice.value.trim());
+    if (priceMessage) {
+        showError(dishPrice, priceMessage);
+        isDishesFormValid = false;
+    } else {
+        showValid(dishPrice);
+    }
+
+    // Validate dish visibility
+    const visibilityMessage = validateDishVisibility(dishVisibility);
+    if (visibilityMessage) {
+        showError(dishVisibility, dishVisibilityError, visibilityMessage);
+        isDishesFormValid = false;
+    } else {
+        showValid(dishVisibility, dishVisibilityError);
+    }
+
+    // Validate dish image
+    const imgMessage = validateDishImg(dishImg);
+    if (imgMessage) {
+        showError(dishImg, dishImgError, imgMessage);
+        isDishesFormValid = false;
+    } else {
+        showValid(dishImg, dishImgError);
+    }
     // If the form is valid, allow submission
     if (isDishesFormValid) {
         dishesForm.submit();
