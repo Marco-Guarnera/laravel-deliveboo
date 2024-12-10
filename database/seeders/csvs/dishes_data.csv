@@ -1,0 +1,229 @@
+name,description,price,is_visible,img,restaurant_id
+Churros,Deep-fried dough sticks dusted with sugar.,23.5,False,,1
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,12.82,False,,1
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,10.41,False,,1
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,15.28,False,,1
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,21.33,False,,1
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,20.23,True,,2
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,22.95,True,,2
+Churros,Deep-fried dough sticks dusted with sugar.,20.42,True,,2
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,20.39,True,,2
+Smoked Brisket,Juicy brisket smoked to perfection.,14.78,False,,3
+Grilled Corn,Char-grilled corn on the cob.,21.59,False,,3
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,13.33,False,,3
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,12.98,False,,3
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,13.36,False,,3
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",16.97,False,,4
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,20.13,False,,4
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,14.42,False,,4
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,13.18,False,,4
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",18.73,False,,4
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,20.04,True,,5
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,18.41,True,,5
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",20.17,True,,5
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",14.95,True,,5
+Churros,Deep-fried dough sticks dusted with sugar.,13.42,False,,6
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,14.16,False,,6
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,22.98,False,,6
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,21.07,False,,6
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,11.82,False,,6
+Naan Bread,Soft and fluffy oven-baked bread.,10.74,True,,7
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,18.42,True,,7
+Biryani,Fragrant rice cooked with spices and meat.,19.5,True,,7
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,10.59,True,,7
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,18.26,False,,8
+Grilled Corn,Char-grilled corn on the cob.,22.32,False,,8
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,19.89,False,,8
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,13.69,False,,8
+Smoked Brisket,Juicy brisket smoked to perfection.,10.28,False,,8
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,13.55,True,,9
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,13.97,True,,9
+Biryani,Fragrant rice cooked with spices and meat.,19.24,True,,9
+Naan Bread,Soft and fluffy oven-baked bread.,16.38,True,,9
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,12.39,True,,10
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,12.08,True,,10
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,16.43,True,,10
+Tempura,Lightly battered and fried vegetables and shrimp.,21.34,True,,11
+Sushi Platter,Assorted sushi rolls with fresh fish.,19.31,True,,11
+Miso Soup,Traditional soup with tofu and seaweed.,14.81,True,,11
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,12.08,False,,12
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,10.79,False,,12
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,18.1,False,,12
+Churros,Deep-fried dough sticks dusted with sugar.,12.11,False,,12
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,11.67,False,,12
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,14.25,True,,13
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,23.6,True,,13
+Biryani,Fragrant rice cooked with spices and meat.,24.44,True,,13
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",17.22,False,,14
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,14.09,False,,14
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",10.01,False,,14
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,17.67,False,,14
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,18.94,False,,14
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,21.99,True,,15
+Churros,Deep-fried dough sticks dusted with sugar.,23.44,True,,15
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,23.01,True,,15
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,15.08,True,,15
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,18.67,False,,16
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,14.97,False,,16
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,19.37,False,,16
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,11.48,False,,16
+Churros,Deep-fried dough sticks dusted with sugar.,12.34,False,,16
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",12.88,True,,17
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,16.43,True,,17
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,23.19,True,,17
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,13.09,False,,18
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,10.22,False,,18
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,19.69,False,,18
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",12.41,False,,18
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",11.04,False,,18
+Grilled Corn,Char-grilled corn on the cob.,15.9,True,,19
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,13.24,True,,19
+Smoked Brisket,Juicy brisket smoked to perfection.,19.79,True,,19
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,24.78,True,,20
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,20.11,True,,20
+Biryani,Fragrant rice cooked with spices and meat.,22.69,True,,20
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,12.0,True,,21
+Churros,Deep-fried dough sticks dusted with sugar.,24.93,True,,21
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,16.6,True,,21
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,24.44,True,,21
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,16.63,True,,22
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,11.34,True,,22
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,13.37,True,,22
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,12.74,True,,22
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,14.92,True,,23
+Smoked Brisket,Juicy brisket smoked to perfection.,22.6,True,,23
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,16.74,True,,23
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,11.82,True,,24
+Smoked Brisket,Juicy brisket smoked to perfection.,20.78,True,,24
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,18.27,True,,24
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,11.04,True,,24
+Biryani,Fragrant rice cooked with spices and meat.,24.72,True,,25
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,24.84,True,,25
+Naan Bread,Soft and fluffy oven-baked bread.,17.75,True,,25
+Matcha Ice Cream,Green tea flavored ice cream.,13.82,False,,26
+Miso Soup,Traditional soup with tofu and seaweed.,21.85,False,,26
+Sushi Platter,Assorted sushi rolls with fresh fish.,11.21,False,,26
+Tempura,Lightly battered and fried vegetables and shrimp.,20.99,False,,26
+Ramen,Rich noodle soup with pork and soft-boiled egg.,19.16,False,,26
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,22.17,True,,27
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,13.83,True,,27
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",16.26,True,,27
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,23.59,True,,27
+Smoked Brisket,Juicy brisket smoked to perfection.,19.55,True,,28
+Grilled Corn,Char-grilled corn on the cob.,14.17,True,,28
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,15.57,True,,28
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,14.54,True,,28
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,19.23,True,,29
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",23.01,True,,29
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,12.0,True,,29
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,11.11,False,,30
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,15.93,False,,30
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,10.59,False,,30
+Biryani,Fragrant rice cooked with spices and meat.,10.54,False,,30
+Naan Bread,Soft and fluffy oven-baked bread.,12.86,False,,30
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,12.33,True,,31
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,16.81,True,,31
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,22.17,True,,31
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,13.87,True,,31
+Biryani,Fragrant rice cooked with spices and meat.,22.79,True,,32
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,11.6,True,,32
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,20.17,True,,32
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,10.41,True,,33
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",11.74,True,,33
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,19.14,True,,33
+Naan Bread,Soft and fluffy oven-baked bread.,20.14,False,,34
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,17.96,False,,34
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,23.71,False,,34
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,17.02,False,,34
+Biryani,Fragrant rice cooked with spices and meat.,11.76,False,,34
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,13.14,True,,35
+Biryani,Fragrant rice cooked with spices and meat.,22.28,True,,35
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,20.6,True,,35
+Naan Bread,Soft and fluffy oven-baked bread.,14.61,True,,35
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,17.05,True,,36
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,20.47,True,,36
+Churros,Deep-fried dough sticks dusted with sugar.,22.15,True,,36
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,23.52,True,,36
+Grilled Corn,Char-grilled corn on the cob.,17.75,True,,37
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,20.07,True,,37
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,19.53,True,,37
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,13.32,True,,37
+Smoked Brisket,Juicy brisket smoked to perfection.,19.13,False,,38
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,16.13,False,,38
+Grilled Corn,Char-grilled corn on the cob.,11.39,False,,38
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,12.64,False,,38
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,17.98,False,,38
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,21.3,False,,39
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",21.79,False,,39
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",16.44,False,,39
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,11.17,False,,39
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,20.65,False,,39
+Matcha Ice Cream,Green tea flavored ice cream.,20.08,False,,40
+Miso Soup,Traditional soup with tofu and seaweed.,18.75,False,,40
+Tempura,Lightly battered and fried vegetables and shrimp.,17.38,False,,40
+Sushi Platter,Assorted sushi rolls with fresh fish.,10.97,False,,40
+Ramen,Rich noodle soup with pork and soft-boiled egg.,11.4,False,,40
+Biryani,Fragrant rice cooked with spices and meat.,13.52,True,,41
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,11.13,True,,41
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,17.08,True,,41
+Matcha Ice Cream,Green tea flavored ice cream.,24.05,True,,42
+Sushi Platter,Assorted sushi rolls with fresh fish.,20.03,True,,42
+Ramen,Rich noodle soup with pork and soft-boiled egg.,10.75,True,,42
+Tempura,Lightly battered and fried vegetables and shrimp.,15.6,True,,42
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,22.9,True,,43
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,10.67,True,,43
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,14.99,True,,43
+Churros,Deep-fried dough sticks dusted with sugar.,17.26,True,,43
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,20.14,False,,44
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,10.17,False,,44
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,23.03,False,,44
+Grilled Corn,Char-grilled corn on the cob.,16.01,False,,44
+Smoked Brisket,Juicy brisket smoked to perfection.,15.75,False,,44
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,16.48,True,,45
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,20.48,True,,45
+Churros,Deep-fried dough sticks dusted with sugar.,15.79,True,,45
+Pulled Pork Sandwich,Tender pulled pork in a soft bun.,14.73,True,,46
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,23.6,True,,46
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,17.99,True,,46
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,20.93,False,,47
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,15.63,False,,47
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,15.04,False,,47
+Caprese Salad,"Fresh mozzarella, tomatoes, and basil.",24.37,False,,47
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",23.55,False,,47
+Ramen,Rich noodle soup with pork and soft-boiled egg.,18.98,False,,48
+Sushi Platter,Assorted sushi rolls with fresh fish.,19.97,False,,48
+Miso Soup,Traditional soup with tofu and seaweed.,11.33,False,,48
+Tempura,Lightly battered and fried vegetables and shrimp.,15.84,False,,48
+Matcha Ice Cream,Green tea flavored ice cream.,17.23,False,,48
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,23.38,True,,49
+Naan Bread,Soft and fluffy oven-baked bread.,19.23,True,,49
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,13.12,True,,49
+Pasta Carbonara,Creamy pasta with pancetta and parmesan.,17.96,True,,50
+Margherita Pizza,"Classic pizza with tomato, mozzarella, and basil.",15.24,True,,50
+Lasagna Bolognese,Layered pasta with rich meat sauce and cheese.,22.01,True,,50
+Tiramisu,Layered coffee-flavored dessert with mascarpone.,14.46,True,,50
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,11.09,True,,51
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,18.89,True,,51
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,20.97,True,,51
+Biryani,Fragrant rice cooked with spices and meat.,18.65,False,,52
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,19.99,False,,52
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,18.6,False,,52
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,11.08,False,,52
+Naan Bread,Soft and fluffy oven-baked bread.,19.26,False,,52
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,10.24,False,,53
+Guacamole Dip,Fresh avocado dip served with tortilla chips.,13.53,False,,53
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,14.27,False,,53
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,13.05,False,,53
+Churros,Deep-fried dough sticks dusted with sugar.,13.68,False,,53
+Churros,Deep-fried dough sticks dusted with sugar.,17.65,True,,54
+Beef Enchiladas,Rolled tortillas filled with beef and topped with red sauce.,10.32,True,,54
+Tacos Al Pastor,Traditional tacos with marinated pork and pineapple.,24.65,True,,54
+Chicken Quesadilla,Cheese-filled tortilla with seasoned chicken.,19.23,True,,54
+Smoked Brisket,Juicy brisket smoked to perfection.,23.92,True,,55
+BBQ Chicken Wings,Spicy and smoky wings coated in sauce.,13.15,True,,55
+BBQ Ribs,Slow-cooked ribs with tangy barbecue sauce.,10.65,True,,55
+Paneer Butter Masala,Soft paneer cubes in a rich tomato-based sauce.,22.53,False,,56
+Chicken Tikka Masala,Grilled chicken in a creamy spiced curry.,12.31,False,,56
+Biryani,Fragrant rice cooked with spices and meat.,24.73,False,,56
+Naan Bread,Soft and fluffy oven-baked bread.,18.46,False,,56
+Gulab Jamun,Sweet fried dough balls soaked in syrup.,15.0,False,,56
