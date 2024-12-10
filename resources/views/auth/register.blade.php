@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="container">
-
     <div class="row justify-content-center">
         <div class="col-md-8">
 
@@ -13,7 +12,8 @@
                 <div class="card-body">
 
                     <!-- Register form -->
-                    <form id="register-form" method="POST" action="{{ route('register') }}">
+                    <form id="register-form" method="POST" action="{{ route('register') }}"
+                        enctype="multipart/form-data">
                         @csrf
 
                         <!-- Input for restaurant name -->
@@ -24,7 +24,9 @@
                             <div class="col-md-6">
                                 <!-- Input field for restaurant name -->
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                    name="name" value="{{ old('name') }}" autocomplete="name" autofocus required
+                                    maxlength="40">
+
 
                                 <!-- Error message for restaurant name -->
                                 @error('name')
@@ -44,7 +46,8 @@
                                 <!-- Input field for restaurant address -->
                                 <input id="address" type="text"
                                     class="form-control @error('address') is-invalid @enderror" name="address"
-                                    value="{{ old('address') }}" autocomplete="address" autofocus>
+                                    value="{{ old('address') }}" autocomplete="address" autofocus required minlength="5"
+                                    maxlength="200">
 
                                 <!-- Error message for restaurant address -->
                                 @error('address')
@@ -63,7 +66,8 @@
                             <div class="col-md-6">
                                 <!-- Input field for P.IVA -->
                                 <input id="piva" type="text" class="form-control @error('piva') is-invalid @enderror"
-                                    name="piva" value="{{ old('piva') }}" autocomplete="piva" autofocus>
+                                    name="piva" value="{{ old('piva') }}" autocomplete="piva" autofocus required
+                                    pattern="\d{11}" title="La P.IVA deve essere composta da 11 caratteri numerici.">
 
                                 <!-- Error message for P.IVA -->
                                 @error('piva')
@@ -74,17 +78,17 @@
                             </div>
                         </div>
 
-                        <!-- Input for restaurant logo -->
+                        <!-- //Input for restaurant logo
                         <div class="row mb-3">
                             <label for="logo" class="col-md-4 col-form-label text-md-end">
                                 Restaurant logo *
                             </label>
                             <div class="col-md-6">
-                                <!-- Input field for restaurant logo -->
+                                // Input field for restaurant logo
                                 <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror"
-                                    name="logo" autofocus>
+    name="logo" accept="image/*" title="Accepted formats: jpg, jpeg, png, gif">
 
-                                <!-- Error message for restaurant logo -->
+                                // Error message for restaurant logo
                                 @error('logo')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -92,6 +96,7 @@
                                 @enderror
                             </div>
                         </div>
+                    -->
 
                         <!-- Input for restaurant types -->
                         <div class="row mb-3">
@@ -128,7 +133,8 @@
                             <div class="col-md-6">
                                 <!-- Input field for email -->
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" autocomplete="email">
+                                    name="email" value="{{ old('email') }}" autocomplete="email" required
+                                    maxlength="255">
 
                                 <!-- Error message for email -->
                                 @error('email')
@@ -148,7 +154,7 @@
                                 <!-- Input field for password -->
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    autocomplete="new-password">
+                                    autocomplete="new-password" required minlength="8">
 
                                 <!-- Error message for password -->
                                 @error('password')
@@ -167,7 +173,7 @@
                             <div class="col-md-6">
                                 <!-- Input field for confirm password -->
                                 <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" autocomplete="new-password">
+                                    name="password_confirmation" autocomplete="new-password" required>
 
                                 <!-- Error message for confirm password -->
                                 @error('password_confirmation')
@@ -199,4 +205,9 @@
 @vite('reso
 urces/js/ap
 p.js')
+
+
+
+
+
 @endsection
