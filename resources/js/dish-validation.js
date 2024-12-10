@@ -1,18 +1,14 @@
-
 console.log('Dishes JS OK');
 
 // !DISHES FORM
 
 // |GET INTERESTED DOCUMENT ELEMENTS
-
-// Form and input fields for dishes
 const dishesForm = document.getElementById('dishes-form');
-const dishName = document.getElementById('dish-name'); // Name input
-const dishDescription = document.getElementById('dish-description'); // Description input
-const dishPrice = document.getElementById('dish-price'); // Price input
-const dishVisibility = document.getElementById('dish-visibility'); // Visibility checkbox
-const dishImg = document.getElementById('dish-img'); // Image input
-
+const dishName = document.getElementById('dish-name');
+const dishDescription = document.getElementById('dish-description');
+const dishPrice = document.getElementById('dish-price');
+const dishVisibility = document.getElementById('dish-visibility');
+const dishImg = document.getElementById('dish-img');
 
 // |FORM VALIDATION FUNCTIONS
 
@@ -38,10 +34,10 @@ const validateDishPrice = (price) => {
     return ""; // Valid
 };
 
-// Validates dish visibility: required, boolean
+// Validates dish visibility: boolean, defaults to false if unchecked
 const validateDishVisibility = (visibility) => {
-    if (!visibility.checked) return "You must check this box to make the dish visible.";
-    return ""; // Valid
+    // No validation required as the value is true or false
+    return ""; // Always valid
 };
 
 // Validates dish image: optional, must be an image and max 256KB
@@ -55,7 +51,7 @@ const validateDishImg = (img) => {
 
 // |UTILITY FUNCTIONS
 
-// Dynamically creates an error element for each input field.
+// Dynamically creates an error element for each input field
 const createErrorElement = (inputElement) => {
     const errorElement = document.createElement('div');
     errorElement.classList.add('invalid-feedback');
@@ -63,31 +59,27 @@ const createErrorElement = (inputElement) => {
     return errorElement;
 };
 
-// Dynamically creates an error element for each input field.
+// Create error elements for all inputs
 const dishNameError = createErrorElement(dishName);
 const dishDescriptionError = createErrorElement(dishDescription);
 const dishPriceError = createErrorElement(dishPrice);
-const dishVisibilityError = createErrorElement(dishVisibility);
 const dishImgError = createErrorElement(dishImg);
 
 // Displays error messages and applies `is-invalid` class to input
-function showError(inputElement, errorMessage) {
-    const errorElement = createErrorElement(inputElement);
+const showError = (inputElement, errorElement, errorMessage) => {
     inputElement.classList.add('is-invalid');
     inputElement.classList.remove('is-valid');
     errorElement.innerHTML = `<strong>${errorMessage}</strong>`;
-}
+};
 
 // Marks an input as valid and removes error messages
-function showValid(inputElement) {
-    const errorElement = createErrorElement(inputElement);
+const showValid = (inputElement, errorElement) => {
     inputElement.classList.remove('is-invalid');
     inputElement.classList.add('is-valid');
     errorElement.innerHTML = ''; // Clears any existing error messages
-}
+};
 
 // |ADD EVENT LISTENER
-// Adds submit event listener to the dishes form
 dishesForm.addEventListener('submit', function (event) {
     // Prevent default submission to apply client-side validation
     event.preventDefault();
@@ -97,30 +89,30 @@ dishesForm.addEventListener('submit', function (event) {
     // Validate dish name
     const nameMessage = validateDishName(dishName.value.trim());
     if (nameMessage) {
-        showError(dishName, nameMessage);
+        showError(dishName, dishNameError, nameMessage);
         isDishesFormValid = false;
     } else {
-        showValid(dishName);
+        showValid(dishName, dishNameError);
     }
 
     // Validate dish description
     const descriptionMessage = validateDishDescription(dishDescription.value.trim());
     if (descriptionMessage) {
-        showError(dishDescription, descriptionMessage);
+        showError(dishDescription, dishDescriptionError, descriptionMessage);
     } else {
-        showValid(dishDescription);
+        showValid(dishDescription, dishDescriptionError);
     }
 
     // Validate dish price
     const priceMessage = validateDishPrice(dishPrice.value.trim());
     if (priceMessage) {
-        showError(dishPrice, priceMessage);
+        showError(dishPrice, dishPriceError, priceMessage);
         isDishesFormValid = false;
     } else {
-        showValid(dishPrice);
+        showValid(dishPrice, dishPriceError);
     }
 
-    // Validate dish visibility
+    // Validate dish visibility (always valid)
     const visibilityMessage = validateDishVisibility(dishVisibility);
     if (visibilityMessage) {
         showError(dishVisibility, dishVisibilityError, visibilityMessage);
@@ -137,6 +129,7 @@ dishesForm.addEventListener('submit', function (event) {
     } else {
         showValid(dishImg, dishImgError);
     }
+
     // If the form is valid, allow submission
     if (isDishesFormValid) {
         dishesForm.submit();
