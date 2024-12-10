@@ -52,5 +52,5 @@ Route::prefix('/admin')->name('admin.dishes.')->group(function () {
 Route::prefix('/admin')->name('admin.orders.')->group(function () {
 
     // Orders
-    Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders');
+    Route::get('/orders', [AdminOrderController::class, 'index'])->name('index');
 });
