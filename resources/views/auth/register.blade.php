@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+
+<!-- Additional scripts -->
+@section('additional-script')
+@vite('resources/js/user-validation.js')
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -198,16 +204,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-<!-- Additional scripts -->
-@section('additional-script')
-@vite('reso
-urces/js/ap
-p.js')
-
-
-
-
-
 @endsection
