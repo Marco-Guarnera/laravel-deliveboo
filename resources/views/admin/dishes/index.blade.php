@@ -74,7 +74,7 @@
                             <h5 class="modal-title" id="deleteModalLabel{{ $dish->id }}">Delete Confirmation</h5>
                         </div>
                         <div class="modal-body">
-                            Are you sure you want to delete this dish? This operation is not reversible.
+                            Are you sure you want to delete <strong>{{ $dish->name }}</strong>? This operation is not reversible.
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep this
