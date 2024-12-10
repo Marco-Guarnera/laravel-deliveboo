@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/js/user-validation.js',
+                'resources/js/dish-validation.js',
             ],
             refresh: true,
         }),
