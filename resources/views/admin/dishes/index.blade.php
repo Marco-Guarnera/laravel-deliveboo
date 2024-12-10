@@ -22,9 +22,11 @@
             @include('partials.session-data')
         </div>
     </div>
-    <!-- Create -->
+    <!-- Create and order section buttons -->
+    <div class="d-flex justify-content-between">
     <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Add a new dish!</a>
-
+    <a href="{{route('admin.orders.index')}}" class="btn btn-success mb-3">Order Section</a>
+</div>
     <table class="table table-hover">
         <thead>
             <tr>

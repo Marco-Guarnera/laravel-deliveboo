@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DishController as AdminDishController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,4 +47,10 @@ Route::prefix('/admin')->name('admin.dishes.')->group(function () {
     Route::put('/dishes/{dish}', [AdminDishController::class, 'update'])->name('update');
     // Delete
     Route::delete('/dishes/{dish}', [AdminDishController::class, 'destroy'])->name('delete');
+});
+
+Route::prefix('/admin')->name('admin.orders.')->group(function () {
+
+    // Orders
+    Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders');
 });

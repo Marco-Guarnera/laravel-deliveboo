@@ -11,11 +11,11 @@ class OrderController extends Controller
     // Index
     public function index()
     {
-        $order_list = Order::all();
+        $orders_list = Order::all();
         return response()->json(
             [
                 'success' => true,
-                'results' => $order_list
+                'results' => $orders_list
             ]
         );
     }
