@@ -23,7 +23,15 @@ const validateDishName = (name) => {
     return ""; // Valid
 };
 
+// |UTILITY FUNCTIONS
 
+// Dynamically creates an error element for each input field.
+const createErrorElement = (inputElement) => {
+    const errorElement = document.createElement('div');
+    errorElement.classList.add('invalid-feedback');
+    inputElement.insertAdjacentElement('afterend', errorElement);
+    return errorElement;
+};
 
 // |ADD EVENT LISTENER
 // Adds submit event listener to the dishes form
