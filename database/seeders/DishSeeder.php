@@ -14,33 +14,28 @@ class DishSeeder extends Seeder
      */
     public function run(): void
     {
-        Dish::factory()->count(200)->create();
 
-        // get all dish IDs
-        $dishIds = Dish::pluck('id');
+        $filePath = database_path('seeders/csvs/dishes_data.csv');
+        $file = fopen($filePath, 'r');
 
-        // get all restaurants
-        $restaurants = Restaurant::all();
 
-        // assign random dishes to each restaurant
-        foreach ($restaurants as $restaurant) {
-            // generate a random number of dishes (7 to 15)
-            $randomDishCount = rand(7, 15);
+        $tableColumns = fgetcsv($file);
 
-            // pick random dishes from the dish IDs
-            $selectedDishes = $dishIds->random($randomDishCount);
 
-            // assign each selected dish to the current restaurant
-            foreach ($selectedDishes as $dishId) {
-                // find the dish by ID
-                $dish = Dish::find($dishId);
+        while (($row = fgetcsv($file)) !== false) {
+            $dishData = [
+                'name' => $row[array_search('name', $tableColumns)],
+                'description' => $row[array_search('description', $tableColumns)],
+                'price' => $row[array_search('price', $tableColumns)],
+                'is_visible' => $row[array_search('is_visible', $tableColumns)] === '1', // Converti in boolean
+                'img' => $row[array_search('img', $tableColumns)],
+                'restaurant_id' => $row[array_search('restaurant_id', $tableColumns)],
+            ];
 
-                // link the dish to the restaurant
-                $dish->restaurant_id = $restaurant->id;
-
-                // save the dish with the restaurant ID
-                $dish->save();
-            }
+            // Crea il piatto nel database
+            Dish::create($dishData);
         }
+
+        fclose($file);
     }
 }
