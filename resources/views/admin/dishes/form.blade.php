@@ -6,17 +6,17 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row justify-content-center">
 
         <!-- Errors -->
-        <div class="col-3">
+        <div class="col-12 col-md-8 col-lg-6">
             @include('partials.errors')
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-3">
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
 
             <!-- Form -->
             <form id="dishes-form" action="@yield('form-action')" method="post" enctype="multipart/form-data">
