@@ -71,7 +71,7 @@
                         <!-- Input for restaurant logo -->
                         <div class="row mb-3">
                             <label for="logo" class="col-md-4 col-form-label text-md-end">
-                                Restaurant logo *
+                                Restaurant logo
                             </label>
                             <div class="col-md-6">
                                 <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror"
