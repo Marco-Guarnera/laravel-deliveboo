@@ -1,0 +1,57 @@
+name,address,piva,logo,user_id
+Kebab House,"Via Milano 44, Napoli",80947066452,https://example.com/images/kebab_house.jpg,1
+Doner Kebab,"Via Milano 67, Napoli",77647403640,https://example.com/images/doner_kebab.jpg,2
+Kebab Garden,"Via Torino 92, Napoli",41191704809,https://example.com/images/kebab_garden.jpg,3
+Kebab Deli,"Via Roma 7, Bologna",05042276090,https://example.com/images/kebab_deli.jpg,4
+La Bella Napoli,"Via Torino 93, Napoli",44404134842,https://example.com/images/la_bella_napoli.jpg,5
+Pizza Mania,"Corso Garibaldi 5, Roma",36398204658,https://example.com/images/pizza_mania.jpg,6
+Pizza Deli,"Via Roma 78, Bologna",34209502626,https://example.com/images/pizza_deli.jpg,7
+Pizza Grill,"Via Roma 37, Bologna",50213327280,https://example.com/images/pizza_grill.jpg,8
+Dragon Garden,"Via Napoli 66, Torino",11933908735,https://example.com/images/dragon_garden.jpg,9
+China Town,"Corso Umberto I 66, Napoli",71809678276,https://example.com/images/china_town.jpg,10
+Cinese Grill,"Via Venezia 52, Torino",34798653007,https://example.com/images/cinese_grill.jpg,11
+Cinese House,"Piazza Dante 15, Milano",33641370633,https://example.com/images/cinese_house.jpg,12
+Sushi Yama,"Via Roma 3, Napoli",50311922381,https://example.com/images/sushi_yama.jpg,13
+Tokyo Bites,"Via Roma 36, Napoli",61725834387,https://example.com/images/tokyo_bites.jpg,14
+Giapponese House,"Viale Italia 81, Milano",38941173674,https://example.com/images/giapponese_house.jpg,15
+Giapponese Garden,"Via Manzoni 47, Roma",28732405319,https://example.com/images/giapponese_garden.jpg,16
+El Mexicano,"Via Napoli 8, Torino",60970670591,https://example.com/images/el_mexicano.jpg,17
+Taco Fiesta,"Via Matteotti 72, Napoli",21428105053,https://example.com/images/taco_fiesta.jpg,18
+Messicano Grill,"Via Napoli 24, Torino",52900640671,https://example.com/images/messicano_grill.jpg,19
+Messicano Garden,"Via Milano 43, Napoli",44017645380,https://example.com/images/messicano_garden.jpg,20
+Seoul Spice,"Piazza Duomo 35, Milano",30861913475,https://example.com/images/seoul_spice.jpg,21
+K-BBQ,"Viale Mazzini 99, Torino",50572982746,https://example.com/images/k-bbq.jpg,22
+Coreano Grill,"Piazza Dante 99, Napoli",70401547405,https://example.com/images/coreano_grill.jpg,23
+Coreano House,"Via Torino 56, Milano",22256561103,https://example.com/images/coreano_house.jpg,24
+Taj Mahal,"Via Verdi 86, Torino",64010531362,https://example.com/images/taj_mahal.jpg,25
+Curry Palace,"Via Matteotti 56, Napoli",48579084115,https://example.com/images/curry_palace.jpg,26
+Indiano House,"Via Torino 77, Bologna",93143355834,https://example.com/images/indiano_house.jpg,27
+Indiano Garden,"Viale Mazzini 96, Roma",80928844269,https://example.com/images/indiano_garden.jpg,28
+Burger House,"Via Roma 42, Torino",78358696259,https://example.com/images/burger_house.jpg,29
+Fast Burger,"Corso Garibaldi 72, Torino",85816453061,https://example.com/images/fast_burger.jpg,30
+Hamburger Garden,"Viale Mazzini 37, Bologna",46638720512,https://example.com/images/hamburger_garden.jpg,31
+Hamburger House,"Via Manzoni 22, Napoli",18882167528,https://example.com/images/hamburger_house.jpg,32
+Texas Grill,"Piazza Duomo 66, Bologna",59971956154,https://example.com/images/texas_grill.jpg,33
+Steak & Co,"Piazza Dante 31, Roma",61634876255,https://example.com/images/steak_&_co.jpg,34
+Steak house House,"Viale Italia 90, Napoli",84507249606,https://example.com/images/steak_house_house.jpg,35
+Steak house Grill,"Corso Umberto I 86, Roma",61802561883,https://example.com/images/steak_house_grill.jpg,36
+BBQ Pit,"Via Manzoni 50, Milano",47324581964,https://example.com/images/bbq_pit.jpg,37
+Smokehouse,"Via Venezia 72, Napoli",87133705426,https://example.com/images/smokehouse.jpg,38
+Barbecue House,"Corso Umberto I 22, Napoli",44800354982,https://example.com/images/barbecue_house.jpg,39
+Barbecue Grill,"Via Matteotti 26, Napoli",72828200626,https://example.com/images/barbecue_grill.jpg,40
+Quick Bite,"Via Matteotti 30, Roma",27573933543,https://example.com/images/quick_bite.jpg,41
+Fast Food House,"Piazza Dante 17, Roma",18902191039,https://example.com/images/fast_food_house.jpg,42
+Fast Food Grill,"Via Torino 12, Bologna",62301194992,https://example.com/images/fast_food_grill.jpg,43
+Fast Food Garden,"Viale Mazzini 35, Bologna",73828328738,https://example.com/images/fast_food_garden.jpg,44
+Green Bites,"Via Milano 12, Torino",49594514023,https://example.com/images/green_bites.jpg,45
+Vegan Delight,"Via Matteotti 67, Torino",37653117686,https://example.com/images/vegan_delight.jpg,46
+Vegan Garden,"Via Torino 63, Roma",99327404859,https://example.com/images/vegan_garden.jpg,47
+Vegan Grill,"Via Matteotti 75, Bologna",55658757561,https://example.com/images/vegan_grill.jpg,48
+NoGlut,"Viale Mazzini 91, Bologna",10541494490,https://example.com/images/noglut.jpg,49
+Gluten Free Hub,"Viale Mazzini 74, Roma",03390887557,https://example.com/images/gluten_free_hub.jpg,50
+Gluten free Deli,"Via Milano 87, Roma",77626802766,https://example.com/images/gluten_free_deli.jpg,51
+Gluten free House,"Piazza Duomo 92, Roma",18968348960,https://example.com/images/gluten_free_house.jpg,52
+Kebab House & Seoul Spice,"Via Roma 27, Palermo",91531897781,https://example.com/images/kebab_house_&_seoul_spice.jpg,53
+Curry Palace & Burger House,"Corso Umberto I 94, Catania",72226400718,https://example.com/images/curry_palace_&_burger_house.jpg,54
+China Town & Smokehouse,"Via Matteotti 59, Firenze",41225658530,https://example.com/images/china_town_&_smokehouse.jpg,55
+El Mexicano & K-BBQ,"Via Milano 70, Palermo",11446405197,https://example.com/images/el_mexicano_&_k-bbq.jpg,56

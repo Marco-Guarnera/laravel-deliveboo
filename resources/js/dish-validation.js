@@ -154,8 +154,6 @@ dishesForm.addEventListener('submit', function (event) {
         dishImgError.innerHTML = ''; // Clear error message
     }
 
-
-
     // If the form is valid, allow submission
     if (isDishesFormValid) {
         dishesForm.submit();
