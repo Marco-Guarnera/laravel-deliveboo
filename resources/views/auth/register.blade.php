@@ -107,7 +107,7 @@
                         <!-- Input for restaurant types -->
                         <div class="row mb-3">
                             <label for="types-group" class="col-md-4 col-form-label text-md-end">
-                                Restaurant type(s)
+                                Restaurant type(s) *
                             </label>
                             <div id="types-group" class="col-md-6">
                                 <!-- Dynamically generated checkboxes for restaurant types -->
@@ -134,7 +134,7 @@
                         <!-- Input for email -->
                         <div class="row mb-3">
                             <label for="email"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address *') }}</label>
 
                             <div class="col-md-6">
                                 <!-- Input field for email -->
@@ -154,7 +154,7 @@
                         <!-- Input for password -->
                         <div class="row mb-3">
                             <label for="password"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                class="col-md-4 col-form-label text-md-end">{{ __('Password *') }}</label>
 
                             <div class="col-md-6">
                                 <!-- Input field for password -->
@@ -174,7 +174,7 @@
                         <!-- Input for confirm password -->
                         <div class="row mb-3">
                             <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                                class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password *') }}</label>
 
                             <div class="col-md-6">
                                 <!-- Input field for confirm password -->
