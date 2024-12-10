@@ -20,8 +20,8 @@ class DishRequest extends FormRequest {
      */
     public function rules() : array {
         return [
-            'name' => ['required', 'string', 'min:1', 'max:250'],
-            'description' => ['nullable', 'string', 'min:1', 'max:500'],
+            'name' => ['required', 'string', 'max:250'],
+            'description' => ['nullable', 'string', 'max:500'],
             'price' => ['required', 'numeric', 'decimal:2', 'min:0', 'max:100'],
             'is_visible' => ['required', 'boolean'],
             'img' => ['nullable', 'image', 'max:256']

@@ -24,6 +24,6 @@ class Dish extends Model {
 
     protected function description() : Attribute {
         return Attribute::make(
-            set: fn (string $value) => ucfirst($value));
+            get: fn (null|string $value) => $value ? ucfirst($value) : null);
     }
 }

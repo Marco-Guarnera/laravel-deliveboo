@@ -26,7 +26,12 @@
                 @forelse ($dishes_list as $dish)
                     <tr class="align-middle">
                         <td>{{ $dish->name }}</td>
-                        <td>{{ $dish->description }}</td>
+                        <td>
+                            @php
+                                if ($dish->description) echo $dish->description;
+                                else echo 'No description';
+                            @endphp
+                        </td>
                         <td>{{ $dish->price . '€' }}</td>
                         <td>
                             @php

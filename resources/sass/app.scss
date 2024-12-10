@@ -13,7 +13,7 @@ a {
     text-decoration: none;
 }
 
-form :where(input, textarea) {
+form :where(input, select, textarea) {
     margin-bottom: 0.25rem;
 }
 
