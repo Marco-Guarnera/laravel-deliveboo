@@ -27,7 +27,7 @@
                 <div>
                 <div class="d-flex align-items-center">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+
 
                         <a class="btn btn-danger text-white ms-3" href="{{ route('admin.dishes.index') }}">Your Restaurant's page</a>
                     @else
