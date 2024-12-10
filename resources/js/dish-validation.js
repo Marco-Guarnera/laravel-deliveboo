@@ -23,6 +23,22 @@ const validateDishName = (name) => {
     return ""; // Valid
 };
 
+// Validates dish description: optional, 1-500 characters
+const validateDishDescription = (description) => {
+    if (description.length > 500) return "Description must not exceed 500 characters.";
+    return ""; // Valid
+};
+
+// Validates dish price: required, numeric, 2 decimal places, 0-100 range
+const validateDishPrice = (price) => {
+    if (price.trim() === "") return "Price is required.";
+    if (!/^\d+(\.\d{1,2})?$/.test(price)) return "Price must be a valid number with up to 2 decimal places.";
+    const numericPrice = parseFloat(price);
+    if (numericPrice < 0 || numericPrice > 100) return "Price must be between 0 and 100.";
+    return ""; // Valid
+};
+
+
 // |UTILITY FUNCTIONS
 
 // Dynamically creates an error element for each input field.
@@ -32,6 +48,13 @@ const createErrorElement = (inputElement) => {
     inputElement.insertAdjacentElement('afterend', errorElement);
     return errorElement;
 };
+
+// Dynamically creates an error element for each input field.
+const dishNameError = createErrorElement(dishName);
+const dishDescriptionError = createErrorElement(dishDescription);
+const dishPriceError = createErrorElement(dishPrice);
+const dishVisibilityError = createErrorElement(dishVisibility);
+const dishImgError = createErrorElement(dishImg);
 
 // |ADD EVENT LISTENER
 // Adds submit event listener to the dishes form
