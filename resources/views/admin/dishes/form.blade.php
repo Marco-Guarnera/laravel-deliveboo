@@ -6,15 +6,15 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3">
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row w-100justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
             <!-- Errors -->
             @include('partials.errors')
         </div>
     </div>
-    <div class="row">
-        <d class="col-3">
+    <div class="row w-100 justify-content-center">
+        <d class="col-12 col-md-8 col-lg-6">
             <!-- Form -->
             <form action="@yield('form-action')" method="post" enctype="multipart/form-data">
                 @yield('form-method')
@@ -50,3 +50,6 @@
     </div>
 </div>
 @endsection
+
+
+

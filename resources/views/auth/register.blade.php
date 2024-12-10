@@ -164,7 +164,7 @@
 
                                 <!-- Error message for password -->
                                 @error('password')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback w-100" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -183,7 +183,7 @@
 
                                 <!-- Error message for confirm password -->
                                 @error('password_confirmation')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback w-100" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
