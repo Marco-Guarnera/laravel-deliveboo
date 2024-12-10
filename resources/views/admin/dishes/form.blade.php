@@ -40,11 +40,14 @@
                     value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01" placeholder="€" required>
 
                 <!-- Dish Visibility -->
-                <div class="form-check form-switch my-3">
-                    <label for="dish-visibility" class="form-check-label">Visibility:</label>
-                    <input type="checkbox" id="dish-visibility" class="form-check-input" name="is_visible" value="1"
-                        role="switch" @checked(old('is_visible', $dish->is_visible))>
+                <div class="form-check  my-3">
+                    <label for="dish-visibility" class="form-label">Visibility:</label>
+                    <select id="dish-visibility" class="form-select w-25" name="is_visible">
+                        <option value="0" @selected(old('is_visible', $dish->is_visible))>Off</option>
+                        <option value="1" @selected(old('is_visible', $dish->is_visible))>On</option>
+                    </select>
                 </div>
+
 
                 <!-- Dish Img -->
                 <label for="dish-img" class="form-label">Image:</label>
