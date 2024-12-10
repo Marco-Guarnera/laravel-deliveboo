@@ -32,11 +32,14 @@
                 <input type="number" id="dish-price" class="form-control" name="price"
                     value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01" placeholder="€">
                 <!-- Dish Visibility -->
-                <label for="dish-vis" class="form-label">Visibility:</label>
-                <select id="dish-vis" class="form-select w-25" name="is_visible">
-                    <option value="0" @selected(old('is_visible', $dish->is_visible))>Off</option>
-                    <option value="1" @selected(old('is_visible', $dish->is_visible))>On</option>
-                </select>
+                <div class="form-check  my-3">
+                    <label for="dish-visibility" class="form-label">Visibility:</label>
+                    <select id="dish-visibility" class="form-select w-25" name="is_visible">
+                        <option value="0" @selected(old('is_visible', $dish->is_visible))>Off</option>
+                        <option value="1" @selected(old('is_visible', $dish->is_visible))>On</option>
+                    </select>
+                </div>
+
                 <!-- Dish Img -->
                 <label for="dish-img" class="form-label">Image:</label>
                 <input type="file" id="dish-img" class="form-control" name="img">
@@ -50,6 +53,3 @@
     </div>
 </div>
 @endsection
-
-
-

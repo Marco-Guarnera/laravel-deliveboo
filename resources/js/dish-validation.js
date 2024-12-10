@@ -34,10 +34,11 @@ const validateDishPrice = (price) => {
     return ""; // Valid
 };
 
-// Validates dish visibility: boolean, defaults to false if unchecked
+// Validates dish visibility: must be either "0" or "1"
 const validateDishVisibility = (visibility) => {
-    // No validation required as the value is true or false
-    return ""; // Always valid
+    const value = visibility.value;
+    if (value !== "0" && value !== "1") return "Visibility must be set to 'On' or 'Off'.";
+    return ""; // Valid
 };
 
 // Validates dish image: optional, must be an image and max 256KB
@@ -113,8 +114,13 @@ dishesForm.addEventListener('submit', function (event) {
         showValid(dishPrice, dishPriceError);
     }
 
-    // Validate dish visibility (always valid)
-    showValid(dishVisibility, dishVisibilityError);
+    const visibilityMessage = validateDishVisibility(dishVisibility);
+    if (visibilityMessage) {
+        showError(dishVisibility, dishVisibilityError, visibilityMessage);
+        isDishesFormValid = false;
+    } else {
+        showValid(dishVisibility, dishVisibilityError);
+    }
 
     // Validate dish image
     const imgMessage = validateDishImg(dishImg);
