@@ -28,7 +28,7 @@ const validateDishDescription = (description) => {
 // Validates dish price: required, numeric, 2 decimal places, 0-100 range
 const validateDishPrice = (price) => {
     if (price.trim() === "") return "Price is required.";
-    if (!/^\d+(\.\d{1,2})?$/.test(price)) return "Price must be a valid number with up to 2 decimal places.";
+    if (!/^\d+(\.\d{2})$/.test(price)) return "Price must be a valid number with exactly 2 decimal places.";
     const numericPrice = parseFloat(price);
     if (numericPrice < 0 || numericPrice > 100) return "Price must be between 0 and 100.";
     return ""; // Valid
@@ -64,6 +64,7 @@ const dishNameError = createErrorElement(dishName);
 const dishDescriptionError = createErrorElement(dishDescription);
 const dishPriceError = createErrorElement(dishPrice);
 const dishImgError = createErrorElement(dishImg);
+const dishVisibilityError = createErrorElement(dishVisibility);
 
 // Displays error messages and applies `is-invalid` class to input
 const showError = (inputElement, errorElement, errorMessage) => {
@@ -113,13 +114,7 @@ dishesForm.addEventListener('submit', function (event) {
     }
 
     // Validate dish visibility (always valid)
-    const visibilityMessage = validateDishVisibility(dishVisibility);
-    if (visibilityMessage) {
-        showError(dishVisibility, dishVisibilityError, visibilityMessage);
-        isDishesFormValid = false;
-    } else {
-        showValid(dishVisibility, dishVisibilityError);
-    }
+    showValid(dishVisibility, dishVisibilityError);
 
     // Validate dish image
     const imgMessage = validateDishImg(dishImg);
