@@ -56,6 +56,22 @@ const dishPriceError = createErrorElement(dishPrice);
 const dishVisibilityError = createErrorElement(dishVisibility);
 const dishImgError = createErrorElement(dishImg);
 
+// Displays error messages and applies `is-invalid` class to input
+function showError(inputElement, errorMessage) {
+    const errorElement = createErrorElement(inputElement);
+    inputElement.classList.add('is-invalid');
+    inputElement.classList.remove('is-valid');
+    errorElement.innerHTML = `<strong>${errorMessage}</strong>`;
+}
+
+// Marks an input as valid and removes error messages
+function showValid(inputElement) {
+    const errorElement = createErrorElement(inputElement);
+    inputElement.classList.remove('is-invalid');
+    inputElement.classList.add('is-valid');
+    errorElement.innerHTML = ''; // Clears any existing error messages
+}
+
 // |ADD EVENT LISTENER
 // Adds submit event listener to the dishes form
 dishesForm.addEventListener('submit', function (event) {
