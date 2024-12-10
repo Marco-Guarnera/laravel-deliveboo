@@ -25,6 +25,14 @@ class Dish extends Model
             set: fn(string $value) => ucfirst(strtolower($value))
         );
     }
+
+    protected function description(): Attribute
+    {
+        return Attribute::make(
+            get: fn(null|string $value) => $value ? ucfirst($value) : null
+        );
+    }
+
     /**
      * Get the restaurant that owns the dish.
      */

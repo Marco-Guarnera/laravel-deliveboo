@@ -28,7 +28,6 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
@@ -40,11 +39,21 @@
             @foreach ($restaurants as $restaurant)
             @forelse ($restaurant->dishes as $dish)
             <tr class="align-middle">
-                <td>{{ $dish->id }}</td>
+
                 <td>{{ $dish->name }}</td>
-                <td>{{ $dish->description }}</td>
-                <td>{{ $dish->price }}</td>
-                <td>{{ $dish->is_visible }}</td>
+                <td>
+                    @php
+                    if ($dish->description) echo $dish->description;
+                    else echo 'No description';
+                    @endphp
+                </td>
+                <td>{{ $dish->price . '€' }}</td>
+                <td>
+                    @php
+                    if ($dish->is_visible) echo 'On';
+                    else echo 'Off';
+                    @endphp
+                </td>
                 <td>
                     <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-success">Show</a>
                     <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn btn-warning">Edit</a>

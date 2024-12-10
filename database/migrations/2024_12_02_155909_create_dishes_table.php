@@ -10,18 +10,15 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create(
-            'dishes',
-            function (Blueprint $table) {
-                $table->id();
-                $table->string('name', length: 250)->nullable(false);
-                $table->text('description')->nullable(true);
-                $table->decimal('price', total: 5, places: 2)->default(0)->nullable(false);
-                $table->boolean('is_visible')->default(false)->nullable(false);
-                $table->text('img')->nullable(true);
-                $table->timestamps();
-            }
-        );
+        Schema::create('dishes', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', length: 250)->nullable(false);
+            $table->text('description')->nullable(true);
+            $table->decimal('price', total: 5, places: 2)->nullable(false);
+            $table->boolean('is_visible')->nullable(false);
+            $table->text('img')->nullable(true);
+            $table->timestamps();
+        });
     }
 
     /**
