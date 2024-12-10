@@ -22,9 +22,11 @@
                                 Restaurant name *
                             </label>
                             <div class="col-md-6">
+                                <!-- Input field for restaurant name -->
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
+                                <!-- Error message for restaurant name -->
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -39,10 +41,12 @@
                                 Restaurant address *
                             </label>
                             <div class="col-md-6">
+                                <!-- Input field for restaurant address -->
                                 <input id="address" type="text"
                                     class="form-control @error('address') is-invalid @enderror" name="address"
-                                    value="{{ old('address') }}" required autocomplete="address" autofocus>
+                                    value="{{ old('address') }}" autocomplete="address" autofocus>
 
+                                <!-- Error message for restaurant address -->
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -51,15 +55,17 @@
                             </div>
                         </div>
 
-                        <!-- Input for restaurant piva -->
+                        <!-- Input for restaurant P.IVA -->
                         <div class="row mb-3">
                             <label for="piva" class="col-md-4 col-form-label text-md-end">
                                 Restaurant piva *
                             </label>
                             <div class="col-md-6">
+                                <!-- Input field for P.IVA -->
                                 <input id="piva" type="text" class="form-control @error('piva') is-invalid @enderror"
-                                    name="piva" value="{{ old('piva') }}" required autocomplete="piva" autofocus>
+                                    name="piva" value="{{ old('piva') }}" autocomplete="piva" autofocus>
 
+                                <!-- Error message for P.IVA -->
                                 @error('piva')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -74,9 +80,11 @@
                                 Restaurant logo
                             </label>
                             <div class="col-md-6">
+                                <!-- Input field for restaurant logo -->
                                 <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror"
                                     name="logo" autofocus>
 
+                                <!-- Error message for restaurant logo -->
                                 @error('logo')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -85,10 +93,13 @@
                             </div>
                         </div>
 
-                        <!--Restaurant type selection   -->
+                        <!-- Input for restaurant types -->
                         <div class="row mb-3">
-                            <label for="types" class="col-md-4 col-form-label text-md-end">Restaurant type(s)</label>
-                            <div class="col-md-6">
+                            <label for="types-group" class="col-md-4 col-form-label text-md-end">
+                                Restaurant type(s)
+                            </label>
+                            <div id="types-group" class="col-md-6">
+                                <!-- Dynamically generated checkboxes for restaurant types -->
                                 @foreach ($types as $type)
                                 <div class="form-check">
                                     <input class="form-check-input @error('types') is-invalid @enderror" type="checkbox"
@@ -99,20 +110,27 @@
                                     </label>
                                 </div>
                                 @endforeach
+
+                                <!-- Error message for types -->
+                                @error('types')
+                                <span class="invalid-feedback d-block" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
-
-
-
+                        <!-- Input for email -->
                         <div class="row mb-3">
                             <label for="email"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
+                                <!-- Input field for email -->
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    name="email" value="{{ old('email') }}" autocomplete="email">
 
+                                <!-- Error message for email -->
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -121,15 +139,18 @@
                             </div>
                         </div>
 
+                        <!-- Input for password -->
                         <div class="row mb-3">
                             <label for="password"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
+                                <!-- Input field for password -->
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="new-password">
+                                    autocomplete="new-password">
 
+                                <!-- Error message for password -->
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -138,16 +159,26 @@
                             </div>
                         </div>
 
+                        <!-- Input for confirm password -->
                         <div class="row mb-3">
                             <label for="password-confirm"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
+                                <!-- Input field for confirm password -->
                                 <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                    name="password_confirmation" autocomplete="new-password">
+
+                                <!-- Error message for confirm password -->
+                                @error('password_confirmation')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
+                        <!-- Submit button -->
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -163,8 +194,9 @@
 </div>
 @endsection
 
+<!-- Additional scripts -->
 @section('additional-script')
-
-@vite('resources/js/app.js')
-
+@vite('reso
+urces/js/ap
+p.js')
 @endsection
