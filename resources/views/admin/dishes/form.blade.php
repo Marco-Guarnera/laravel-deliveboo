@@ -30,24 +30,21 @@
 
                 <!-- Dish Description -->
                 <label for="dish-description" class="form-label">Description:</label>
-                <textarea id="dish-description" class="form-control" name="description" rows="5"
-                    placeholder="Description (optional)" minlength="15" maxlength="500">
+                <textarea id="dish-description" class="form-control" name="description"
+                    placeholder="Description (optional)" minlength="15"
+                    maxlength="500">{{ old('description', $dish->description) }}</textarea>
 
-                    <!-- Dish Price -->
+                <!-- Dish Price -->
                 <label for="dish-price" class="form-label">Price:</label>
                 <input type="number" id="dish-price" class="form-control" name="price"
-                    value="{{ old('price', $dish->price) }}"
-                    min="0" max="100" step="0.01"
-                    placeholder="€"
-                    required>
+                    value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01" placeholder="€" required>
 
                 <!-- Dish Visibility -->
-                <div class="form-check form-switch">
-                    <label for="dish-visibility" class="form-check-label">Visibility</label>
+                <div class="form-check form-switch my-3">
+                    <label for="dish-visibility" class="form-check-label">Visibility:</label>
                     <input type="checkbox" id="dish-visibility" class="form-check-input" name="is_visible" value="1"
-                        role="switch"
-                        @checked(old('is_visible', $dish->is_visible))>
-                                   </div>
+                        role="switch" @checked(old('is_visible', $dish->is_visible))>
+                </div>
 
                 <!-- Dish Img -->
                 <label for="dish-img" class="form-label">Image:</label>
@@ -63,4 +60,5 @@
         </div>
     </div>
 </div>
+
 @endsection
