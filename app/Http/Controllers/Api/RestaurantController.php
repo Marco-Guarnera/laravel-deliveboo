@@ -27,12 +27,12 @@ class RestaurantController extends Controller
         }
 
         // Recupera i ristoranti filtrati con paginazione
-        $restaurants = $query->paginate(10);
+        $restaurants = $query->paginate(12);
 
         return response()->json(
             [
-            'success' => true,
-            'results' => $restaurants,
+                'success' => true,
+                'results' => $restaurants,
             ]
         );
     }
