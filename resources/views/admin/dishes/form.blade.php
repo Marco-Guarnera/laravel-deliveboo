@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 mx-auto">
                 <!-- Form -->
                 <form action="@yield('form-action')" method="post" enctype="multipart/form-data">
                     @yield('form-method')
@@ -22,7 +22,7 @@
                     <textarea id="dish-description" class="form-control" name="description" rows="5" placeholder="Description">{{ old('description', $dish->description) }}</textarea>
                     <!-- Dish Price -->
                     <label for="dish-price" class="form-label">Price:</label>
-                    <input type="number" id="dish-price" class="form-control" name="price" value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01" placeholder="€" required>
+                    <input type="number" id="dish-price" class="form-control w-25" name="price" value="{{ old('price', $dish->price) }}" min="0" max="100" step="0.01" placeholder="€" required>
                     <!-- Dish Visibility -->
                     <label for="dish-vis" class="form-label">Visibility:</label>
                     <select id="dish-vis" class="form-select w-25" name="is_visible">

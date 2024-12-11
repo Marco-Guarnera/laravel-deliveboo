@@ -16,7 +16,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th class="d-none d-md-table-cell">Description</th>
                     <th>Price</th>
                     <th>Visibility</th>
                     <th>Functions</th>
@@ -26,7 +26,7 @@
                 @forelse ($dishes_list as $dish)
                     <tr class="align-middle">
                         <td>{{ $dish->name }}</td>
-                        <td>
+                        <td class="d-none d-md-table-cell">
                             @php
                                 if ($dish->description) echo $dish->description;
                                 else echo 'No description';
