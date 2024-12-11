@@ -19,9 +19,13 @@ class DishPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Dish $dish): bool
+    public function view(User $user, Dish $dish): Response
     {
-        return $dish->restaurant && $dish->restaurant->user_id === $user->id;
+        if ($dish->restaurant && $dish->restaurant->user_id === $user->id) {
+            return Response::allow();
+        }
+
+        return Response::deny('You\'re not authorized to access this dish.');
     }
 
     /**
