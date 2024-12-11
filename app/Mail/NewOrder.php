@@ -27,8 +27,8 @@ class NewOrder extends Mailable {
      */
     public function envelope() : Envelope {
         return new Envelope(
-            subject: 'New order from ' . $this->order->name,
-            replyTo: $this->order->email
+            subject: 'New order from ' . $this->order->customer_name,
+            replyTo: $this->order->customer_email
         );
     }
 
