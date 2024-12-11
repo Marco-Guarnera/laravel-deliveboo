@@ -27,12 +27,11 @@ class DishSeeder extends Seeder
                 'name' => $row[array_search('name', $tableColumns)],
                 'description' => $row[array_search('description', $tableColumns)],
                 'price' => $row[array_search('price', $tableColumns)],
-                'is_visible' => $row[array_search('is_visible', $tableColumns)] === '1', // Converti in boolean
+                'is_visible' => $row[array_search('is_visible', $tableColumns)] === '1',
                 'img' => $row[array_search('img', $tableColumns)],
                 'restaurant_id' => $row[array_search('restaurant_id', $tableColumns)],
             ];
 
-            // Crea il piatto nel database
             Dish::create($dishData);
         }
 

@@ -15,27 +15,12 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'email' => 'kebabhouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
                 'email' => 'donerkebab@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabgarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'kebabdeli@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'labellanapoli@example.com',
+                'email' => 'kebabplace@example.com',
                 'password' => '12345678'
             ],
 
@@ -45,17 +30,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'pizzadeli@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'pizzagrill@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'dragongarden@example.com',
+                'email' => 'labellanapoli@example.com',
                 'password' => '12345678'
             ],
 
@@ -65,12 +40,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'cinesegrill@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'cinesehouse@example.com',
+                'email' => 'dragongarden@example.com',
                 'password' => '12345678'
             ],
 
@@ -80,22 +50,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'tokyobites@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'giapponesehouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'giapponesegarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'elmexicano@example.com',
+                'email' => 'giapponesedeli@example.com',
                 'password' => '12345678'
             ],
 
@@ -105,27 +60,12 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'messicanogrill@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'messicanogarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'seoulspice@example.com',
+                'email' => 'elmexicano@example.com',
                 'password' => '12345678'
             ],
 
             [
                 'email' => 'kbbq@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'coreanogrill@example.com',
                 'password' => '12345678'
             ],
 
@@ -140,22 +80,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'currypalace@example.com',
-                'password' => '12345678'
-            ],
-
-            [
                 'email' => 'indianohouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'indianogarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'burgerhouse@example.com',
                 'password' => '12345678'
             ],
 
@@ -165,12 +90,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'hamburgergarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'hamburgerhouse@example.com',
+                'email' => 'burgerhouse@example.com',
                 'password' => '12345678'
             ],
 
@@ -185,12 +105,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'steakhousehouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'steakhousegrill@example.com',
+                'email' => 'smokehouse@example.com',
                 'password' => '12345678'
             ],
 
@@ -200,17 +115,7 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'smokehouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'barbecuehouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'barbecuegrill@example.com',
+                'email' => 'fastfoodplace@example.com',
                 'password' => '12345678'
             ],
 
@@ -220,37 +125,12 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'fastfoodhouse@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'fastfoodgrill@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'fastfoodgarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'greenbites@example.com',
-                'password' => '12345678'
-            ],
-
-            [
                 'email' => 'vegandelight@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'vegangarden@example.com',
-                'password' => '12345678'
-            ],
-
-            [
-                'email' => 'vegangrill@example.com',
+                'email' => 'greenbites@example.com',
                 'password' => '12345678'
             ],
 
@@ -265,42 +145,64 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'glutenfreedeli@example.com',
+                'email' => 'donerkebabpizzamania@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'glutenfreehouse@example.com',
+                'email' => 'kebabhousedragongarden@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabhouseseoulspice@example.com',
+                'email' => 'kebabhousetokyobites@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'currypalaceburgerhouse@example.com',
+                'email' => 'kebabhousetacofiesta@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'chinatownsmokehouse@example.com',
+                'email' => 'kebabcoreanoplace@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'elmexicanokbbq@example.com',
+                'email' => 'donerkebabtajmahal@example.com',
                 'password' => '12345678'
             ],
 
+            [
+                'email' => 'kebabhouseburgerhouse@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabhousesteakco@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabbarbecueplace@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabfastfoodplace@example.com',
+                'password' => '12345678
+                '
+            ]
 
         ];
+
 
         foreach ($users as $userData) {
             User::create(
                 [
                     'email' => $userData["email"],
+
                     'password' => Hash::make($userData["password"]),
                 ]
             );
