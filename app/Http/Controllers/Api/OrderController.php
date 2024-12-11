@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Order;
 use App\Http\Controllers\Controller;
+use App\Mail\NewOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -25,7 +26,7 @@ class OrderController extends Controller {
             ]);
         } else {
             $order = Order::create($validator->validated());
-            Mail::to('admin@gmail.com')->send(new Order($order));
+            Mail::to('admin@gmail.com')->send(new NewOrder($order));
             return response()->json([
                 'success' => true
             ]);
