@@ -49,7 +49,7 @@ Route::prefix('/admin')->name('admin.dishes.')->group(function () {
     Route::delete('/dishes/{dish}', [AdminDishController::class, 'destroy'])->name('delete');
 });
 
-Route::prefix('/admin')->name('admin.orders.')->group(function () {
+Route::prefix('/admin')->name('admin.orders.')->middleware('auth')->group(function () {
 
     // Orders
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('index');
