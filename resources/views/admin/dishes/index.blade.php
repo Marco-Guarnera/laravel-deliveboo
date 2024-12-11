@@ -101,9 +101,10 @@
         </tbody>
     </table>
     @else
-    <div class="text-center mt-4">
+    <div class="text-center container-fluid mt-4">
         <p>No dishes available. Start inserting your dishes!</p>
         <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary mb-3">Add a new dish!</a>
+        <a href="{{route('admin.orders.index')}}" class="btn btn-success mb-3">Order Section</a>
     </div>
     @endif
 

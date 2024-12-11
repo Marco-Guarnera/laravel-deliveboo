@@ -13,7 +13,7 @@ class DishPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class DishPolicy
      */
     public function view(User $user, Dish $dish): bool
     {
-        return $dish->restaurant->user_id === $user->id;
+        return $dish->restaurant && $dish->restaurant->user_id === $user->id;
     }
 
     /**
@@ -37,7 +37,7 @@ class DishPolicy
      */
     public function update(User $user, Dish $dish): bool
     {
-        return $dish->restaurant->user_id === $user->id;
+        return $dish->restaurant && $dish->restaurant->user_id === $user->id;
     }
 
     /**
@@ -45,7 +45,7 @@ class DishPolicy
      */
     public function delete(User $user, Dish $dish): bool
     {
-        return $dish->restaurant->user_id === $user->id;
+        return $dish->restaurant && $dish->restaurant->user_id === $user->id;
     }
 
     /**
@@ -53,7 +53,7 @@ class DishPolicy
      */
     public function restore(User $user, Dish $dish): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -61,6 +61,6 @@ class DishPolicy
      */
     public function forceDelete(User $user, Dish $dish): bool
     {
-        //
+        return false;
     }
 }
