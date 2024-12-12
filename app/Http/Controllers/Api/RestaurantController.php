@@ -58,10 +58,10 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function show($restaurantId)
+    public function show($slug)
     {
-        // Trova il ristorante con i suoi tipi associati
-        $restaurant = Restaurant::with('types')->findOrFail($restaurantId);
+        // Trova il ristorante tramite lo slug
+        $restaurant = Restaurant::with('types')->where('slug', $slug)->firstOrFail();
 
         return response()->json([
             'success' => true,
