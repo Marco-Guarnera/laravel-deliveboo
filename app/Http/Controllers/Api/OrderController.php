@@ -2,42 +2,25 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Order;
 
-class OrderController extends Controller {
-    // Store
-    public function store(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'customer_name' => ['required', 'string', 'min:2', 'max:250'],
-            'customer_email' => ['required', 'email', 'min:6', 'max:250'],
-            'customer_number' => ['required', 'numeric', 'integer', 'size:10'],
-            'customer_address' => ['required', 'string', 'min:10', 'max:250']
+class OrderController extends Controller
+{
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'restaurant_id' => 'required|exists:restaurants,id',
+            'customer_name' => 'required|string|max:255',
+            'customer_email' => 'required|email|max:255',
+            'customer_number' => 'required|string|max:10',
+            'customer_address' => 'required|string|max:255',
+            'total_price' => 'required|numeric|min:0',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()
-            ]);
-        } else {
-            $order = Order::create($validator->validated());
-            Mail::to('admin@gmail.com')->send(new Order($order));
-            return response()->json([
-                'success' => true
-            ]);
-        }
-    }
+        $order = Order::create($validatedData);
 
-    // Index
-    public function index() {
-        $orders_list = Order::all();
-        return response()->json([
-                'success' => true,
-                'results' => $orders_list
-            ]);
+        return response()->json(['success' => true, 'order' => $order], 201);
     }
 }
