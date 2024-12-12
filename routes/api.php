@@ -43,3 +43,9 @@ Route::get('/types', [TypeController::class, 'index']);
 
 Route::get('restaurants/{restaurantId}/dishes', [RestaurantController::class, 'getDishes']);
 Route::get('/restaurants/{restaurantId}', [RestaurantController::class, 'show'])->name('api.restaurants.show');
+
+
+use App\Http\Controllers\Api\CheckoutController;
+
+Route::get('/checkout/token', [CheckoutController::class, 'generateToken']);
+Route::post('/checkout/pay', [CheckoutController::class, 'processPayment']);
