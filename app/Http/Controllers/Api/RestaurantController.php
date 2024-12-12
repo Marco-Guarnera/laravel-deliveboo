@@ -29,11 +29,6 @@ class RestaurantController extends Controller
         // Recupera i ristoranti filtrati con paginazione
         $restaurants = $query->paginate(10);
 
-        // Modifica la struttura dei dati per includere lo slug
-        foreach ($restaurants as $restaurant) {
-            $restaurant->slug = $restaurant->slug;
-        }
-
         return response()->json([
             'success' => true,
             'results' => $restaurants,

@@ -36,6 +36,11 @@ use App\Http\Controllers\Api\TypeController;
 
 Route::get('/types', [TypeController::class, 'index']);
 
+/*
 
 Route::get('restaurants/{restaurantId}/dishes', [RestaurantController::class, 'getDishes']);
 Route::get('/restaurants/{restaurantId}', [RestaurantController::class, 'show'])->name('api.restaurants.show');
+ */
+
+Route::get('/restaurants/{slug}', [RestaurantController::class, 'show'])->name('api.restaurants.show');
+Route::get('/restaurants/{slug}/dishes', [RestaurantController::class, 'getDishes']);
