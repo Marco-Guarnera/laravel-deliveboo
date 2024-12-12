@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+
     public function index()
     {
-        // get the currently authenticated user
-        $user = auth()->user();
-
-        return view('admin.orders.index');
+        $orders = Order::with('restaurant')->paginate(10); // Recupera gli ordini con il ristorante associato
+        return view('admin.orders.index', compact('orders')); // Passa la variabile alla vista
     }
 }

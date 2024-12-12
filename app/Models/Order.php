@@ -17,4 +17,9 @@ class Order extends Model
         'customer_address',
         'total_price',
     ];
+
+    public function restaurant()
+    {
+        return $this->belongsTo(Restaurant::class);
+    }
 }
