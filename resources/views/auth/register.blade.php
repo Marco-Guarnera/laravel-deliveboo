@@ -1,115 +1,83 @@
 @extends('layouts.app')
 
-
-<!-- Additional scripts -->
 @section('additional-script')
 @vite('resources/js/user-validation.js')
 @endsection
 
 @section('content')
 
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
 
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <!-- Title and subtitle -->
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Start Your Journey with Us</h1>
+                <p class="text-muted">Complete the form below to get started. All fields marked with an asterisk (*) are
+                    required.</p>
+            </div>
 
-                <div class="card-body">
+            <!-- Form card -->
+            <div class="card shadow border-0">
+                <div class="card-body p-4">
 
-                    <!-- Register form -->
+                    <!-- Register Form -->
                     <form id="register-form" method="POST" action="{{ route('register') }}"
                         enctype="multipart/form-data">
                         @csrf
 
+                        <!-- Section Restaurant Details -->
+                        <h5 class="fw-bold mb-3">Restaurant Details</h5>
+
                         <!-- Input for restaurant name -->
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">
-                                Restaurant name *
-                            </label>
-                            <div class="col-md-6">
-                                <!-- Input field for restaurant name -->
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" autocomplete="name" autofocus required
-                                    maxlength="40">
-
-
-                                <!-- Error message for restaurant name -->
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Restaurant Name *</label>
+                            <!-- Input field for restaurant name -->
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                name="name" value="{{ old('name') }}" placeholder="e.g., Joe's Italian" required
+                                maxlength="40">
+                            <!-- Error message for restaurant name -->
+                            @error('name')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </div>
+                            @enderror
                         </div>
 
                         <!-- Input for restaurant address -->
-                        <div class="row mb-3">
-                            <label for="address" class="col-md-4 col-form-label text-md-end">
-                                Restaurant address *
-                            </label>
-                            <div class="col-md-6">
-                                <!-- Input field for restaurant address -->
-                                <input id="address" type="text"
-                                    class="form-control @error('address') is-invalid @enderror" name="address"
-                                    value="{{ old('address') }}" autocomplete="address" autofocus required minlength="5"
-                                    maxlength="200">
-
-                                <!-- Error message for restaurant address -->
-                                @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                        <div class="mb-4">
+                            <label for="address" class="form-label">Restaurant Address *</label>
+                            <!-- Input field for restaurant address -->
+                            <input id="address" type="text" class="form-control @error('address') is-invalid @enderror"
+                                name="address" value="{{ old('address') }}" placeholder="e.g., 123 High Street" required
+                                minlength="5" maxlength="200">
+                            <!-- Error message for restaurant address -->
+                            @error('address')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </div>
+                            @enderror
                         </div>
 
-                        <!-- Input for restaurant P.IVA -->
-                        <div class="row mb-3">
-                            <label for="piva" class="col-md-4 col-form-label text-md-end">
-                                Restaurant piva *
-                            </label>
-                            <div class="col-md-6">
-                                <!-- Input field for P.IVA -->
-                                <input id="piva" type="text" class="form-control @error('piva') is-invalid @enderror"
-                                    name="piva" value="{{ old('piva') }}" autocomplete="piva" autofocus required
-                                    pattern="\d{11}" title="La P.IVA deve essere composta da 11 caratteri numerici.">
-
-                                <!-- Error message for P.IVA -->
-                                @error('piva')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                        <!-- Input for VAT Number (P.IVA) -->
+                        <div class="mb-4">
+                            <label for="piva" class="form-label">VAT Number (P.IVA) *</label>
+                            <!-- Input field for VAT Number -->
+                            <input id="piva" type="text" class="form-control @error('piva') is-invalid @enderror"
+                                name="piva" value="{{ old('piva') }}" placeholder="e.g., 12345678901" required
+                                pattern="\d{11}">
+                            <!-- Error message for VAT Number -->
+                            @error('piva')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </div>
+                            @enderror
                         </div>
-
-                        <!-- //Input for restaurant logo
-                        <div class="row mb-3">
-                            <label for="logo" class="col-md-4 col-form-label text-md-end">
-                                Restaurant logo *
-                            </label>
-                            <div class="col-md-6">
-                                // Input field for restaurant logo
-                                <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror"
-    name="logo" accept="image/*" title="Accepted formats: jpg, jpeg, png, gif">
-
-                                // Error message for restaurant logo
-                                @error('logo')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                    -->
 
                         <!-- Input for restaurant types -->
-                        <div class="row mb-3">
-                            <label for="types-group" class="col-md-4 col-form-label text-md-end">
-                                Restaurant type(s)
-                            </label>
-                            <div id="types-group" class="col-md-6">
+                        <div class="mb-4">
+                            <label for="types-group" class="form-label">Restaurant Type(s) *</label>
+                            <div id="types-group" class="d-flex flex-wrap gap-2">
                                 <!-- Dynamically generated checkboxes for restaurant types -->
                                 @foreach ($types as $type)
                                 <div class="form-check">
@@ -121,87 +89,88 @@
                                     </label>
                                 </div>
                                 @endforeach
-
                                 <!-- Error message for types -->
                                 @error('types')
-                                <span class="invalid-feedback d-block" role="alert">
+                                <div class="invalid-feedback d-block" role="alert">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                                 @enderror
                             </div>
                         </div>
 
+
+                        <!-- //Input for restaurant logo
+<div class="row mb-3">
+    <label for="logo" class="col-md-4 col-form-label text-md-end">
+        Restaurant logo *
+    </label>
+    <div class="col-md-6">
+        // Input field for restaurant logo
+        <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror"
+name="logo" accept="image/*" title="Accepted formats: jpg, jpeg, png, gif">
+
+        // Error message for restaurant logo
+        @error('logo')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>
+-->
+
+                        <!-- Section Account Details -->
+                        <h5 class="fw-bold mb-3">Account Details</h5>
+
                         <!-- Input for email -->
-                        <div class="row mb-3">
-                            <label for="email"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <!-- Input field for email -->
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" autocomplete="email" required
-                                    maxlength="255">
-
-                                <!-- Error message for email -->
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <!-- Input field for email -->
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" placeholder="e.g., enquiries@example.com"
+                                required maxlength="255">
+                            <!-- Error message for email -->
+                            @error('email')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </div>
+                            @enderror
                         </div>
 
                         <!-- Input for password -->
-                        <div class="row mb-3">
-                            <label for="password"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <!-- Input field for password -->
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    autocomplete="new-password" required minlength="8">
-
-                                <!-- Error message for password -->
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password *</label>
+                            <!-- Input field for password -->
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                placeholder="Minimum 8 characters" required minlength="8">
+                            <!-- Error message for password -->
+                            @error('password')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </div>
+                            @enderror
                         </div>
 
                         <!-- Input for confirm password -->
-                        <div class="row mb-3">
-                            <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <!-- Input field for confirm password -->
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" autocomplete="new-password" required>
-
-                                <!-- Error message for confirm password -->
-                                @error('password_confirmation')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                        <div class="mb-4">
+                            <label for="password-confirm" class="form-label">Confirm Password *</label>
+                            <!-- Input field for confirm password -->
+                            <input id="password-confirm" type="password" class="form-control"
+                                name="password_confirmation" placeholder="Re-enter your password" required>
                         </div>
 
                         <!-- Submit button -->
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary w-100 py-2">Register</button>
                         </div>
                     </form>
+
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+
 @endsection
