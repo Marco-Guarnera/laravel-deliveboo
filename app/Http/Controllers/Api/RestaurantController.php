@@ -30,25 +30,15 @@ class RestaurantController extends Controller
         $restaurants = $query->paginate(10);
 
         // Modifica la struttura dei dati per includere lo slug
-        $restaurants->data = $restaurants->map(function ($restaurant) {
-            return [
-                'id' => $restaurant->id,
-                'name' => $restaurant->name,
-                'slug' => $restaurant->slug,
-                'types' => $restaurant->types,
-                'dishes' => $restaurant->dishes,
-            ];
-        });
+        foreach ($restaurants as $restaurant) {
+            $restaurant->slug = $restaurant->slug;
+        }
 
-        return response()->json(
-            [
-                'success' => true,
-                'results' => $restaurants,
-            ]
-        );
+        return response()->json([
+            'success' => true,
+            'results' => $restaurants,
+        ]);
     }
-
-
 
 
     public function getDishes($restaurantId)
