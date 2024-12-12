@@ -19,7 +19,7 @@ class TypeSeeder extends Seeder
             "Pizza",
             "Chinese",
             "Japanese",
-            "Tex Mex",
+            "Mexican",
             "Korean",
             "Indian",
             "Hamburger",
