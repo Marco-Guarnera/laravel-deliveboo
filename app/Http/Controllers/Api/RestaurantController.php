@@ -29,31 +29,19 @@ class RestaurantController extends Controller
         // Recupera i ristoranti filtrati con paginazione
         $restaurants = $query->paginate(10);
 
-        // Modifica la struttura dei dati per includere lo slug
-        $restaurants->data = $restaurants->map(function ($restaurant) {
-            return [
-                'id' => $restaurant->id,
-                'name' => $restaurant->name,
-                'slug' => $restaurant->slug,
-                'types' => $restaurant->types,
-                'dishes' => $restaurant->dishes,
-            ];
-        });
-
-        return response()->json(
-            [
-                'success' => true,
-                'results' => $restaurants,
-            ]
-        );
+        return response()->json([
+            'success' => true,
+            'results' => $restaurants,
+        ]);
     }
 
 
-
-
-    public function getDishes($restaurantId)
+    public function getDishes($slug)
     {
-        $restaurant = Restaurant::findOrFail($restaurantId);
+        // Trova il ristorante tramite lo slug
+        $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
+
+        // Recupera i piatti del ristorante
         $dishes = $restaurant->dishes->map(function ($dish) {
             $dish->image_url = $dish->img ? asset('storage/' . ltrim($dish->img, '/')) : null;
             return $dish;
@@ -65,10 +53,10 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function show($restaurantId)
+    public function show($slug)
     {
-        // Trova il ristorante con i suoi tipi associati
-        $restaurant = Restaurant::with('types')->findOrFail($restaurantId);
+        // Trova il ristorante tramite lo slug
+        $restaurant = Restaurant::with('types')->where('slug', $slug)->firstOrFail();
 
         return response()->json([
             'success' => true,
