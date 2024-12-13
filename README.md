@@ -8,25 +8,25 @@ The app allows the user to search through various restaurants categorized by typ
 
 ## Technologies used
 
-<div style="display: flex; justify-content: space-around;">
+<p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" width="60" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" width="60" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="60" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="60" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP_logo.svg" width="60" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Laravel.svg" width="40" />
-</div>
+  <img src="https://www.svgrepo.com/show/303656/php-logo.svg" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" width="40" />
+</p>
 
-<div style="display: flex; justify-content: space-around;">
+
+<p align="center">
   
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo_2018.svg" width="60" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Pinia_logo.svg" width="40" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Axios_logo.svg" width="40" />
+  <img src="https://logowik.com/content/uploads/images/bootstrap-new725.logowik.com.webp" width="60" />
+  <img src="https://seeklogo.com/images/P/pinia-logo-51BF712FB0-seeklogo.com.png" width="40" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlnsIRA3gg2TPnh9uXu4VKVfYf5V3PkIeTiQ&s" width="40" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Font_Awesome_Logo_2013-2019.svg" width="40" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Postman_Logo_2022.png" width="40" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Braintree_Logo.png" width="40" />
-</div>
-
+  <img src="https://avatars.githubusercontent.com/u/1505683?v=4" width="40" />
+  <img src="https://marketplace.commercetools.com/img/containers/assets/integrations/paypalbraintree/paypal_braintree_450_450.png/833b6528579b8219a71c44b6b7211c6d.png" width="40" />
+</p>
 
 ## The Team
 
