@@ -23,13 +23,13 @@
                 </div>
             </div>
             <!-- Create -->
-            <a href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i class="fa-solid fa-plus fa-2x"></i></a>
+            <a href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i class="icon-create fa-solid fa-plus fa-2x"></i></a>
             <!-- Table -->
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>Name</th>
+                        <th class="d-none d-sm-table-cell">Name</th>
                         <th>Price</th>
                         <th>Visibility</th>
                         <th>Functions</th>
@@ -42,7 +42,7 @@
                                 <td>
                                     <img class="img-dish" src="{{ asset('/storage/' . $dish->img) }}" alt="{{ $dish->name }}">
                                 </td>
-                                <td>{{ $dish->name }}</td>
+                                <td class="d-none d-sm-table-cell">{{ $dish->name }}</td>
                                 <td>{{ $dish->price . '€' }}</td>
                                 <td>
                                     @if ($dish->is_visible)
@@ -54,11 +54,11 @@
                                 <td>
                                     <!-- Edit -->
                                     <a href="{{ route('admin.dishes.edit', $dish) }}" class="btn">
-                                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                                        <i class="icon-edit fa-solid fa-pen-to-square fa-xl"></i>
                                     </a>
                                     <!-- Delete -->
                                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $dish->id }}">
-                                        <i class="fa-solid fa-trash fa-xl"></i>
+                                        <i class="icon-delete fa-solid fa-trash fa-xl"></i>
                                     </button>
                                 </td>
                             </tr>

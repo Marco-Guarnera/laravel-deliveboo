@@ -72,9 +72,13 @@ header {
 }
 
 .img-dish {
-    height: 125px;
+    width: 125px;
 }
 
 table :where(th, td):not(:nth-child(2)) {
     text-align: center;
+}
+
+i:where(.icon-create, .icon-edit, .icon-delete):hover {
+    color: rgba($color: #000, $alpha: 0.5);
 }
