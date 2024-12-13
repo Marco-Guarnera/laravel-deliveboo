@@ -8,18 +8,24 @@ The app allows the user to search through various restaurants categorized by typ
 
 ## Technologies used
 
-![HTML](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg)
-![CSS](https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg)
-![JavaScript](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)
-![Vue.js](https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg)
-![Bootstrap](https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo_2018.svg)
-![PHP](https://upload.wikimedia.org/wikipedia/commons/2/27/PHP_logo.svg)
-![Laravel](https://upload.wikimedia.org/wikipedia/commons/2/2d/Laravel.svg)
-![Pinia](https://upload.wikimedia.org/wikipedia/commons/1/1a/Pinia_logo.svg)
-![Axios](https://upload.wikimedia.org/wikipedia/commons/0/0e/Axios_logo.svg)
-![Font Awesome](https://upload.wikimedia.org/wikipedia/commons/4/42/Font_Awesome_Logo_2013-2019.svg)
-![Postman](https://upload.wikimedia.org/wikipedia/commons/8/83/Postman_Logo_2022.png)
-![Braintree](https://upload.wikimedia.org/wikipedia/commons/1/1a/Braintree_Logo.png)
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP_logo.svg" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Laravel.svg" width="40" />
+</div>
+
+<div style="display: flex; justify-content: space-around;">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo_2018.svg" width="60" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Pinia_logo.svg" width="40" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Axios_logo.svg" width="40" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Font_Awesome_Logo_2013-2019.svg" width="40" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Postman_Logo_2022.png" width="40" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Braintree_Logo.png" width="40" />
+</div>
 
 
 ## The Team
