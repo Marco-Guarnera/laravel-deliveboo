@@ -1,0 +1,37 @@
+restaurant_id,types
+1,Kebab
+2,Kebab
+3,Pizza
+4,Pizza
+5,Cinese
+6,Cinese
+7,Giapponese
+8,Giapponese
+9,Messicano
+10,Messicano
+11,Coreano
+12,Coreano
+13,Indiano
+14,Indiano
+15,Hamburger
+16,Hamburger
+17,Steak house
+18,Steak house
+19,Barbecue
+20,Barbecue
+21,Fast Food
+22,Fast Food
+23,Vegan
+24,Vegan
+25,Gluten free
+26,Gluten free
+27,"Kebab, Pizza"
+28,"Kebab, Cinese"
+29,"Kebab, Giapponese"
+30,"Kebab, Messicano"
+31,"Kebab, Coreano"
+32,"Kebab, Indiano"
+33,"Kebab, Hamburger"
+34,"Kebab, Steak house"
+35,"Kebab, Barbecue"
+36,"Kebab, Fast Food"

@@ -70,3 +70,11 @@ header {
     align-items: center;
     margin-bottom: 20px;
 }
+
+.img-dish {
+    height: 125px;
+}
+
+table :where(th, td):not(:nth-child(2)) {
+    text-align: center;
+}

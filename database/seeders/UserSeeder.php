@@ -14,79 +14,196 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $users = [
-
             [
-                'email' => 'info@kebabhouse.com',
+                'email' => 'donerkebab@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'pizzeria@bellanapoli.it',
+                'email' => 'kebabplace@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'info@dragongarden.com',
+                'email' => 'pizzamania@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'sushi@sushiyama.com',
+                'email' => 'labellanapoli@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'info@elmexicano.com',
+                'email' => 'chinatown@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'info@seoulspice.com',
+                'email' => 'dragongarden@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'info@tajmahal.com',
+                'email' => 'sushiyama@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'burger@burgerhouse.com',
+                'email' => 'giapponesedeli@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'steakhouse@texasgrill.com',
+                'email' => 'tacofiesta@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'bbq@bbqpit.com',
+                'email' => 'elmexicano@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'fastfood@fastburger.com',
+                'email' => 'kbbq@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'vegan@greenbites.com',
+                'email' => 'coreanohouse@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'glutenfree@noglut.com',
+                'email' => 'tajmahal@example.com',
                 'password' => '12345678'
             ],
+
+            [
+                'email' => 'indianohouse@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'fastburger@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'burgerhouse@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'texasgrill@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'steakco@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'smokehouse@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'bbqpit@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'fastfoodplace@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'quickbite@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'vegandelight@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'greenbites@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'noglut@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'glutenfreehub@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'donerkebabpizzamania@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabhousedragongarden@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabhousetokyobites@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabhousetacofiesta@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabcoreanoplace@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'donerkebabtajmahal@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabhouseburgerhouse@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabhousesteakco@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabbarbecueplace@example.com',
+                'password' => '12345678'
+            ],
+
+            [
+                'email' => 'kebabfastfoodplace@example.com',
+                'password' => '12345678
+                '
+            ]
 
         ];
+
 
         foreach ($users as $userData) {
             User::create(
                 [
-                'email' => $userData["email"],
-                'password' => Hash::make($userData["password"]),
+                    'email' => $userData["email"],
+
+                    'password' => Hash::make($userData["password"]),
                 ]
             );
         }

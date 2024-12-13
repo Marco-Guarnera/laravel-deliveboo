@@ -1,0 +1,152 @@
+name,description,price,is_visible,img,restaurant_id
+Hummus Platter,Creamy hummus with pita.,7.57,1,https://example.com/dish_image.jpg,1
+Falafel Wrap,Crispy falafel in a pita wrap.,13.64,1,https://example.com/dish_image.jpg,1
+Shawarma Bowl,Chicken shawarma with salad.,11.21,1,https://example.com/dish_image.jpg,1
+Mixed Grill,Assorted kebabs with sides.,11.88,1,https://example.com/dish_image.jpg,1
+Kebab Plate,Traditional lamb kebab with rice.,5.26,1,https://example.com/dish_image.jpg,1
+Mixed Grill,Assorted kebabs with sides.,9.21,1,https://example.com/dish_image.jpg,2
+Kebab Plate,Traditional lamb kebab with rice.,15.22,1,https://example.com/dish_image.jpg,2
+Falafel Wrap,Crispy falafel in a pita wrap.,17.63,1,https://example.com/dish_image.jpg,2
+Shawarma Bowl,Chicken shawarma with salad.,8.12,1,https://example.com/dish_image.jpg,2
+Hummus Platter,Creamy hummus with pita.,11.97,1,https://example.com/dish_image.jpg,2
+Hawaiian,Ham and pineapple toppings.,13.92,1,https://example.com/dish_image.jpg,3
+Four Cheese,A blend of four delicious cheeses.,11.73,1,https://example.com/dish_image.jpg,3
+Vegetarian,Loaded with fresh vegetables.,15.55,1,https://example.com/dish_image.jpg,3
+Four Cheese,A blend of four delicious cheeses.,18.8,1,https://example.com/dish_image.jpg,4
+Pepperoni,Topped with spicy pepperoni slices.,12.39,1,https://example.com/dish_image.jpg,4
+Margherita,Classic pizza with mozzarella and basil.,7.19,1,https://example.com/dish_image.jpg,4
+Hawaiian,Ham and pineapple toppings.,7.73,1,https://example.com/dish_image.jpg,4
+Dim Sum,Steamed dumplings with fillings.,15.4,1,https://example.com/dish_image.jpg,5
+Sweet and Sour Pork,Crispy pork with sweet sauce.,17.55,1,https://example.com/dish_image.jpg,5
+Kung Pao Chicken,Spicy chicken stir-fry with peanuts.,19.88,1,https://example.com/dish_image.jpg,5
+Spring Rolls,Fried rolls with vegetable filling.,15.81,1,https://example.com/dish_image.jpg,5
+Kung Pao Chicken,Spicy chicken stir-fry with peanuts.,19.65,1,https://example.com/dish_image.jpg,6
+Spring Rolls,Fried rolls with vegetable filling.,12.01,1,https://example.com/dish_image.jpg,6
+Dim Sum,Steamed dumplings with fillings.,6.64,1,https://example.com/dish_image.jpg,6
+Fried Rice,Stir-fried rice with vegetables.,8.93,1,https://example.com/dish_image.jpg,6
+Sweet and Sour Pork,Crispy pork with sweet sauce.,17.01,1,https://example.com/dish_image.jpg,6
+Tempura,Lightly battered fried vegetables.,16.52,1,https://example.com/dish_image.jpg,7
+Teriyaki Chicken,Chicken glazed in teriyaki sauce.,15.15,1,https://example.com/dish_image.jpg,7
+Sushi Platter,Assorted sushi with fresh fish.,10.91,1,https://example.com/dish_image.jpg,7
+Ramen,Noodles in a flavorful broth.,9.57,1,https://example.com/dish_image.jpg,7
+Miso Soup,Traditional Japanese soup with tofu.,18.13,1,https://example.com/dish_image.jpg,7
+Teriyaki Chicken,Chicken glazed in teriyaki sauce.,13.28,1,https://example.com/dish_image.jpg,8
+Tempura,Lightly battered fried vegetables.,19.16,1,https://example.com/dish_image.jpg,8
+Sushi Platter,Assorted sushi with fresh fish.,14.83,1,https://example.com/dish_image.jpg,8
+Ramen,Noodles in a flavorful broth.,13.56,1,https://example.com/dish_image.jpg,8
+Quesadilla,Grilled tortilla with melted cheese.,13.74,1,https://example.com/dish_image.jpg,9
+Tacos,Corn tortillas with flavorful fillings.,14.8,1,https://example.com/dish_image.jpg,9
+Churros,Fried dough with sugar and cinnamon.,15.39,1,https://example.com/dish_image.jpg,9
+Nachos,Tortilla chips with toppings.,10.56,1,https://example.com/dish_image.jpg,9
+Churros,Fried dough with sugar and cinnamon.,14.49,1,https://example.com/dish_image.jpg,10
+Burrito,"Stuffed with rice, beans, and meat.",12.61,1,https://example.com/dish_image.jpg,10
+Tacos,Corn tortillas with flavorful fillings.,7.22,1,https://example.com/dish_image.jpg,10
+Bibimbap,Rice bowl with mixed toppings.,10.23,1,https://example.com/dish_image.jpg,11
+Japchae,Stir-fried glass noodles with veggies.,12.96,1,https://example.com/dish_image.jpg,11
+Tteokbokki,Spicy rice cakes in sauce.,19.67,1,https://example.com/dish_image.jpg,11
+Korean BBQ,Grilled meats with dipping sauces.,12.17,1,https://example.com/dish_image.jpg,11
+Korean BBQ,Grilled meats with dipping sauces.,18.36,1,https://example.com/dish_image.jpg,12
+Kimchi Stew,Spicy stew with fermented cabbage.,15.72,1,https://example.com/dish_image.jpg,12
+Bibimbap,Rice bowl with mixed toppings.,19.74,1,https://example.com/dish_image.jpg,12
+Chicken Tikka Masala,Chicken in a creamy tomato sauce.,6.31,1,https://example.com/dish_image.jpg,13
+Biryani,Fragrant rice with spices and meat.,10.65,1,https://example.com/dish_image.jpg,13
+Butter Naan,Soft bread with butter.,5.47,1,https://example.com/dish_image.jpg,13
+Butter Naan,Soft bread with butter.,16.22,1,https://example.com/dish_image.jpg,14
+Paneer Curry,Cottage cheese in spicy curry.,13.54,1,https://example.com/dish_image.jpg,14
+Biryani,Fragrant rice with spices and meat.,18.56,1,https://example.com/dish_image.jpg,14
+Chicken Tikka Masala,Chicken in a creamy tomato sauce.,15.61,1,https://example.com/dish_image.jpg,14
+Veggie Burger,Plant-based patty with fresh toppings.,10.85,1,https://example.com/dish_image.jpg,15
+Double Cheeseburger,Two beef patties with cheese.,13.4,1,https://example.com/dish_image.jpg,15
+Cheeseburger,Burger with melted cheese.,15.53,1,https://example.com/dish_image.jpg,15
+Classic Burger,Juicy beef patty with lettuce and tomato.,5.3,1,https://example.com/dish_image.jpg,15
+Bacon Burger,Burger topped with crispy bacon.,8.82,1,https://example.com/dish_image.jpg,15
+Double Cheeseburger,Two beef patties with cheese.,12.4,1,https://example.com/dish_image.jpg,16
+Classic Burger,Juicy beef patty with lettuce and tomato.,17.11,1,https://example.com/dish_image.jpg,16
+Cheeseburger,Burger with melted cheese.,17.82,1,https://example.com/dish_image.jpg,16
+Veggie Burger,Plant-based patty with fresh toppings.,11.52,1,https://example.com/dish_image.jpg,16
+Filet Mignon,Tender filet with sides.,8.17,1,https://example.com/dish_image.jpg,17
+Steak Tartare,Raw beef seasoned with spices.,11.93,1,https://example.com/dish_image.jpg,17
+Porterhouse Steak,Large steak for sharing.,8.7,1,https://example.com/dish_image.jpg,17
+Porterhouse Steak,Large steak for sharing.,18.5,1,https://example.com/dish_image.jpg,18
+T-Bone Steak,Thick cut T-bone steak.,5.48,1,https://example.com/dish_image.jpg,18
+Filet Mignon,Tender filet with sides.,8.56,1,https://example.com/dish_image.jpg,18
+Ribeye Steak,Grilled ribeye cooked to perfection.,18.62,1,https://example.com/dish_image.jpg,18
+Steak Tartare,Raw beef seasoned with spices.,15.78,1,https://example.com/dish_image.jpg,18
+Pulled Pork Sandwich,Slow-cooked pork in a bun.,13.48,1,https://example.com/dish_image.jpg,19
+BBQ Ribs,Smoky ribs with tangy sauce.,16.61,1,https://example.com/dish_image.jpg,19
+BBQ Chicken,Grilled chicken with BBQ glaze.,10.93,1,https://example.com/dish_image.jpg,19
+Brisket,Tender smoked beef brisket.,16.6,1,https://example.com/dish_image.jpg,19
+Cornbread,Sweet and savory baked bread.,16.55,1,https://example.com/dish_image.jpg,19
+Pulled Pork Sandwich,Slow-cooked pork in a bun.,9.95,1,https://example.com/dish_image.jpg,20
+Cornbread,Sweet and savory baked bread.,11.48,1,https://example.com/dish_image.jpg,20
+Brisket,Tender smoked beef brisket.,13.77,1,https://example.com/dish_image.jpg,20
+BBQ Ribs,Smoky ribs with tangy sauce.,12.26,1,https://example.com/dish_image.jpg,20
+Hot Dog,Grilled sausage in a bun.,10.18,1,https://example.com/dish_image.jpg,21
+Fried Chicken,Crispy fried chicken pieces.,13.08,1,https://example.com/dish_image.jpg,21
+Fries,Crispy golden french fries.,5.39,1,https://example.com/dish_image.jpg,21
+Chicken Nuggets,Breaded chicken bites.,15.51,1,https://example.com/dish_image.jpg,22
+Milkshake,Thick and creamy milkshake.,11.5,1,https://example.com/dish_image.jpg,22
+Fried Chicken,Crispy fried chicken pieces.,13.82,1,https://example.com/dish_image.jpg,22
+Stuffed Peppers,Peppers filled with rice and beans.,6.45,1,https://example.com/dish_image.jpg,23
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,19.36,1,https://example.com/dish_image.jpg,23
+Lentil Soup,Hearty soup with lentils and spices.,14.25,1,https://example.com/dish_image.jpg,23
+Quinoa Salad,Salad with quinoa and fresh greens.,6.41,1,https://example.com/dish_image.jpg,23
+Vegan Burger,Plant-based patty with fresh veggies.,18.13,1,https://example.com/dish_image.jpg,23
+Vegan Burger,Plant-based patty with fresh veggies.,14.52,1,https://example.com/dish_image.jpg,24
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,14.01,1,https://example.com/dish_image.jpg,24
+Lentil Soup,Hearty soup with lentils and spices.,6.21,1,https://example.com/dish_image.jpg,24
+Stuffed Peppers,Peppers filled with rice and beans.,13.22,1,https://example.com/dish_image.jpg,24
+Quinoa Salad,Salad with quinoa and fresh greens.,13.8,1,https://example.com/dish_image.jpg,24
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,19.31,1,https://example.com/dish_image.jpg,25
+Quinoa Salad,Salad with quinoa and fresh greens.,9.8,1,https://example.com/dish_image.jpg,25
+Lentil Soup,Hearty soup with lentils and spices.,8.45,1,https://example.com/dish_image.jpg,25
+Vegan Burger,Plant-based patty with fresh veggies.,14.04,1,https://example.com/dish_image.jpg,25
+Stuffed Peppers,Peppers filled with rice and beans.,19.48,1,https://example.com/dish_image.jpg,25
+Quinoa Salad,Salad with quinoa and fresh greens.,13.82,1,https://example.com/dish_image.jpg,26
+Vegan Burger,Plant-based patty with fresh veggies.,17.91,1,https://example.com/dish_image.jpg,26
+Lentil Soup,Hearty soup with lentils and spices.,15.34,1,https://example.com/dish_image.jpg,26
+Stuffed Peppers,Peppers filled with rice and beans.,10.37,1,https://example.com/dish_image.jpg,26
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,14.01,1,https://example.com/dish_image.jpg,26
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,17.08,1,https://example.com/dish_image.jpg,27
+Lentil Soup,Hearty soup with lentils and spices.,6.23,1,https://example.com/dish_image.jpg,27
+Quinoa Salad,Salad with quinoa and fresh greens.,8.37,1,https://example.com/dish_image.jpg,27
+Vegan Burger,Plant-based patty with fresh veggies.,14.93,1,https://example.com/dish_image.jpg,27
+Stuffed Peppers,Peppers filled with rice and beans.,16.35,1,https://example.com/dish_image.jpg,27
+Stuffed Peppers,Peppers filled with rice and beans.,5.88,1,https://example.com/dish_image.jpg,28
+Vegan Burger,Plant-based patty with fresh veggies.,5.91,1,https://example.com/dish_image.jpg,28
+Lentil Soup,Hearty soup with lentils and spices.,7.27,1,https://example.com/dish_image.jpg,28
+Quinoa Salad,Salad with quinoa and fresh greens.,6.82,1,https://example.com/dish_image.jpg,28
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,10.98,1,https://example.com/dish_image.jpg,28
+Vegan Burger,Plant-based patty with fresh veggies.,18.47,1,https://example.com/dish_image.jpg,29
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,14.4,1,https://example.com/dish_image.jpg,29
+Quinoa Salad,Salad with quinoa and fresh greens.,14.01,1,https://example.com/dish_image.jpg,29
+Stuffed Peppers,Peppers filled with rice and beans.,16.69,1,https://example.com/dish_image.jpg,29
+Lentil Soup,Hearty soup with lentils and spices.,8.31,1,https://example.com/dish_image.jpg,29
+Vegan Burger,Plant-based patty with fresh veggies.,13.63,1,https://example.com/dish_image.jpg,30
+Quinoa Salad,Salad with quinoa and fresh greens.,13.33,1,https://example.com/dish_image.jpg,30
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,10.92,1,https://example.com/dish_image.jpg,30
+Lentil Soup,Hearty soup with lentils and spices.,11.52,1,https://example.com/dish_image.jpg,30
+Stuffed Peppers,Peppers filled with rice and beans.,7.72,1,https://example.com/dish_image.jpg,30
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,10.7,1,https://example.com/dish_image.jpg,31
+Stuffed Peppers,Peppers filled with rice and beans.,6.79,1,https://example.com/dish_image.jpg,31
+Vegan Burger,Plant-based patty with fresh veggies.,19.26,1,https://example.com/dish_image.jpg,31
+Quinoa Salad,Salad with quinoa and fresh greens.,13.25,1,https://example.com/dish_image.jpg,32
+Lentil Soup,Hearty soup with lentils and spices.,16.25,1,https://example.com/dish_image.jpg,32
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,19.97,1,https://example.com/dish_image.jpg,32
+Stuffed Peppers,Peppers filled with rice and beans.,16.08,1,https://example.com/dish_image.jpg,32
+Vegan Burger,Plant-based patty with fresh veggies.,12.04,1,https://example.com/dish_image.jpg,32
+Quinoa Salad,Salad with quinoa and fresh greens.,13.27,1,https://example.com/dish_image.jpg,33
+Lentil Soup,Hearty soup with lentils and spices.,19.45,1,https://example.com/dish_image.jpg,33
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,8.74,1,https://example.com/dish_image.jpg,33
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,11.17,1,https://example.com/dish_image.jpg,34
+Lentil Soup,Hearty soup with lentils and spices.,15.9,1,https://example.com/dish_image.jpg,34
+Stuffed Peppers,Peppers filled with rice and beans.,14.99,1,https://example.com/dish_image.jpg,34
+Vegan Burger,Plant-based patty with fresh veggies.,6.34,1,https://example.com/dish_image.jpg,34
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,17.47,1,https://example.com/dish_image.jpg,35
+Lentil Soup,Hearty soup with lentils and spices.,18.77,1,https://example.com/dish_image.jpg,35
+Stuffed Peppers,Peppers filled with rice and beans.,10.08,1,https://example.com/dish_image.jpg,35
+Stuffed Peppers,Peppers filled with rice and beans.,18.13,1,https://example.com/dish_image.jpg,36
+Quinoa Salad,Salad with quinoa and fresh greens.,19.38,1,https://example.com/dish_image.jpg,36
+Lentil Soup,Hearty soup with lentils and spices.,13.42,1,https://example.com/dish_image.jpg,36
+Vegan Burger,Plant-based patty with fresh veggies.,11.15,1,https://example.com/dish_image.jpg,36
+Tofu Stir-Fry,Tofu with vegetables in a savory sauce.,12.87,1,https://example.com/dish_image.jpg,36

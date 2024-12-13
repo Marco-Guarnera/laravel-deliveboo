@@ -41,12 +41,26 @@ const validateDishVisibility = (visibility) => {
     return ""; // Valid
 };
 
-// Validates dish image: optional, must be an image and max 256KB
+/// Validates dish image: optional, must be a single image file and max 256KB
 const validateDishImg = (img) => {
-    if (img.files.length === 0) return ""; // Optional field
-    const file = img.files[0];
-    if (!file.type.startsWith('image/')) return "File must be an image.";
-    if (file.size > 256 * 1024) return "Image size must not exceed 256KB.";
+    const file = img.files[0]; // Retrieve the single file
+    if (!file) return null; // No validation if field is empty
+
+    const validImageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']; // Allowed extensions
+
+    // Get the file extension
+    const fileExtension = file.name.split('.').pop().toLowerCase();
+
+    // Validate file extension
+    if (!validImageExtensions.includes(fileExtension)) {
+        return "File must be a valid image format (jpg, jpeg, png, gif, bmp, webp).";
+    }
+
+    // Validate file size
+    if (file.size > 256 * 1024) {
+        return "Image size must not exceed 256KB.";
+    }
+
     return ""; // Valid
 };
 
@@ -122,13 +136,22 @@ dishesForm.addEventListener('submit', function (event) {
         showValid(dishVisibility, dishVisibilityError);
     }
 
-    // Validate dish image
+    // Validate image
     const imgMessage = validateDishImg(dishImg);
-    if (imgMessage) {
-        showError(dishImg, dishImgError, imgMessage);
-        isDishesFormValid = false;
+
+    if (imgMessage !== null) {
+        if (imgMessage) {
+            // Validation failed
+            showError(dishImg, dishImgError, imgMessage);
+            isDishesFormValid = false;
+        } else {
+            // Validation passed
+            showValid(dishImg, dishImgError);
+        }
     } else {
-        showValid(dishImg, dishImgError);
+        // No file selected
+        dishImg.classList.remove('is-valid', 'is-invalid');
+        dishImgError.innerHTML = ''; // Clear error message
     }
 
     // If the form is valid, allow submission
