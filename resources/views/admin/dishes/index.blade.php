@@ -17,7 +17,7 @@
 
     @if ($hasDishes)
     <!-- Session Data -->
-    <div class="row">
+    <div id="session-data" class="row">
         <div class="col-3 mx-auto">
             @include('partials.session-data')
         </div>
