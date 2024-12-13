@@ -31,7 +31,7 @@
                             <label for="dish-name" class="form-label">Dish Name *</label>
                             <input type="text" id="dish-name" class="form-control @error('name') is-invalid @enderror"
                                 name="name" value="{{ old('name', $dish->name) }}" placeholder="e.g., Margherita Pizza"
-                                minlength="5" maxlength="250" required>
+                                minlength="3" maxlength="250" required>
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
                             <label for="dish-description" class="form-label">Description</label>
                             <textarea id="dish-description"
                                 class="form-control @error('description') is-invalid @enderror" name="description"
-                                placeholder="e.g., A delicious classic pizza..." minlength="15"
+                                placeholder="e.g., A delicious classic pizza..."
                                 maxlength="500">{{ old('description', $dish->description) }}</textarea>
                             @error('description')
                             <span class="invalid-feedback" role="alert">

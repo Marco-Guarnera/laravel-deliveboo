@@ -15,22 +15,27 @@ const dishImg = document.getElementById('dish-img');
 // Validates dish name: required, 1-250 characters
 const validateDishName = (name) => {
     if (name.trim() === "") return "Dish name is required.";
+    if (name.length >= 0 && name.length < 3) return "Dish name must be at least 3 characters long.";
     if (name.length > 250) return "Dish name must not exceed 250 characters.";
     return ""; // Valid
 };
 
 // Validates dish description: optional, 1-500 characters
 const validateDishDescription = (description) => {
+    if (!description) return null
     if (description.length > 500) return "Description must not exceed 500 characters.";
     return ""; // Valid
 };
 
 // Validates dish price: required, numeric, 2 decimal places, 0-100 range
 const validateDishPrice = (price) => {
-    if (price.trim() === "") return "Price is required.";
-    if (!/^\d+(\.\d{2})$/.test(price)) return "Price must be a valid number with exactly 2 decimal places.";
+    if (!price.trim()) return "Price is required.";
+    if (!/^\d+(\.\d{2})$/.test(price))
+        return "The price must be a valid non-negative number with up to 2 decimal places.";
+
     const numericPrice = parseFloat(price);
-    if (numericPrice < 0 || numericPrice > 100) return "Price must be between 0 and 100.";
+    if (numericPrice < 0 || numericPrice > 100)
+        return "Price must be between 0 and 100.";
     return ""; // Valid
 };
 
@@ -113,10 +118,21 @@ dishesForm.addEventListener('submit', function (event) {
 
     // Validate dish description
     const descriptionMessage = validateDishDescription(dishDescription.value.trim());
-    if (descriptionMessage) {
-        showError(dishDescription, dishDescriptionError, descriptionMessage);
+    if (descriptionMessage !== null) {
+        console.log('messaggio di conferma che non è vuoto')
+        // Validation failed
+        if (descriptionMessage) {
+            showError(dishDescription, dishDescriptionError, descriptionMessage);
+            isDishesFormValid = false;
+        } else {
+            console.log('messaggio di conferma che  è vuoto')
+            // Validation passed
+            showValid(dishDescription, dishDescriptionError);
+        }
     } else {
-        showValid(dishDescription, dishDescriptionError);
+        // Not text in description
+        dishDescription.classList.remove('is-valid', 'is-invalid');
+        dishDescriptionError.innerHTML = ''; // Clear error message
     }
 
     // Validate dish price
