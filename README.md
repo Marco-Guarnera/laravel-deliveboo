@@ -24,7 +24,7 @@ The app allows the user to search through various restaurants categorized by typ
   <img src="https://seeklogo.com/images/P/pinia-logo-51BF712FB0-seeklogo.com.png" width="40" />
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlnsIRA3gg2TPnh9uXu4VKVfYf5V3PkIeTiQ&s" width="40" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Font_Awesome_Logo_2013-2019.svg" width="40" />
-  <img src="https://avatars.githubusercontent.com/u/1505683?v=4" width="40" />
+  <img src="https://static-00.iconduck.com/assets.00/font-awesome-icon-512x512-vwz08fde.png" width="40" />
   <img src="https://marketplace.commercetools.com/img/containers/assets/integrations/paypalbraintree/paypal_braintree_450_450.png/833b6528579b8219a71c44b6b7211c6d.png" width="40" />
 </p>
 
