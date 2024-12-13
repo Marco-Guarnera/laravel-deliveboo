@@ -97,8 +97,7 @@
     @else
     <div class="text-center mt-4">
         <p>No dishes available. Add new dish!</p>
-        <a 
-href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i class="fa-solid fa-plus fa-2x"></i></a>
+        <a href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i class="fa-solid fa-plus fa-2x"></i></a>
     </div>
     @endif
 </div>
