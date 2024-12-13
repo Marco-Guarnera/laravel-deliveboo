@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\DishController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\TypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,31 +23,29 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Index
+// Index dei piatti
 Route::get('/dishes', [DishController::class, 'index'])->name('api.dishes.index');
 
-// Store
+// Creazione di un ordine
 Route::post('/orders', [OrderController::class, 'store'])->name('api.orders.store');
 
-// API endpoint to list all restaurants
+// Elenco di tutti i ristoranti
 Route::get('/restaurants', [RestaurantController::class, 'index'])->name('api.restaurants.index');
 
+// Dettagli di un singolo ristorante
+Route::get('/restaurants/{restaurantId}', [RestaurantController::class, 'show'])->name('api.restaurants.show');
 
+// Piatti per un singolo ristorante
+Route::get('restaurants/{restaurantId}/dishes', [RestaurantController::class, 'getDishes']);
+
+// Aggiungere, aggiornare ed eliminare piatti
 Route::post('/dishes', [DishController::class, 'store']);
 Route::put('/dishes/{dish}', [DishController::class, 'update']);
 Route::delete('/dishes/{dish}', [DishController::class, 'destroy']);
 
-
-use App\Http\Controllers\Api\TypeController;
-
+// Tipi di piatti
 Route::get('/types', [TypeController::class, 'index']);
 
-
-Route::get('restaurants/{restaurantId}/dishes', [RestaurantController::class, 'getDishes']);
-Route::get('/restaurants/{restaurantId}', [RestaurantController::class, 'show'])->name('api.restaurants.show');
-
-
-use App\Http\Controllers\Api\CheckoutController;
-
+// Checkout
 Route::get('/checkout/token', [CheckoutController::class, 'generateToken']);
 Route::post('/checkout/pay', [CheckoutController::class, 'processPayment']);
