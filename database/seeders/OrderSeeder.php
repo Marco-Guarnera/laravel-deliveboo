@@ -19,7 +19,6 @@ class OrderSeeder extends Seeder
 
         while (($row = fgetcsv($file)) !== false) {
             $orderData = [
-                'id' => $row[array_search('id', $tableColumns)],
                 'restaurant_id' => $row[array_search('restaurant_id', $tableColumns)],
                 'customer_name' => $row[array_search('customer_name', $tableColumns)],
                 'customer_email' => $row[array_search('customer_email', $tableColumns)],
