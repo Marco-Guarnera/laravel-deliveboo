@@ -5,7 +5,7 @@
         <h1 class="my-4 text-center">Statistiche degli Ordini</h1>
 
         <!-- Aggiungi il bottone per tornare alla lista degli ordini -->
-        <a href="{{ route('orders.index') }}" class="btn btn-secondary mb-4">Torna alla lista ordini</a>
+        <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary mb-4">Torna alla lista ordini</a>
 
         <!-- Canvas per il grafico -->
         <canvas id="salesChart"></canvas>
