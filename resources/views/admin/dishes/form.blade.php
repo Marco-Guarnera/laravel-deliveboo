@@ -84,11 +84,11 @@
 
                         <!-- Dish Image -->
                         <div class="mb-4">
-                            <label for="dish-img" class="form-label">Current Image</label>
+                            <label for="dish-img" class="form-label">Current Image:</label>
                             <!-- Mostrare l'immagine nell'edit --->
 @if(isset($dish) && $dish->img)
-<div class="mb-3">
-    <img src="{{ asset('storage/' . $dish->img) }}" alt="Current Image">
+<div class="mb-3 d-flex justify-content-center">
+    <img src="{{ asset('storage/' . $dish->img) }}" alt="Current Image" style="max-height: 200px;">
 </div>
 @endif
 
