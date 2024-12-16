@@ -58,3 +58,9 @@ Route::get('/restaurants/{slug}/dishes', [RestaurantController::class, 'getDishe
 // Checkout
 Route::get('/checkout/token', [CheckoutController::class, 'generateToken']);
 Route::post('/checkout/pay', [CheckoutController::class, 'processPayment']);
+
+// Dettagli di un singolo piatto
+Route::get('/dishes/{id}', [DishController::class, 'show']);
+
+// Dettagli di un singolo ristorante
+Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);

@@ -3,6 +3,8 @@
 @section('content')
 <div class="container">
     <h1 class="my-4 text-center">Lista degli Ordini</h1>
+    <!-- Bottone per visualizzare le statistiche -->
+    <a href="{{ route('admin.orders.statistics') }}" class="btn btn-primary mb-4">Visualizza Statistiche</a>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>

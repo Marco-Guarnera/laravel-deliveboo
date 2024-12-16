@@ -14,8 +14,8 @@ class DishController extends Controller
         $dishes_list = Dish::all();
         return response()->json(
             [
-            'success' => true,
-            'results' => $dishes_list
+                'success' => true,
+                'results' => $dishes_list
             ]
         );
     }
@@ -24,9 +24,9 @@ class DishController extends Controller
     {
         $data = $request->validate(
             [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric|min:0',
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'price' => 'required|numeric|min:0',
             ]
         );
 
@@ -39,9 +39,9 @@ class DishController extends Controller
     {
         $data = $request->validate(
             [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric|min:0',
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'price' => 'required|numeric|min:0',
             ]
         );
 
@@ -55,5 +55,11 @@ class DishController extends Controller
         $dish->delete();
 
         return response()->json(['success' => true]);
+    }
+
+    public function show($id)
+    {
+        $dish = Dish::with('restaurant')->findOrFail($id);
+        return response()->json($dish);
     }
 }
