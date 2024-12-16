@@ -22,9 +22,17 @@
             @include('partials.session-data')
         </div>
     </div>
-    <!-- Create -->
-    <a href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i class="icon-create fa-solid fa-plus fa-2x"></i></a>
-    <!-- Table -->
+
+    <div class="d-flex justify-content-between">
+        <!-- Create -->
+        <a href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i
+                class="icon-create fa-solid fa-plus fa-2x"></i></a>
+
+        <!-- Table -->
+        <a href="{{route('admin.orders.index')}}" class="btn btn-success mb-3">Order Section</a>
+    </div>
+
+    <!-- Orders -->
     <table class="table table-hover">
         <thead>
             <tr>
@@ -101,4 +109,5 @@
     </div>
     @endif
 </div>
+
 @endsection
