@@ -9,12 +9,7 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Client Name</th>
-                <th>Client Email</th>
-                <th>Telephone Number</th>
-                <th>Client Address</th>
                 <th>Total Price</th>
-                <th>Restaurant</th>
                 <th>Creation Date</th>
                 <th>Actions</th>
             </tr>
@@ -23,12 +18,7 @@
             @forelse($orders as $order)
             <tr>
                 <td>{{ $order->id }}</td>
-                <td>{{ $order->customer_name }}</td>
-                <td>{{ $order->customer_email }}</td>
-                <td>{{ $order->customer_number }}</td>
-                <td>{{ $order->customer_address }}</td>
                 <td>&euro; {{ number_format($order->total_price, 2) }}</td>
-                <td>{{ $order->restaurant->name }}</td>
                 <td>{{ $order->created_at->format('d/m/Y H:i') }}</td>
                 <td>
                     {{-- <a href="{{ route('orders.show', $order->id) }}" class="btn btn-info btn-sm">Details</a> --}}
