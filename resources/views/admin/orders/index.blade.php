@@ -2,21 +2,21 @@
 
 @section('content')
 <div class="container">
-    <h1 class="my-4 text-center">Lista degli Ordini</h1>
+    <h1 class="my-4 text-center">Orders List</h1>
     <!-- Bottone per visualizzare le statistiche -->
-    <a href="{{ route('admin.orders.statistics') }}" class="btn btn-primary mb-4">Visualizza Statistiche</a>
+    <a href="{{ route('admin.orders.statistics') }}" class="btn btn-primary mb-4">See statistics</a>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nome Cliente</th>
-                <th>Email Cliente</th>
-                <th>Numero Telefono</th>
-                <th>Indirizzo Cliente</th>
-                <th>Prezzo Totale</th>
-                <th>Ristorante</th>
-                <th>Data Creazione</th>
-                <th>Azioni</th>
+                <th>Client Name</th>
+                <th>Client Email</th>
+                <th>Telephone Number</th>
+                <th>Client Address</th>
+                <th>Total Price</th>
+                <th>Restaurant</th>
+                <th>Creation Date</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -31,18 +31,18 @@
                 <td>{{ $order->restaurant->name }}</td>
                 <td>{{ $order->created_at->format('d/m/Y H:i') }}</td>
                 <td>
-                    {{-- <a href="{{ route('orders.show', $order->id) }}" class="btn btn-info btn-sm">Dettagli</a> --}}
+                    {{-- <a href="{{ route('orders.show', $order->id) }}" class="btn btn-info btn-sm">Details</a> --}}
                     {{-- <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm"
-                        onclick="return confirm('Sei sicuro di voler eliminare questo ordine?')">Elimina</button>
+                        onclick="return confirm('Are you sure you want to delete this order?')">Delete</button>
                     </form> --}}
                 </td>
             </tr>
             @empty
             <tr>
-                <td colspan="9" class="text-center">Nessun ordine trovato.</td>
+                <td colspan="9" class="text-center">No order was found.</td>
             </tr>
             @endforelse
         </tbody>
