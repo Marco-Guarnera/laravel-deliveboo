@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'DeliveBoo'),
 
     /*
     |--------------------------------------------------------------------------
@@ -210,7 +210,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge(
         [
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+            // 'ExampleClass' => App\Example\ExampleClass::class,
         ]
     )->toArray(),
 
