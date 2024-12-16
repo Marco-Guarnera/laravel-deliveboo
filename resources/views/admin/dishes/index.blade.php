@@ -23,13 +23,13 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between align-items-center mb-3">
         <!-- Create -->
-        <a href="{{ route('admin.dishes.create') }}" class="btn mb-3"><i
-                class="icon-create fa-solid fa-plus fa-2x"></i></a>
+        <a href="{{ route('admin.dishes.create') }}" class="btn d-flex align-items-center gap-1"><i
+                class="icon-create fa-solid fa-plus fa-2x"></i>New</a>
 
         <!-- Table -->
-        <a href="{{route('admin.orders.index')}}" class="btn btn-success mb-3">Order Section</a>
+        <a href="{{route('admin.orders.index')}}" class="btn btn-success">Order Section</a>
     </div>
 
     <!-- Orders -->
