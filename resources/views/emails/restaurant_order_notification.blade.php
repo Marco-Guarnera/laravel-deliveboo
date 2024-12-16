@@ -5,7 +5,9 @@
 <p><strong>Dettagli ordine:</strong></p>
 <ul>
     <li>Totale: €{{ number_format($order->total_price, 2) }}</li>
-    <li>Indirizzo: {{ $order->customer_address }}</li>
+    <li>Nome cliente: {{ $order->customer_name }}</li>
+    <li>Email cliente: {{ $order->customer_email }}</li>
+    <li>Indirizzo cliente: {{ $order->customer_address }}</li>
 </ul>
 
 <p><strong>Piatti ordinati:</strong></p>
