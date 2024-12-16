@@ -84,12 +84,11 @@
 
                         <!-- Dish Image -->
                         <div class="mb-4">
-                            <label for="dish-img" class="form-label">Image</label>
+                            <label for="dish-img" class="form-label">Current Image</label>
                             <!-- Mostrare l'immagine nell'edit --->
 @if(isset($dish) && $dish->img)
 <div class="mb-3">
     <img src="{{ asset('storage/' . $dish->img) }}" alt="Current Image">
-    <h6 class="mt-2">Current Image</h6>
 </div>
 @endif
 
