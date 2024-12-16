@@ -36,12 +36,10 @@ class RestaurantController extends Controller
     }
 
 
-    public function getDishes($slug)
-    {
-        // Trova il ristorante tramite lo slug
-        $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
 
-        // Recupera i piatti del ristorante
+    public function getDishes($restaurantId)
+    {
+        $restaurant = Restaurant::findOrFail($restaurantId);
         $dishes = $restaurant->dishes->map(function ($dish) {
             $dish->image_url = $dish->img ? asset('storage/' . ltrim($dish->img, '/')) : null;
             return $dish;
@@ -53,10 +51,10 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show($restaurantId)
     {
-        // Trova il ristorante tramite lo slug
-        $restaurant = Restaurant::with('types')->where('slug', $slug)->firstOrFail();
+        // Trova il ristorante con i suoi tipi associati
+        $restaurant = Restaurant::with('types')->findOrFail($restaurantId);
 
         return response()->json([
             'success' => true,
