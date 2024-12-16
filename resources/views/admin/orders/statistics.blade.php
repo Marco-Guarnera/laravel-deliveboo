@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h1 class="my-4 text-center">Statistiche degli Ordini</h1>
+        <h1 class="my-4 text-center">Orders Statistics</h1>
 
         <!-- Aggiungi il bottone per tornare alla lista degli ordini -->
-        <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary mb-4">Torna alla lista ordini</a>
+        <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary mb-4">Back to Orders List</a>
 
         <!-- Canvas per il grafico -->
         <canvas id="salesChart"></canvas>
@@ -21,7 +21,7 @@
                             return Carbon\Carbon::create($order->year, $order->month, 1)->format('F Y');
                         })),
                     datasets: [{
-                        label: 'Vendite Totali (€)',
+                        label: 'Total sales (€)',
                         data: @json(
                             $orders->map(function ($order) {
                                 return $order->total_sales;
@@ -38,13 +38,13 @@
                         x: {
                             title: {
                                 display: true,
-                                text: 'Mese / Anno'
+                                text: 'Month / Year'
                             }
                         },
                         y: {
                             title: {
                                 display: true,
-                                text: 'Vendite (€)'
+                                text: 'Sales (€)'
                             },
                             beginAtZero: true
                         }
