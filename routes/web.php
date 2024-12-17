@@ -52,4 +52,5 @@ Route::prefix('/admin')->name('admin.dishes.')->group(function () {
 Route::prefix('/admin')->name('admin.orders.')->middleware('auth')->group(function () {
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('index');
     Route::get('/orders/statistics', [AdminOrderController::class, 'statistics'])->name('statistics');
+    Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('show');
 });

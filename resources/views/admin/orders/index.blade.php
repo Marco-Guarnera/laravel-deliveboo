@@ -21,8 +21,8 @@
                 <td>&euro; {{ number_format($order->total_price, 2) }}</td>
                 <td>{{ $order->created_at->format('d/m/Y H:i') }}</td>
                 <td>
-                    {{-- <a href="{{ route('orders.show', $order->id) }}" class="btn btn-info btn-sm">Details</a> --}}
-                    {{-- <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display:inline;">
+                    <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-info btn-sm">Details</a>
+                   {{-- <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm"
