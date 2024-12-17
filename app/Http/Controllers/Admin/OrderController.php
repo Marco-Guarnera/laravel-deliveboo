@@ -30,6 +30,7 @@ class OrderController extends Controller
     public function show($id)
     {
 
+        $order = Order::with(['dishes', 'restaurant'])->findOrFail($id);
         $orders = Order::findOrFail($id);
         return view('admin.orders.show', compact('orders'));
     }
