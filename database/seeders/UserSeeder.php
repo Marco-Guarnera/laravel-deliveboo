@@ -145,54 +145,53 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'email' => 'donerkebabpizzamania@example.com',
+                'email' => 'pizzaandbarbecuespot@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabhousedragongarden@example.com',
+                'email' => 'chineseanddragongarden@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabhousetokyobites@example.com',
+                'email' => 'japaneseandtacofiesta@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabhousetacofiesta@example.com',
+                'email' => 'mexicanandsteakhouse@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabcoreanoplace@example.com',
+                'email' => 'koreanandveganplace@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'donerkebabtajmahal@example.com',
+                'email' => 'indianandglutenfreehub@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabhouseburgerhouse@example.com',
+                'email' => 'hamburgerandpizzahouse@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabhousesteakco@example.com',
+                'email' => 'steakhouseandfastfood@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabbarbecueplace@example.com',
+                'email' => 'barbecueandjapanesetavern@example.com',
                 'password' => '12345678'
             ],
 
             [
-                'email' => 'kebabfastfoodplace@example.com',
-                'password' => '12345678
-                '
+                'email' => 'mexicanandvegancorner@example.com',
+                'password' => '12345678'
             ]
 
         ];

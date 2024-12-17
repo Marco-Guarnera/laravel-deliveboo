@@ -25,13 +25,14 @@ restaurant_id,types
 24,Vegan
 25,Gluten free
 26,Gluten free
-27,"Kebab, Pizza"
-28,"Kebab, Chinese"
-29,"Kebab, Japanese"
-30,"Kebab, Mexican"
-31,"Kebab, Korean"
-32,"Kebab, Indian"
-33,"Kebab, Hamburger"
-34,"Kebab, Steak house"
-35,"Kebab, Barbecue"
-36,"Kebab, Fast Food"
+27,"Chinese, Vegan"
+28,"Japanese, Gluten Free"
+29,"Mexican, Vegan"
+30,"Steak House, Barbecue"
+31,"Korean, Vegan"
+32,"Indian, Gluten Free"
+33,"Hamburger, Pizza"
+34,"Steak House, Fast Food"
+35,"Barbecue, Japanese"
+36,"Mexican, Vegan"
+
