@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <h1 class="text-center">Order Details</h1>
-
+        <a href="{{ route('admin.orders.index') }}" class="btn btn-danger">Back to Orders</a>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <!-- Order Details Card -->
