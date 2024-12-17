@@ -30,7 +30,7 @@ img {
 
 #welcome-header {
     height: 100px;
-    background-color: orange;
+
 }
 
 a,
@@ -40,36 +40,7 @@ header {
     color: red;
 }
 
-#welcome-main {
-    background-color: orange;
-    height: calc(100vh - 100px);
-}
 
-#text-container-1,
-#text-container-2 {
-    height: 80px;
-
-    width: fit-content;
-    padding: 10px;
-
-}
-
-#text-container-1 {
-    margin-left: 200px;
-}
-
-#text-container-2 {
-    margin-top: 100px;
-    margin-right: 200px;
-}
-
-#welcome-image {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
 
 .img-dish {
     width: 125px;

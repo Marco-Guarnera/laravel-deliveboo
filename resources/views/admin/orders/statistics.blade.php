@@ -14,7 +14,7 @@
         <script>
             const ctx = document.getElementById('salesChart').getContext('2d');
             const salesChart = new Chart(ctx, {
-                type: 'bar', // Tipo di grafico, può essere 'bar', 'line', 'pie', ecc.
+                type: 'bar', // Tipo di grafico
                 data: {
                     labels: @json(
                         $orders->map(function ($order) {
@@ -22,10 +22,7 @@
                         })),
                     datasets: [{
                         label: 'Total sales (€)',
-                        data: @json(
-                            $orders->map(function ($order) {
-                                return $order->total_sales;
-                            })),
+                        data: @json($orders->pluck('total_sales')),
                         borderColor: 'rgba(75, 192, 192, 1)',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         fill: true,
