@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -25,11 +27,16 @@ class OrderController extends Controller
 
     public function statistics()
     {
-        // Recupera gli ordini per mese e anno
-        $orders = Order::selectRaw('YEAR(created_at) as year, MONTH(created_at) as month, SUM(total_price) as total_sales')
+        // Ottieni i ristoranti dell'utente loggato
+        $restaurants = Auth::user()->restaurants->pluck('id');
+
+        // Aggrega gli ordini dei ristoranti dell'utente loggato
+        $orders = DB::table('orders')
+            ->selectRaw('YEAR(created_at) as year, MONTH(created_at) as month, SUM(total_price) as total_sales')
+            ->whereIn('restaurant_id', $restaurants)
             ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
+            ->orderBy('year')
+            ->orderBy('month')
             ->get();
 
         return view('admin.orders.statistics', compact('orders'));
