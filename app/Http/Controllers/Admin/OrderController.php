@@ -11,9 +11,17 @@ class OrderController extends Controller
 
     public function index()
     {
-        $orders = Order::with('restaurant')->latest()->paginate(10); // Recupera gli ordini con il ristorante associato
-        return view('admin.orders.index', compact('orders')); // Passa la variabile alla vista
+        $user = auth()->user(); // Recupera l'utente loggato
+        $orders = Order::whereHas('restaurant', function ($query) use ($user) {
+            $query->where('user_id', $user->id); // Filtra i ristoranti dell'utente loggato
+        })
+            ->with('restaurant') // Carica il ristorante associato
+            ->latest()
+            ->paginate(10);
+
+        return view('admin.orders.index', compact('orders')); // Passa gli ordini filtrati alla vista
     }
+
 
     public function statistics()
     {
@@ -30,7 +38,6 @@ class OrderController extends Controller
     public function show($id)
     {
 
-        $order = Order::with(['dishes', 'restaurant'])->findOrFail($id);
         $orders = Order::findOrFail($id);
         return view('admin.orders.show', compact('orders'));
     }
