@@ -26,4 +26,11 @@ class OrderController extends Controller
 
         return view('admin.orders.statistics', compact('orders'));
     }
+
+    public function show($id)
+    {
+
+        $orders = Order::findOrFail($id);
+        return view('admin.orders.show', compact('orders'));
+    }
 }
