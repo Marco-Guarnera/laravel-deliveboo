@@ -20,11 +20,10 @@
     <body>
         <header id="welcome-header" class="d-flex justify-content-between align-items-center p-3">
 
-            <h3 class="text-success fw-bold">DeliveBoo</h3>
-
+            <h3 class="text-dark fw-bold">DeliveBoo - Administration Area</h3>
 
             @if (Route::has('login'))
-                <div>
+
                 <div class="d-flex align-items-center">
                     @auth
 
@@ -41,24 +40,18 @@
                     @endauth
                 </div>
             @endif
+            </main>
+
 
 
         </div>
     </body>
-        </header>
-        <main id="welcome-main">
-            <div class="d-flex justify-content-between">
-         <div id="text-container-1">
-            <h3 class="text-success">Create your account</h3>
-         </div>
-         <div id="text-container-2">
-           <h3 class="text-success">Insert all your dishes</h3>
-         </div>
-            </div>
-<div id="welcome-image">
-    <img src="https://img.freepik.com/free-psd/free-food-service-arrangement-with-background-mock-up_23-2148421299.jpg?size=626&ext=jpg" alt="">
-</div>
-        </main>
+</header>
+<main id="welcome-main">
+    <div class="mt-5">
+   <h1 class="text-center">Join us and start managing your business! </h1>
+   <h2 class="text-center">Discover your restaurant's statistics and personalize your menu.</h2>
+
 
         </body>
         </html>
