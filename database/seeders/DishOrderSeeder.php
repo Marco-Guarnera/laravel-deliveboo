@@ -24,6 +24,8 @@ class DishOrderSeeder extends Seeder
         'dish_id' => $row[array_search('dish_id', $tableColumns)],
         'order_id' => $row[array_search('order_id', $tableColumns)],
         'quantity' => $row[array_search('quantity', $tableColumns)],
+        'price' => $row[array_search('price', $tableColumns)],
+        'name' => $row[array_search('name', $tableColumns)],
       ];
 
       DB::table('dish_order')->insert($dishOrderData);
