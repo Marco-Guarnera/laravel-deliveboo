@@ -12,7 +12,7 @@ class RestaurantController extends Controller
     {
         // Includi i tipi e il primo piatto associato al ristorante
         $query = Restaurant::with(['types', 'dishes' => function ($query) {
-            $query->select('id', 'restaurant_id', 'img')->orderBy('id')->limit(1);
+            $query->select('id', 'restaurant_id', 'img')->orderBy('id');
         }]);
 
         // Filtra i ristoranti in base ai tipi selezionati
