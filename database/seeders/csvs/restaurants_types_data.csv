@@ -25,14 +25,13 @@ restaurant_id,types
 24,Vegan
 25,Gluten free
 26,Gluten free
-27,"Chinese, Vegan"
-28,"Japanese, Gluten Free"
-29,"Mexican, Vegan"
-30,"Steak House, Barbecue"
+27,"Pizza, Barbecue"
+28,"Chinese, Barbecue"
+29,"Japanese, Mexican"
+30,"Mexican, Steak House"
 31,"Korean, Vegan"
 32,"Indian, Gluten Free"
 33,"Hamburger, Pizza"
 34,"Steak House, Fast Food"
 35,"Barbecue, Japanese"
 36,"Mexican, Vegan"
-
