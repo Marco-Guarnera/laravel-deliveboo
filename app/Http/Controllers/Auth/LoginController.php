@@ -17,15 +17,17 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
+     *  Define the URL to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        return route('admin.dishes.index');
+    }
 
     /**
      * Create a new controller instance.

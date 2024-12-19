@@ -17,15 +17,17 @@ class ConfirmPasswordController extends Controller
     | this trait and override any functions that require customization.
     |
     */
-
     use ConfirmsPasswords;
 
     /**
-     * Where to redirect users when the intended url fails.
+     *  Define the URL to redirect users after confirming their password.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        return route('admin.dishes,index');
+    }
 
     /**
      * Create a new controller instance.

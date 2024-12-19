@@ -6,3 +6,50 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// Generics
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+form :where(input, select, textarea) {
+    margin-bottom: 0.25rem;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#welcome-header {
+    height: 100px;
+
+}
+
+a,
+header {
+    text-decoration: none;
+    font-size: 20px;
+    color: red;
+}
+
+
+
+.img-dish {
+    width: 125px;
+}
+
+table :where(th, td):not(:nth-child(2)) {
+    text-align: center;
+}
+
+i:where(.icon-create, .icon-edit, .icon-delete):hover {
+    color: rgba($color: #000, $alpha: 0.5);
+}
